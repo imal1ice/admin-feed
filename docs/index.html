@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin surface changes</title>
+<link rel="alternate" type="application/rss+xml" title="admin-feed" href="feed.xml">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--crit:#b00020;--high:#c2410c;--med:#a16207;--info:#2563eb}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a;--crit:#ff6b6b;--high:#fb923c;--med:#facc15;--info:#60a5fa}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px} p.sub{color:var(--muted);margin:0 0 24px}
+h2{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:28px 0 8px}
+.a{border-top:1px solid var(--line);padding:10px 0} .a:last-child{border-bottom:1px solid var(--line)}
+.sev{font-size:11px;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:4px;color:#fff;margin-right:8px;vertical-align:middle}
+.critical{background:var(--crit)} .high{background:var(--high)} .medium{background:var(--med)} .info{background:var(--info)}
+.meta{color:var(--muted);font-size:13px} .msg{margin:4px 0 0;word-break:break-word} a{color:inherit} code{font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:32px}
+</style></head><body>
+<h1>Admin surface changes</h1>
+<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major Ethereum protocols, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a></p>
+<h2>2026-10-21</h2>
+<div class="a"><span class="sev high">HIGH</span><strong>Compound Timelock</strong> <span class="meta"><a href="https://etherscan.io/address/0x6d903f6003cca6255D85CcA4D3B5E5146dC33925">0x6d90…3925</a> · ethereum · Timelock(legacy).QueueTransaction · block 26237471 · tx <a href="https://etherscan.io/tx/https://etherscan.io/tx/0xec40a2b366682121bdf44df91e57930a9385468947b2521cb3f2c87fecf2cf6d">https://et…</a> · 08:38 UTC</span><p class="msg">timelock tx queued: target 0x6774Bcbd5ceCeF1336b5300fb5186a12DDD8b367 value 50000000000000000 sig &#x27;&#x27; eta 1792716371</p></div>
+<div class="a"><span class="sev high">HIGH</span><strong>Compound Governor Bravo (proxy)</strong> <span class="meta"><a href="https://etherscan.io/address/0x309a862bbC1A00e45506cB8A802D1ff10004c8C0">0x309a…c8C0</a> · ethereum · Governor.ProposalQueued · block 26237471 · tx <a href="https://etherscan.io/tx/https://etherscan.io/tx/0xec40a2b366682121bdf44df91e57930a9385468947b2521cb3f2c87fecf2cf6d">https://et…</a> · 08:38 UTC</span><p class="msg">proposal 616 queued, executable at 1792716371</p></div>
+<div class="a"><span class="sev medium">MEDIUM</span><strong>Compound Governor Bravo (proxy)</strong> <span class="meta"><a href="https://etherscan.io/address/0x309a862bbC1A00e45506cB8A802D1ff10004c8C0">0x309a…c8C0</a> · ethereum · Governor.ProposalCreated · block 26233479 · tx <a href="https://etherscan.io/tx/https://etherscan.io/tx/0x79d7dcde69dc66a11b0bcfa41a7466b5808bd4e4ccafffaa84f2a2885e1f3c5f">https://et…</a> · 08:38 UTC</span><p class="msg">proposal 618 created by 0x5b2962121b4334fe563F7062feA975f51313EDE3 with 1 targets: # Community Multisig Custody for the EPCF | actions: 0x5b2962121b4334fe563F7062feA975f51313EDE3: empty calldata</p></div>
+<footer>Generated 2026-10-21 08:38 UTC. Alerts are produced from public chain data only; nothing here is a judgement about any project. Run it on your own contracts: <code>pip install ownerwatch</code>.</footer></body></html>

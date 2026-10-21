@@ -1,0 +1,48 @@
+# admin-feed: ownerwatch config for the public feed. Ethereum mainnet only for now.
+# Logs come from rpc.flashbots.net (10k-block eth_getLogs ranges, no eth_call);
+# reads for `probe` use eth.drpc.org. State and alerts are committed by the workflow.
+rpc_url: "https://rpc.flashbots.net"
+probe_rpc_url: "https://eth.drpc.org"
+chain_name: ethereum
+explorer_url: "https://etherscan.io"
+confirmations: 3
+max_block_range: 10000
+start_block: latest
+state_file: state/ethereum.json
+contracts:
+  - address: "0x1a9C8182C09F50C8318d769245beA52c32BE35BC"
+    label: "Uniswap Timelock"
+  - address: "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925"
+    label: "Compound Timelock"
+  - address: "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0"
+    label: "Compound Governor Bravo (proxy)"
+  - address: "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+    label: "Aave Executor Lvl 1"
+  - address: "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+    label: "Aave Payloads Controller (proxy)"
+  - address: "0xE6841D92B0C345144506576eC13ECf5103aC7f49"
+    label: "Arbitrum DAO L1 Timelock (proxy)"
+  - address: "0x3ffFbAdAF827559da092217e474760E2b2c3CeDd"
+    label: "Arbitrum L1 Upgrade Executor (proxy)"
+  - address: "0xFe89cc7aBB2C4183683ab71653C4cdc9B02D44b7"
+    label: "ENS DAO Timelock"
+  - address: "0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c"
+    label: "Lido DAO Agent"
+  - address: "0x2e59A20f205bB85a89C53f1936454680651E618e"
+    label: "Lido DAO Voting"
+  - address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+    label: "Morpho Blue"
+  - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
+    label: "Optimism Foundation Safe"
+  - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+    label: "Morpho Owner Safe"
+safes:
+  - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
+    label: "Optimism Foundation Safe"
+    chain: eth
+  - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+    label: "Morpho Owner Safe"
+    chain: eth
+alerts:
+  jsonl_path: alerts.jsonl
+  min_severity: info
