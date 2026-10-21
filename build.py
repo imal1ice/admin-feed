@@ -25,12 +25,21 @@ def load() -> list[dict]:
     return rows
 
 
-def tx_link(row: dict) -> str:
+def tx_url(row: dict) -> str:
+    """ownerwatch stores a full explorer URL in tx_hash when explorer_url is configured, else a bare hash."""
+    tx = row.get("tx_hash") or ""
+    if tx.startswith("http"):
+        return tx
     base = EXPLORERS.get(row.get("chain", ""), "")
-    tx = row.get("tx_hash", "-")
-    if base and tx and tx != "-":
-        return f'<a href="{base}/tx/{html.escape(tx)}">{html.escape(tx[:10])}…</a>'
-    return html.escape(tx or "-")
+    return f"{base}/tx/{tx}" if base and tx.startswith("0x") else ""
+
+
+def tx_link(row: dict) -> str:
+    url = tx_url(row)
+    h = url.rsplit("/", 1)[-1] if url else (row.get("tx_hash") or "-")
+    if url:
+        return f'<a href="{html.escape(url)}">{html.escape(h[:10])}…</a>'
+    return html.escape(h or "-")
 
 
 def addr_link(row: dict) -> str:
@@ -87,9 +96,8 @@ def render_rss(rows: list[dict]) -> str:
         except ValueError:
             pub = ""
         title = f"[{r.get('severity', 'info').upper()}] {r.get('label', '')}: {r.get('event', '')}"
-        base = EXPLORERS.get(r.get("chain", ""), "")
-        link = f"{base}/tx/{r.get('tx_hash')}" if base and r.get("tx_hash") not in (None, "-", "") else SITE
-        guid = f"{r.get('chain')}:{r.get('tx_hash')}:{r.get('contract')}:{r.get('event')}:{r.get('block')}"
+        link = tx_url(r) or SITE
+        guid = f"{r.get('chain')}:{(r.get('tx_hash') or '').rsplit('/', 1)[-1]}:{r.get('contract')}:{r.get('event')}:{r.get('block')}"
         items.append(f"<item><title>{escape(title)}</title><link>{escape(link)}</link><guid isPermaLink=\"false\">{escape(guid)}</guid>"
                      f"<pubDate>{pub}</pubDate><description>{escape(str(r.get('message', '')))} (block {r.get('block')}, {escape(str(r.get('chain')))})</description></item>")
     return ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Admin surface changes</title>'
