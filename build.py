@@ -61,7 +61,7 @@ h2{{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-
 footer{{color:var(--muted);font-size:13px;margin-top:32px}}
 </style></head><body>
 <h1>Admin surface changes</h1>
-<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major Ethereum protocols, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a></p>"""]
+<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a></p>"""]
     if not rows:
         parts.append("<p>No changes recorded yet. The feed started on " + gen + ".</p>")
     for day, items in by_day.items():
@@ -93,7 +93,7 @@ def render_rss(rows: list[dict]) -> str:
         items.append(f"<item><title>{escape(title)}</title><link>{escape(link)}</link><guid isPermaLink=\"false\">{escape(guid)}</guid>"
                      f"<pubDate>{pub}</pubDate><description>{escape(str(r.get('message', '')))} (block {r.get('block')}, {escape(str(r.get('chain')))})</description></item>")
     return ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Admin surface changes</title>'
-            f'<link>{SITE}</link><description>Timelock queues, upgrades, role grants and Safe changes on major Ethereum protocols, via ownerwatch.</description>'
+            f'<link>{SITE}</link><description>Timelock queues, upgrades, role grants and Safe changes on major protocols on Ethereum, Arbitrum, Optimism and Base, via ownerwatch.</description>'
             + "".join(items) + "</channel></rss>")
 
 

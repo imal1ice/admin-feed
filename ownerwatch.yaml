@@ -1,49 +1,114 @@
-# admin-feed: ownerwatch config for the public feed. Ethereum mainnet only for now.
-# Logs and reads come from Tenderly's public gateway: it serves full-history eth_getLogs
-# over large ranges. (rpc.flashbots.net was dropped: it silently returns incomplete logs,
-# e.g. none at all for the Aave PayloadsController.) State and alerts are committed by the workflow.
-rpc_url: "https://mainnet.gateway.tenderly.co"
-probe_rpc_url: "https://mainnet.gateway.tenderly.co"
-chain_name: ethereum
-explorer_url: "https://etherscan.io"
+# admin-feed: ownerwatch config for the public feed. Four chains, one process.
+# Logs and reads come from Tenderly's public gateways, which serve full history and were
+# cross-checked against the official RPCs (rpc.flashbots.net was dropped: it silently returned
+# incomplete logs). State per chain and every alert are committed back by the workflow.
 confirmations: 3
-max_block_range: 10000
 start_block: latest
-state_file: state/ethereum.json
-contracts:
-  - address: "0x1a9C8182C09F50C8318d769245beA52c32BE35BC"
-    label: "Uniswap Timelock"
-  - address: "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925"
-    label: "Compound Timelock"
-  - address: "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0"
-    label: "Compound Governor Bravo (proxy)"
-  - address: "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
-    label: "Aave Executor Lvl 1"
-  - address: "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
-    label: "Aave Payloads Controller (proxy)"
-  - address: "0xE6841D92B0C345144506576eC13ECf5103aC7f49"
-    label: "Arbitrum DAO L1 Timelock (proxy)"
-  - address: "0x3ffFbAdAF827559da092217e474760E2b2c3CeDd"
-    label: "Arbitrum L1 Upgrade Executor (proxy)"
-  - address: "0xFe89cc7aBB2C4183683ab71653C4cdc9B02D44b7"
-    label: "ENS DAO Timelock"
-  - address: "0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c"
-    label: "Lido DAO Agent"
-  - address: "0x2e59A20f205bB85a89C53f1936454680651E618e"
-    label: "Lido DAO Voting"
-  - address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
-    label: "Morpho Blue"
-  - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
-    label: "Optimism Foundation Safe"
-  - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
-    label: "Morpho Owner Safe"
-safes:
-  - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
-    label: "Optimism Foundation Safe"
-    chain: eth
-  - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
-    label: "Morpho Owner Safe"
-    chain: eth
 alerts:
   jsonl_path: alerts.jsonl
   min_severity: info
+chains:
+  - chain_name: ethereum
+    rpc_url: "https://mainnet.gateway.tenderly.co"
+    probe_rpc_url: "https://mainnet.gateway.tenderly.co"
+    explorer_url: "https://etherscan.io"
+    max_block_range: 10000
+    state_file: state/ethereum.json
+    contracts:
+      - address: "0x1a9C8182C09F50C8318d769245beA52c32BE35BC"
+        label: "Uniswap Timelock"
+      - address: "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925"
+        label: "Compound Timelock"
+      - address: "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0"
+        label: "Compound Governor Bravo (proxy)"
+      - address: "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"
+        label: "Aave Executor Lvl 1"
+      - address: "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+        label: "Aave Payloads Controller (proxy)"
+      - address: "0xE6841D92B0C345144506576eC13ECf5103aC7f49"
+        label: "Arbitrum DAO L1 Timelock (proxy)"
+      - address: "0x3ffFbAdAF827559da092217e474760E2b2c3CeDd"
+        label: "Arbitrum L1 Upgrade Executor (proxy)"
+      - address: "0xFe89cc7aBB2C4183683ab71653C4cdc9B02D44b7"
+        label: "ENS DAO Timelock"
+      - address: "0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c"
+        label: "Lido DAO Agent"
+      - address: "0x2e59A20f205bB85a89C53f1936454680651E618e"
+        label: "Lido DAO Voting"
+      - address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+        label: "Morpho Blue"
+      - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
+        label: "Optimism Foundation Safe"
+      - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+        label: "Morpho Owner Safe"
+    safes:
+      - address: "0x5a0Aae59D09fccBdDb6C6CcEB07B7279367C3d2A"
+        label: "Optimism Foundation Safe"
+        chain: eth
+      - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+        label: "Morpho Owner Safe"
+        chain: eth
+  - chain_name: arbitrum
+    rpc_url: "https://arbitrum.gateway.tenderly.co"
+    probe_rpc_url: "https://arbitrum.gateway.tenderly.co"
+    explorer_url: "https://arbiscan.io"
+    max_block_range: 50000
+    state_file: state/arbitrum.json
+    contracts:
+      - address: "0x34d45e99f7D8c45ed05B5cA72D54bbD1fb3F98f0"
+        label: "Arbitrum DAO L2 Core Timelock"
+      - address: "0xbFc1FECa8B09A5c5D3EFfE7429eBE24b9c09EF58"
+        label: "Arbitrum DAO L2 Treasury Timelock"
+      - address: "0xf07DeD9dC292157749B6Fd268E37DF6EA38395B9"
+        label: "Arbitrum DAO Core Governor (proxy)"
+      - address: "0x789fC99093B09aD01C34DC7251D0C89ce743e5a4"
+        label: "Arbitrum DAO Treasury Governor (proxy)"
+      - address: "0xCF57572261c7c2BCF21ffD220ea7d1a27D40A827"
+        label: "Arbitrum L2 Upgrade Executor (proxy)"
+      - address: "0x423552c0F05baCCac5Bfa91C6dCF1dc53a0A1641"
+        label: "Arbitrum Security Council (emergency)"
+      - address: "0xADd68bCb0f66878aB9D37a447C7b9067C5dfa941"
+        label: "Arbitrum Security Council (non-emergency)"
+      - address: "0x89644CA1bB8064760312AE4F03ea41b05dA3637C"
+        label: "Aave Payloads Controller (proxy)"
+      - address: "0xFF1137243698CaA18EE364Cc966CF0e02A4e6327"
+        label: "Aave Executor Lvl 1"
+    safes:
+      - address: "0x423552c0F05baCCac5Bfa91C6dCF1dc53a0A1641"
+        label: "Arbitrum Security Council (emergency)"
+        chain: arb1
+      - address: "0xADd68bCb0f66878aB9D37a447C7b9067C5dfa941"
+        label: "Arbitrum Security Council (non-emergency)"
+        chain: arb1
+  - chain_name: optimism
+    rpc_url: "https://optimism.gateway.tenderly.co"
+    probe_rpc_url: "https://optimism.gateway.tenderly.co"
+    explorer_url: "https://optimistic.etherscan.io"
+    max_block_range: 50000
+    state_file: state/optimism.json
+    contracts:
+      - address: "0x4200000000000000000000000000000000000018"
+        label: "Optimism L2 ProxyAdmin (predeploys)"
+      - address: "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4"
+        label: "Aave Payloads Controller (proxy)"
+      - address: "0x746c675dAB49Bcd5BB9Dc85161f2d7Eb435009bf"
+        label: "Aave Executor Lvl 1"
+  - chain_name: base
+    rpc_url: "https://base.gateway.tenderly.co"
+    probe_rpc_url: "https://base.gateway.tenderly.co"
+    explorer_url: "https://basescan.org"
+    max_block_range: 1000
+    state_file: state/base.json
+    contracts:
+      - address: "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01"
+        label: "Aave Payloads Controller (proxy)"
+      - address: "0x9390B1735def18560c509E2d0bc090E9d6BA257a"
+        label: "Aave Executor Lvl 1"
+      - address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+        label: "Morpho Blue"
+      - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+        label: "Morpho Owner Safe (Base)"
+    safes:
+      - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
+        label: "Morpho Owner Safe (Base)"
+        chain: base
