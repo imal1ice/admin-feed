@@ -1,8 +1,9 @@
 # admin-feed: ownerwatch config for the public feed. Ethereum mainnet only for now.
-# Logs come from rpc.flashbots.net (10k-block eth_getLogs ranges, no eth_call);
-# reads for `probe` use eth.drpc.org. State and alerts are committed by the workflow.
-rpc_url: "https://rpc.flashbots.net"
-probe_rpc_url: "https://eth.drpc.org"
+# Logs and reads come from Tenderly's public gateway: it serves full-history eth_getLogs
+# over large ranges. (rpc.flashbots.net was dropped: it silently returns incomplete logs,
+# e.g. none at all for the Aave PayloadsController.) State and alerts are committed by the workflow.
+rpc_url: "https://mainnet.gateway.tenderly.co"
+probe_rpc_url: "https://mainnet.gateway.tenderly.co"
 chain_name: ethereum
 explorer_url: "https://etherscan.io"
 confirmations: 3
