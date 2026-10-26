@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who controls mid-size DeFi</title>
+<meta name="description" content="36 DeFi protocols on Ethereum, Arbitrum, Base and Optimism: who can upgrade, mint and pause, read from the chain.">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--accent:#b00020}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a;--accent:#ff6b6b}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px} p.sub{color:var(--muted);margin:0 0 28px}
+h2{font-size:18px;margin:32px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.stat{border:1px solid var(--line);border-radius:8px;padding:12px}
+.stat b{display:block;font-size:28px;line-height:1.1;color:var(--accent)} .stat span{font-size:14px;color:var(--muted)}
+ul{padding-left:20px} li{margin:6px 0} a{color:inherit} code{font-size:14px}
+footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>Who controls mid-size DeFi? 36 protocols, read from the chain</h1>
+<p class="sub">imal1ice · October 2026 · <a href="./">admin-feed</a></p>
+
+<p>Between 14 and 26 October 2026 I read the admin setup of 36 DeFi protocols on Ethereum, Arbitrum, Base and Optimism, mostly in the $10M to $400M TVL range. For each one I asked who can upgrade the contracts, mint the token, pause, move collateral or change the oracle, and whether anything slows them down. Everything came from public chain state and verified source code, read with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>. No protocol is named here: several findings are not fixed yet, and every team was told privately first.</p>
+
+<div class="stats">
+<div class="stat"><b>10</b><span>put a privileged role on a single key</span></div>
+<div class="stat"><b>16</b><span>use a Safe with no timelock on some admin path</span></div>
+<div class="stat"><b>8</b><span>are genuinely well run</span></div>
+<div class="stat"><b>10+</b><span>publish docs that contradict their contracts</span></div>
+</div>
+
+<h2>One key, one transaction</h2>
+<p>Ten of the 36 put at least one privileged role on a single externally owned address. Depending on the protocol, that key can upgrade the contracts, appoint a minter, blacklist holders, approve redemptions or move collateral, in one transaction, with no second signature and no delay. Several of these keys are active hot wallets with hundreds or thousands of transactions. Some teams say the key sits behind MPC or a custody provider. That may be true, but nothing on-chain shows it, and holders cannot check it.</p>
+
+<h2>A multisig, but no clock</h2>
+<p>Sixteen more rely on a Safe with no timelock on at least one admin path. The usual shape: the code upgrade waits 24 to 48 hours as advertised, while the same Safe can change roles, mint limits, oracles or pause state instantly. Thresholds as low as 2-of-3 and 2-of-4 guard tens of millions of dollars.</p>
+
+<h2>Supply that did not come through the minter</h2>
+<p>One stablecoin's documentation says every token is minted one for one against deposited collateral through its minting contract. On-chain, most of the supply ever issued was minted directly by the owner, through a timelock, outside that contract. For two of those mints the timelock's delay was 60 seconds. The tokens may well be backed. The point is that the chain does not show it, and the docs describe a mechanism that most of the supply did not use.</p>
+
+<h2>Docs that disagree with the chain</h2>
+<p>At least ten protocols publish documentation that contradicts their own contracts. The patterns:</p>
+<ul>
+<li>a timelock described as 30 days that is 3 days on one vault;</li>
+<li>a "2-day timelock" address that controls nothing, while a different timelock does the work;</li>
+<li>an address labelled "MultiSig" that is a single key;</li>
+<li>"immutable" contracts that are upgradeable;</li>
+<li>a 3-of-4 multisig that is 3-of-5 on-chain;</li>
+<li>a minting contract listed in the docs that the token no longer uses.</li>
+</ul>
+
+<h2>Nowhere to send a security note</h2>
+<p>Thirteen offered no working private channel. Eleven publish no email at all: Discord, X or Telegram only, often behind phone verification. Two publish a security address that cannot receive mail: one domain has no mail server, and the other address does not exist.</p>
+
+<h2>What this means</h2>
+<p><b>For users:</b> "audited" and "multisig" on a landing page say little about who can change the protocol tomorrow. The questions that matter can be answered from the chain in minutes: who holds each admin role, how many signatures it takes, and whether anything delays them.</p>
+<p><b>For teams:</b> the fixes are cheap. Put the Safe behind a timelock. Move single-key roles to the Safe. Keep a security.txt with an address that works. Check your docs against the chain whenever ownership changes. A drift check in CI catches the moment docs and chain diverge; the <a href="https://github.com/imal1ice/ownerwatch-action">ownerwatch GitHub Action</a> does this for free.</p>
+
+<h2>Method and caveats</h2>
+<p>Read-only public data. Roles were reconstructed from events and confirmed with direct reads. Upgrade authority was resolved from proxy storage, factories and verified upgrade gates, never from <code>owner()</code> alone. One early finding was wrong because an upgrade admin was stored in a proxy factory. It was caught before anything was sent, the tool was fixed in ownerwatch 0.7.6, and every other target was re-checked. The classification is mine. A single key is not proof of bad intent or of a coming exploit. All counts were re-checked on <!--RECHECK-->26 October 2026<!--/RECHECK-->.</p>
+
+<footer>Tools: <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> (MIT, <code>pip install ownerwatch</code>), the <a href="https://github.com/imal1ice/ownerwatch-action">ownerwatch GitHub Action</a>, and the <a href="./">live feed</a> of admin changes on Aave, Compound, Lido, Arbitrum DAO and others. Corrections welcome as <a href="https://github.com/imal1ice/admin-feed/issues">issues</a>.</footer>
+</body></html>
