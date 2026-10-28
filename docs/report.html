@@ -31,9 +31,6 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 <h2>A multisig, but no clock</h2>
 <p>Sixteen more rely on a Safe with no timelock on at least one admin path. The usual shape: the code upgrade waits 24 to 48 hours as advertised, while the same Safe can change roles, mint limits, oracles or pause state instantly. Thresholds as low as 2-of-3 and 2-of-4 guard tens of millions of dollars.</p>
 
-<h2>Supply that did not come through the minter</h2>
-<p>One stablecoin's documentation says every token is minted one for one against deposited collateral through its minting contract. On-chain, most of the supply ever issued was minted directly by the owner, through a timelock, outside that contract. For two of those mints the timelock's delay was 60 seconds. The tokens may well be backed. The point is that the chain does not show it, and the docs describe a mechanism that most of the supply did not use.</p>
-
 <h2>Docs that disagree with the chain</h2>
 <p>At least ten protocols publish documentation that contradicts their own contracts. The patterns:</p>
 <ul>
@@ -53,7 +50,7 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 <p><b>For teams:</b> the fixes are cheap. Put the Safe behind a timelock. Move single-key roles to the Safe. Keep a security.txt with an address that works. Check your docs against the chain whenever ownership changes. A drift check in CI catches the moment docs and chain diverge; the <a href="https://github.com/imal1ice/ownerwatch-action">ownerwatch GitHub Action</a> does this for free.</p>
 
 <h2>Method and caveats</h2>
-<p>Read-only public data. Roles were reconstructed from events and confirmed with direct reads. Upgrade authority was resolved from proxy storage, factories and verified upgrade gates, never from <code>owner()</code> alone. One early finding was wrong because an upgrade admin was stored in a proxy factory. It was caught before anything was sent, the tool was fixed in ownerwatch 0.7.6, and every other target was re-checked. The classification is mine. A single key is not proof of bad intent or of a coming exploit. Findings for every team I contacted were re-checked on <!--RECHECK-->26 October 2026<!--/RECHECK-->.</p>
+<p>Read-only public data. Roles were reconstructed from events and confirmed with direct reads. Upgrade authority was resolved from proxy storage, factories and verified upgrade gates, never from <code>owner()</code> alone. One early finding was wrong because an upgrade admin was stored in a proxy factory. It was caught before anything was sent, the tool was fixed in ownerwatch 0.7.6, and every other target was re-checked. The classification is mine. A single key is not proof of bad intent or of a coming exploit. Findings for every team I contacted were re-checked on <!--RECHECK-->28 October 2026<!--/RECHECK-->.</p>
 
 <footer>Tools: <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> (MIT, <code>pip install ownerwatch</code>), the <a href="https://github.com/imal1ice/ownerwatch-action">ownerwatch GitHub Action</a>, and the <a href="./">live feed</a> of admin changes on Aave, Compound, Lido, Arbitrum DAO and others. Corrections welcome as <a href="https://github.com/imal1ice/admin-feed/issues">issues</a>.</footer>
 </body></html>
