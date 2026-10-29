@@ -1,0 +1,1711 @@
+{
+ "generated": "2026-10-29T07:25:04Z",
+ "chain": "ethereum",
+ "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
+ "protocols": {
+  "aave-v3": {
+   "name": "Aave Governance V3",
+   "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-28",
+   "controlChanges": 2,
+   "governanceExecutions": 19,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+     "label": "Payloads Controller",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 19,
+     "last": "2026-10-28"
+    },
+    {
+     "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
+     "label": "Governance V3",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+     "label": "Protocol Guardian",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
+     "label": "Governance Guardian",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+     "label": "Risk Council",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-22"
+    },
+    {
+     "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+     "label": "Executor Lvl 1",
+     "type": "executor",
+     "since": "2026-10-21",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-28",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 477 executed",
+     "tx": "https://etherscan.io/tx/0x226c48626ec314b194dfa080e992dcabfa1526f813835f81914e1885d5af1275"
+    },
+    {
+     "date": "2026-10-24",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 476 executed",
+     "tx": "https://etherscan.io/tx/0x56ce4896169a408576c05744dfa561949eff9ef8fe2f101bde48eacc5e3e17c0"
+    },
+    {
+     "date": "2026-10-22",
+     "label": "Aave Risk Council (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x606dC57cd166643760E049609bfd1D8a698D3bAc",
+     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+    },
+    {
+     "date": "2026-10-22",
+     "label": "Aave Risk Council (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x2B99790c35a401be873FA7Eb514D9220736BB1cA",
+     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+    },
+    {
+     "date": "2026-10-17",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 475 executed",
+     "tx": "https://etherscan.io/tx/0x22563675a30209a70881d047e4d93dd8025dfe8ef8657f4ad45fd0f0d4c3c3ff"
+    },
+    {
+     "date": "2026-10-16",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 474 executed",
+     "tx": "https://etherscan.io/tx/0x45daddf38952f0e83976a1b2975104003ff65208b50fe16d7a4dbad652204224"
+    },
+    {
+     "date": "2026-10-16",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 473 executed",
+     "tx": "https://etherscan.io/tx/0x750886b77571dc6dd0a2e74e657963e83c8bd025d3d3f9aaf13dc5b4ec3a9fbe"
+    },
+    {
+     "date": "2026-10-12",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 472 executed",
+     "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
+    },
+    {
+     "date": "2026-09-30",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 471 executed",
+     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
+    },
+    {
+     "date": "2026-09-25",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 470 executed",
+     "tx": "https://etherscan.io/tx/0x60256f180c019dd7bd101bbe680461df28f1a59ef811025b8b49e94730351adc"
+    }
+   ],
+   "system": "aave-governance-v3",
+   "url": "https://imal1ice.github.io/admin-feed/control/#aave-governance-v3"
+  },
+  "aave-v4": {
+   "name": "Aave Governance V3",
+   "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-28",
+   "controlChanges": 2,
+   "governanceExecutions": 19,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+     "label": "Payloads Controller",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 19,
+     "last": "2026-10-28"
+    },
+    {
+     "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
+     "label": "Governance V3",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+     "label": "Protocol Guardian",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
+     "label": "Governance Guardian",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+     "label": "Risk Council",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-22"
+    },
+    {
+     "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+     "label": "Executor Lvl 1",
+     "type": "executor",
+     "since": "2026-10-21",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-28",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 477 executed",
+     "tx": "https://etherscan.io/tx/0x226c48626ec314b194dfa080e992dcabfa1526f813835f81914e1885d5af1275"
+    },
+    {
+     "date": "2026-10-24",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 476 executed",
+     "tx": "https://etherscan.io/tx/0x56ce4896169a408576c05744dfa561949eff9ef8fe2f101bde48eacc5e3e17c0"
+    },
+    {
+     "date": "2026-10-22",
+     "label": "Aave Risk Council (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x606dC57cd166643760E049609bfd1D8a698D3bAc",
+     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+    },
+    {
+     "date": "2026-10-22",
+     "label": "Aave Risk Council (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x2B99790c35a401be873FA7Eb514D9220736BB1cA",
+     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+    },
+    {
+     "date": "2026-10-17",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 475 executed",
+     "tx": "https://etherscan.io/tx/0x22563675a30209a70881d047e4d93dd8025dfe8ef8657f4ad45fd0f0d4c3c3ff"
+    },
+    {
+     "date": "2026-10-16",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 474 executed",
+     "tx": "https://etherscan.io/tx/0x45daddf38952f0e83976a1b2975104003ff65208b50fe16d7a4dbad652204224"
+    },
+    {
+     "date": "2026-10-16",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 473 executed",
+     "tx": "https://etherscan.io/tx/0x750886b77571dc6dd0a2e74e657963e83c8bd025d3d3f9aaf13dc5b4ec3a9fbe"
+    },
+    {
+     "date": "2026-10-12",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 472 executed",
+     "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
+    },
+    {
+     "date": "2026-09-30",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 471 executed",
+     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
+    },
+    {
+     "date": "2026-09-25",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 470 executed",
+     "tx": "https://etherscan.io/tx/0x60256f180c019dd7bd101bbe680461df28f1a59ef811025b8b49e94730351adc"
+    }
+   ],
+   "system": "aave-governance-v3",
+   "url": "https://imal1ice.github.io/admin-feed/control/#aave-governance-v3"
+  },
+  "balancer-v2": {
+   "name": "Balancer DAO",
+   "source": "https://docs.balancer.fi/concepts/governance/",
+   "value": "2 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-09-10",
+   "controlChanges": 2,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+     "label": "DAO multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+     "label": "Emergency subDAO",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89",
+     "label": "Treasury",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-09-10"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-09-10",
+     "label": "Balancer Treasury (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xAA5AF0Dd9c52C773D36cDBC509A0b2a1deD4C196",
+     "tx": "https://etherscan.io/tx/0x844dc5560546fed29e07476e98561bc244c969738656ef7f25f1dba80b5fe3eb"
+    },
+    {
+     "date": "2026-09-10",
+     "label": "Balancer Treasury (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0xBCC63E9c0a486D10Cdb8617242507733fEF1d792",
+     "tx": "https://etherscan.io/tx/0x844dc5560546fed29e07476e98561bc244c969738656ef7f25f1dba80b5fe3eb"
+    }
+   ],
+   "system": "balancer-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#balancer-dao"
+  },
+  "balancer-v3": {
+   "name": "Balancer DAO",
+   "source": "https://docs.balancer.fi/concepts/governance/",
+   "value": "2 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-09-10",
+   "controlChanges": 2,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+     "label": "DAO multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+     "label": "Emergency subDAO",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89",
+     "label": "Treasury",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-09-10"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-09-10",
+     "label": "Balancer Treasury (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xAA5AF0Dd9c52C773D36cDBC509A0b2a1deD4C196",
+     "tx": "https://etherscan.io/tx/0x844dc5560546fed29e07476e98561bc244c969738656ef7f25f1dba80b5fe3eb"
+    },
+    {
+     "date": "2026-09-10",
+     "label": "Balancer Treasury (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0xBCC63E9c0a486D10Cdb8617242507733fEF1d792",
+     "tx": "https://etherscan.io/tx/0x844dc5560546fed29e07476e98561bc244c969738656ef7f25f1dba80b5fe3eb"
+    }
+   ],
+   "system": "balancer-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#balancer-dao"
+  },
+  "compound-v2": {
+   "name": "Compound governance",
+   "source": "https://docs.compound.xyz/governance/",
+   "value": "0 control changes \u00b7 20 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-26",
+   "controlChanges": 0,
+   "governanceExecutions": 20,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 43,
+     "last": "2026-10-26"
+    },
+    {
+     "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
+     "label": "Governor",
+     "type": "governor",
+     "since": "2026-10-21",
+     "events": 20,
+     "last": "2026-10-26"
+    },
+    {
+     "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
+     "label": "Community multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-26",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x676A795fe6E43C17c668de16730c3F690FEB7120 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x28efc7f17cb656e85bbcb05b31fb17a76534bd6701d26c1ad7907fb84c4217f3"
+    },
+    {
+     "date": "2026-10-26",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 617 executed",
+     "tx": "https://etherscan.io/tx/0x28efc7f17cb656e85bbcb05b31fb17a76534bd6701d26c1ad7907fb84c4217f3"
+    },
+    {
+     "date": "2026-10-23",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x6774Bcbd5ceCeF1336b5300fb5186a12DDD8b367 value 50000000000000000 sig ''",
+     "tx": "https://etherscan.io/tx/0x2775991d5eed44a292231f83a0b218a43fa35ac2d7b1dbe9f629c523801a760f"
+    },
+    {
+     "date": "2026-10-23",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 616 executed",
+     "tx": "https://etherscan.io/tx/0x2775991d5eed44a292231f83a0b218a43fa35ac2d7b1dbe9f629c523801a760f"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x80226fc0Ee2b096224EeAc085Bb9a8cba1146f7D value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 615 executed",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-10",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
+    },
+    {
+     "date": "2026-10-10",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 614 executed",
+     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
+    },
+    {
+     "date": "2026-10-06",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xafaa5bf6b68ebab27d8cc4212730b77a3371396712bd296da7ce0a63ba083476"
+    }
+   ],
+   "system": "compound-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#compound-governance"
+  },
+  "compound-v3": {
+   "name": "Compound governance",
+   "source": "https://docs.compound.xyz/governance/",
+   "value": "0 control changes \u00b7 20 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-26",
+   "controlChanges": 0,
+   "governanceExecutions": 20,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 43,
+     "last": "2026-10-26"
+    },
+    {
+     "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
+     "label": "Governor",
+     "type": "governor",
+     "since": "2026-10-21",
+     "events": 20,
+     "last": "2026-10-26"
+    },
+    {
+     "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
+     "label": "Community multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-26",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x676A795fe6E43C17c668de16730c3F690FEB7120 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x28efc7f17cb656e85bbcb05b31fb17a76534bd6701d26c1ad7907fb84c4217f3"
+    },
+    {
+     "date": "2026-10-26",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 617 executed",
+     "tx": "https://etherscan.io/tx/0x28efc7f17cb656e85bbcb05b31fb17a76534bd6701d26c1ad7907fb84c4217f3"
+    },
+    {
+     "date": "2026-10-23",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x6774Bcbd5ceCeF1336b5300fb5186a12DDD8b367 value 50000000000000000 sig ''",
+     "tx": "https://etherscan.io/tx/0x2775991d5eed44a292231f83a0b218a43fa35ac2d7b1dbe9f629c523801a760f"
+    },
+    {
+     "date": "2026-10-23",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 616 executed",
+     "tx": "https://etherscan.io/tx/0x2775991d5eed44a292231f83a0b218a43fa35ac2d7b1dbe9f629c523801a760f"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x80226fc0Ee2b096224EeAc085Bb9a8cba1146f7D value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 615 executed",
+     "tx": "https://etherscan.io/tx/0x2eeea4df2e085adb2bd03a259fa7e2b78f073d3cc40eac07bb11a7bae66a7c8e"
+    },
+    {
+     "date": "2026-10-10",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
+    },
+    {
+     "date": "2026-10-10",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 614 executed",
+     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
+    },
+    {
+     "date": "2026-10-06",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xafaa5bf6b68ebab27d8cc4212730b77a3371396712bd296da7ce0a63ba083476"
+    }
+   ],
+   "system": "compound-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#compound-governance"
+  },
+  "cowswap": {
+   "name": "CoW DAO",
+   "source": "https://docs.cow.fi/cow-protocol/reference/contracts/core",
+   "value": null,
+   "note": "ownerwatch does not yet decode the solver allow-list events of GPv2AllowListAuthentication; nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x2c4c28DDBdAc9C5E7055b4C863b72eA0149D8aFE",
+     "label": "GPv2AllowListAuthentication",
+     "type": "holder",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "cow-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#cow-dao"
+  },
+  "curve": {
+   "name": "Curve DAO",
+   "source": "https://docs.curve.finance/deployments/dao/",
+   "value": "0 control changes \u00b7 38 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-21",
+   "controlChanges": 0,
+   "governanceExecutions": 38,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xE478de485ad2fe566d49342Cbd03E49ed7DB3356",
+     "label": "Ownership voting",
+     "type": "aragon-voting",
+     "since": "2026-10-28",
+     "events": 38,
+     "last": "2026-10-21"
+    },
+    {
+     "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
+     "label": "Parameter voting",
+     "type": "aragon-voting",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x467947EE34aF926cF1DCac093870f613C96B1E0c",
+     "label": "Emergency DAO",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-21",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1505 executed",
+     "tx": "https://etherscan.io/tx/0x243d49d61886e263a78bf4b22a8272d7bccaac25088b2725678f09382e343277"
+    },
+    {
+     "date": "2026-10-21",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1503 executed",
+     "tx": "https://etherscan.io/tx/0x0e330fe0220bf93981eae68255ce3196734c1036e689335d8a8c7f61fcc637c1"
+    },
+    {
+     "date": "2026-10-21",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1504 executed",
+     "tx": "https://etherscan.io/tx/0x83b244cc0db07dcb7dcaced078e83abe09f12346235ce28cf6030048066f0aa0"
+    },
+    {
+     "date": "2026-10-19",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1502 executed",
+     "tx": "https://etherscan.io/tx/0x68f9dbd13802cdb937482f69585f920dcce47254963f4544582b0a7e0e5f5bb9"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1500 executed",
+     "tx": "https://etherscan.io/tx/0x84736501f15721958584035631b9bfdd71c00adb4bc28e12d4661844114c5528"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1501 executed",
+     "tx": "https://etherscan.io/tx/0xc3fb275e79ac5aab6ab4d211bbce9dacd8494cfb15e11c89d9bf24a25e38f061"
+    },
+    {
+     "date": "2026-10-06",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1499 executed",
+     "tx": "https://etherscan.io/tx/0x08dc49f312c8c7aca8bf5c0d714706885475e1f487127c29fe36e3670ae3ead3"
+    },
+    {
+     "date": "2026-09-24",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1498 executed",
+     "tx": "https://etherscan.io/tx/0x2d13e3a32ed92aae028b0732e0a1b5c6b4440d9ad5e96e3cdd3551c7b69a2d6e"
+    },
+    {
+     "date": "2026-09-20",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1497 executed",
+     "tx": "https://etherscan.io/tx/0xd8831f9998d0af8037a3b8f6b185747f2c8c4d4249ed39b0504445c5d1a04701"
+    },
+    {
+     "date": "2026-09-17",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1495 executed",
+     "tx": "https://etherscan.io/tx/0x23773ede557f8e5be64c4f73eab1882fc1a88dd774955333acb9c59d34c4201f"
+    }
+   ],
+   "system": "curve-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#curve-dao"
+  },
+  "euler": {
+   "name": "Euler DAO",
+   "source": "https://github.com/euler-xyz/euler-interfaces/blob/master/addresses/1/GovernorAddresses.json",
+   "value": "0 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xfb034c1C6c7F42171b2d1Cb8486E0f43ED07A968",
+     "label": "eVaultFactory timelock",
+     "type": "timelock",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xcAD001c30E96765aC90307669d578219D4fb1DCe",
+     "label": "DAO multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xb3b84e8320250Afe7a5fb313Ee32B52982b73c53",
+     "label": "Security Council",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "euler-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#euler-dao"
+  },
+  "fluid": {
+   "name": "Fluid governance",
+   "source": "https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md",
+   "value": "0 control changes \u00b7 5 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-27",
+   "controlChanges": 0,
+   "governanceExecutions": 5,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x2386DC45AdDed673317eF068992F19421B481F4c",
+     "label": "InstaTimelock",
+     "type": "timelock",
+     "since": "2026-10-28",
+     "events": 5,
+     "last": "2026-10-27"
+    },
+    {
+     "address": "0x0204Cd037B2ec03605CFdFe482D8e257C765fA1B",
+     "label": "Governor",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 5,
+     "last": "2026-10-27"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-27",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0x0272cc519607d710fd7d159b520b8b1647d75ea8, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0x35bf7e506faecb057a3432f54fd6468cd6874f1ba6c78bf9fc5180f70fdcbaf1"
+    },
+    {
+     "date": "2026-10-27",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 141 executed",
+     "tx": "https://etherscan.io/tx/0x35bf7e506faecb057a3432f54fd6468cd6874f1ba6c78bf9fc5180f70fdcbaf1"
+    },
+    {
+     "date": "2026-09-26",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0x5aa925ccb417656dcc03d06adb37088d0dccb31b, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0xa21b5547fb79dba5ca5398aca783c76dde38cc7a2e6edc3383c74709c0a6d67c"
+    },
+    {
+     "date": "2026-09-26",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 140 executed",
+     "tx": "https://etherscan.io/tx/0xa21b5547fb79dba5ca5398aca783c76dde38cc7a2e6edc3383c74709c0a6d67c"
+    },
+    {
+     "date": "2026-08-30",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0xe9941bb0844160bde0cc19f7c0f0357d4af78400, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0x02448ce12384d887915c075eddecc8ea0f6b5a1dcbf0722e1ec7c9fe5adea021"
+    },
+    {
+     "date": "2026-08-30",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 139 executed",
+     "tx": "https://etherscan.io/tx/0x02448ce12384d887915c075eddecc8ea0f6b5a1dcbf0722e1ec7c9fe5adea021"
+    },
+    {
+     "date": "2026-08-27",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0x90337e6e547759962e0a873152a46e4eb649b417, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0xe1594471c2f5e314303e7bc4b160a0a2684b9abca903fb4fcfd7a5fccefd5b15"
+    },
+    {
+     "date": "2026-08-27",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 138 executed",
+     "tx": "https://etherscan.io/tx/0xe1594471c2f5e314303e7bc4b160a0a2684b9abca903fb4fcfd7a5fccefd5b15"
+    },
+    {
+     "date": "2026-08-07",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0xfd2f66244700e62fa9c725fc0917df1891ac612d, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0x09ab220ddd2b56babe0372efff2e05ab4e2460a595c9004a5eadaffee65066ec"
+    },
+    {
+     "date": "2026-08-07",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 137 executed",
+     "tx": "https://etherscan.io/tx/0x09ab220ddd2b56babe0372efff2e05ab4e2460a595c9004a5eadaffee65066ec"
+    }
+   ],
+   "system": "fluid-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#fluid-governance"
+  },
+  "gearbox": {
+   "name": "Gearbox DAO",
+   "source": "https://etherscan.io/address/0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
+   "value": null,
+   "note": "ownerwatch does not yet decode the admin events of Gearbox's ACL; nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
+     "label": "ACL",
+     "type": "holder",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "gearbox-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#gearbox-dao"
+  },
+  "lido": {
+   "name": "Lido DAO",
+   "source": "https://docs.lido.fi/deployed-contracts/",
+   "value": null,
+   "note": "ownerwatch decodes Lido's Aragon votes but not yet Dual Governance or the Emergency Protected Timelock, through which Lido proposals execute; nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-19",
+   "controlChanges": 0,
+   "governanceExecutions": 3,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xCE0425301C85c5Ea2A0873A2dEe44d78E02D2316",
+     "label": "Emergency Protected Timelock",
+     "type": "timelock",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xC1db28B3301331277e307FDCfF8DE28242A4486E",
+     "label": "Dual Governance",
+     "type": "dual-governance",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x2e59A20f205bB85a89C53f1936454680651E618e",
+     "label": "Aragon voting",
+     "type": "aragon-voting",
+     "since": "2026-10-21",
+     "events": 3,
+     "last": "2026-10-19"
+    },
+    {
+     "address": "0x8B7854488Fde088d686Ea672B6ba1A5242515f45",
+     "label": "Emergency activation committee",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xC7792b3F2B399bB0EdF53fECDceCeB97FBEB18AF",
+     "label": "Emergency execution committee",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xFFe21561251c49AdccFad065C94Fb4931dF49081",
+     "label": "Reseal committee",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c",
+     "label": "Aragon Agent",
+     "type": "agent",
+     "since": "2026-10-21",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-19",
+     "label": "Lido DAO Voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 206 executed",
+     "tx": "https://etherscan.io/tx/0x7a3559517ba94d6697f61d5d91086e16bcc1d7bbdb23bf4934aff6bdf312f381"
+    },
+    {
+     "date": "2026-09-21",
+     "label": "Lido DAO Voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 205 executed",
+     "tx": "https://etherscan.io/tx/0xcb2cc1805ae5c733f8e2670a8dc57caa8a9a43329bed7e5a8b7d87b10515e76c"
+    },
+    {
+     "date": "2026-08-10",
+     "label": "Lido DAO Voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 204 executed",
+     "tx": "https://etherscan.io/tx/0xd34730fe6f821e3f05eff51f1606276e10eaf40c5854e2d2793a1cd1373d8aee"
+    }
+   ],
+   "system": "lido-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#lido-dao"
+  },
+  "morpho-blue": {
+   "name": "Morpho DAO",
+   "source": "https://docs.morpho.org/developers/contracts/addresses/",
+   "value": "2 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-09-22",
+   "controlChanges": 2,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb",
+     "label": "Morpho Blue",
+     "type": "holder",
+     "since": "2026-10-21",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+     "label": "Morpho owner Safe",
+     "type": "safe",
+     "since": "2026-10-21",
+     "events": 2,
+     "last": "2026-09-22"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-09-22",
+     "label": "Morpho Owner Safe",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0xaD0E1B385A6E2D5Aa4C72F37dCDd4dafD63CeD8f",
+     "tx": "https://etherscan.io/tx/0xd7aae02089e6fe87453318fc49195d09f268c4fe7aaeb341228b7bc0870d4c1b"
+    },
+    {
+     "date": "2026-09-22",
+     "label": "Morpho Owner Safe",
+     "event": "ChangedThreshold",
+     "kind": "control change",
+     "message": "Safe threshold changed to 6",
+     "tx": "https://etherscan.io/tx/0xd7aae02089e6fe87453318fc49195d09f268c4fe7aaeb341228b7bc0870d4c1b"
+    }
+   ],
+   "system": "morpho-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#morpho-dao"
+  },
+  "oneinch": {
+   "name": "1inch",
+   "source": "https://etherscan.io/address/0x111111125421cA6dc452d289314280a0f8842A65",
+   "value": "0 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x111111125421cA6dc452d289314280a0f8842A65",
+     "label": "Aggregation Router V6",
+     "type": "holder",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "oneinch",
+   "url": "https://imal1ice.github.io/admin-feed/control/#oneinch"
+  },
+  "pendle": {
+   "name": "Pendle governance",
+   "source": "https://github.com/pendle-finance/pendle-core-v2-public/blob/main/deployments/1-core.json",
+   "value": "0 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x68d8D192dF476bC01895E16b0ED3945673d777AC",
+     "label": "Timelock controller",
+     "type": "timelock",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1",
+     "label": "Governance multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xA28c08f165116587D4F3E708743B4dEe155c5E64",
+     "label": "ProxyAdmin",
+     "type": "holder",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "pendle-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#pendle-governance"
+  },
+  "rocketpool": {
+   "name": "Rocket Pool DAO",
+   "source": "https://docs.rocketpool.net/overview/contracts-integrations",
+   "value": null,
+   "note": "ownerwatch does not yet decode Rocket Pool's DAO events (RocketStorage and the DAO proposal contracts); nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x1d8f8f00cfa6758d7bE78336684788Fb0ee0Fa46",
+     "label": "RocketStorage",
+     "type": "registry",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x84aE6D61Df5c6ba7196b5C76Bcb112B8a689aD37",
+     "label": "RocketDAOSecurity",
+     "type": "council",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0xf6ad771dfB1cd10c66F688E251b5E5c21cbfDF81",
+     "label": "RocketDAOProtocolSettingsProposals",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "rocket-pool-dao",
+   "url": "https://imal1ice.github.io/admin-feed/control/#rocket-pool-dao"
+  },
+  "spark": {
+   "name": "Sky governance (Spark spells)",
+   "source": "https://github.com/sparkdotfi/spark-address-registry/blob/master/src/Ethereum.sol",
+   "value": null,
+   "note": "ownerwatch does not yet decode Sky's governance events (DSPause plot/exec notes, DSChief); nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xbE286431454714F511008713973d3B053A2d38f3",
+     "label": "Sky governance pause (MCD_PAUSE)",
+     "type": "timelock",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x929d9A1435662357F54AdcF64DcEE4d6b867a6f9",
+     "label": "Chief",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x44efFc473e81632B12486866AA1678edbb7BEeC3",
+     "label": "SparkLend freezer multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
+     "label": "ALM relayer multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431",
+     "label": "ALM freezer multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "sky-spark",
+   "url": "https://imal1ice.github.io/admin-feed/control/#sky-spark"
+  },
+  "uniswap-v2": {
+   "name": "Uniswap governance",
+   "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
+   "value": "0 control changes \u00b7 2 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-05",
+   "controlChanges": 0,
+   "governanceExecutions": 2,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 6,
+     "last": "2026-10-05"
+    },
+    {
+     "address": "0x408ED6354d4973f66138C91495F2f2FCbd8724C3",
+     "label": "Governor Bravo",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-05"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 101 executed",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x5B453493D2328E7F747eb2e66446eFe707728be7 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xb8274eFADB953FE9ae052D481a3FC5B6A3ceD703 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x98D2b241DA14c5dd848812708Eb8A1F3c5512f9d value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 102 executed",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x7597C40Fd3df66b750C14ad4D90524e247499011 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x6569925Aac77D6B8Bb085F31F9828ff80D5a0c44 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xf5F4496219F31CDCBa6130B5402873624585615a value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    }
+   ],
+   "system": "uniswap-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#uniswap-governance"
+  },
+  "uniswap-v3": {
+   "name": "Uniswap governance",
+   "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
+   "value": "0 control changes \u00b7 2 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-05",
+   "controlChanges": 0,
+   "governanceExecutions": 2,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 6,
+     "last": "2026-10-05"
+    },
+    {
+     "address": "0x408ED6354d4973f66138C91495F2f2FCbd8724C3",
+     "label": "Governor Bravo",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-05"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 101 executed",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x5B453493D2328E7F747eb2e66446eFe707728be7 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xb8274eFADB953FE9ae052D481a3FC5B6A3ceD703 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x98D2b241DA14c5dd848812708Eb8A1F3c5512f9d value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 102 executed",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x7597C40Fd3df66b750C14ad4D90524e247499011 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x6569925Aac77D6B8Bb085F31F9828ff80D5a0c44 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xf5F4496219F31CDCBa6130B5402873624585615a value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    }
+   ],
+   "system": "uniswap-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#uniswap-governance"
+  },
+  "uniswap-v4": {
+   "name": "Uniswap governance",
+   "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
+   "value": "0 control changes \u00b7 2 governance executions in 90 days",
+   "note": null,
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-05",
+   "controlChanges": 0,
+   "governanceExecutions": 2,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21",
+     "events": 6,
+     "last": "2026-10-05"
+    },
+    {
+     "address": "0x408ED6354d4973f66138C91495F2f2FCbd8724C3",
+     "label": "Governor Bravo",
+     "type": "governor",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-05"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 101 executed",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x5B453493D2328E7F747eb2e66446eFe707728be7 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xb8274eFADB953FE9ae052D481a3FC5B6A3ceD703 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x98D2b241DA14c5dd848812708Eb8A1F3c5512f9d value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0x8bc11fde94843cb64421e4358b28143bc3445211e6a34ba2984e34c3302ec670"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Governor Bravo",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 102 executed",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x7597C40Fd3df66b750C14ad4D90524e247499011 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x6569925Aac77D6B8Bb085F31F9828ff80D5a0c44 value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    },
+    {
+     "date": "2026-10-05",
+     "label": "Uniswap Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xf5F4496219F31CDCBa6130B5402873624585615a value 0 sig ''",
+     "tx": "https://etherscan.io/tx/0xc3b82a4721717315ce420f5c5f422934e4f662f170da7bb70cc5aad337a34dc4"
+    }
+   ],
+   "system": "uniswap-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#uniswap-governance"
+  },
+  "yearn": {
+   "name": "Yearn governance",
+   "source": "https://github.com/yearn/yearn-devdocs/blob/master/src/ethereum/constants.ts",
+   "value": "2 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": "2026-10-15",
+   "controlChanges": 2,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+     "label": "yChad multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    },
+    {
+     "address": "0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7",
+     "label": "Brain multisig",
+     "type": "safe",
+     "since": "2026-10-28",
+     "events": 2,
+     "last": "2026-10-15"
+    }
+   ],
+   "recent": [
+    {
+     "date": "2026-10-15",
+     "label": "Yearn Brain multisig (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xFafFb75e14faFf9f11315E44a2E54A22872c7a34",
+     "tx": "https://etherscan.io/tx/0xfcc529cfb0a85204a137315423f15f8a4a59fa4ad0b26d0603e9e0892d091065"
+    },
+    {
+     "date": "2026-10-15",
+     "label": "Yearn Brain multisig (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xFcc3796370e1538F8cC60bec19A8be5457f2C74F",
+     "tx": "https://etherscan.io/tx/0xfcc529cfb0a85204a137315423f15f8a4a59fa4ad0b26d0603e9e0892d091065"
+    }
+   ],
+   "system": "yearn-governance",
+   "url": "https://imal1ice.github.io/admin-feed/control/#yearn-governance"
+  },
+  "zerox": {
+   "name": "0x Settler",
+   "source": "https://github.com/0xProject/0x-settler",
+   "value": null,
+   "note": "ownerwatch does not yet decode the 0x Settler deployer, where feature ownership moves as NFT transfers; nothing is counted.",
+   "updatedAt": "2026-10-29",
+   "lastEvent": null,
+   "controlChanges": 0,
+   "governanceExecutions": 0,
+   "window": {
+    "days": 90,
+    "from": "2026-07-31"
+   },
+   "contracts": [
+    {
+     "address": "0x00000000000004533Fe15556B1E086BB1A72cEae",
+     "label": "Settler deployer",
+     "type": "holder",
+     "since": "2026-10-28",
+     "events": 0,
+     "last": null
+    }
+   ],
+   "recent": [],
+   "system": "zerox-settler",
+   "url": "https://imal1ice.github.io/admin-feed/control/#zerox-settler"
+  }
+ }
+}

@@ -1,0 +1,459 @@
+{
+ "_comment": "Which watched Ethereum contracts belong to which protocol version. Protocol ids are the rows of cp0x-org/defi-dna registry/protocols.json. Governance systems and their contracts follow defi-dna's adapters/metrics/governance (systems.json, mapping.json), whose addresses cite each protocol's own registry (`source`); every address was re-read on-chain (code present, Safe threshold answered) on 2026-10-28. `since` is the day this feed started watching the contract; events before it come from a backfill over the same 90-day window. `decoded: false` marks a system whose governance events ownerwatch cannot decode yet (measured on 2026-10-28: logs over 90 days compared with ownerwatch's event catalog); it gets a note and no value. `executions: false` marks a system governed through Safes, whose transactions are not classified; only control changes are counted.",
+ "systems": {
+  "aave-governance-v3": {
+   "name": "Aave Governance V3",
+   "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
+   "contracts": [
+    {
+     "address": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+     "label": "Payloads Controller",
+     "type": "timelock",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
+     "label": "Governance V3",
+     "type": "governor",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
+     "label": "Protocol Guardian",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xCe52ab41C40575B072A18C9700091Ccbe4A06710",
+     "label": "Governance Guardian",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
+     "label": "Risk Council",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A",
+     "label": "Executor Lvl 1",
+     "type": "executor",
+     "since": "2026-10-21"
+    }
+   ],
+   "decoded": true,
+   "executions": true
+  },
+  "sky-spark": {
+   "name": "Sky governance (Spark spells)",
+   "source": "https://github.com/sparkdotfi/spark-address-registry/blob/master/src/Ethereum.sol",
+   "contracts": [
+    {
+     "address": "0xbE286431454714F511008713973d3B053A2d38f3",
+     "label": "Sky governance pause (MCD_PAUSE)",
+     "type": "timelock",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x929d9A1435662357F54AdcF64DcEE4d6b867a6f9",
+     "label": "Chief",
+     "type": "governor",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x44efFc473e81632B12486866AA1678edbb7BEeC3",
+     "label": "SparkLend freezer multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x8a25A24EDE9482C4Fc0738F99611BE58F1c839AB",
+     "label": "ALM relayer multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x90D8c80C028B4C09C0d8dcAab9bbB057F0513431",
+     "label": "ALM freezer multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch does not yet decode Sky's governance events (DSPause plot/exec notes, DSChief); nothing is counted."
+  },
+  "morpho-dao": {
+   "name": "Morpho DAO",
+   "source": "https://docs.morpho.org/developers/contracts/addresses/",
+   "contracts": [
+    {
+     "address": "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb",
+     "label": "Morpho Blue",
+     "type": "holder",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa",
+     "label": "Morpho owner Safe",
+     "type": "safe",
+     "since": "2026-10-21"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "fluid-governance": {
+   "name": "Fluid governance",
+   "source": "https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md",
+   "contracts": [
+    {
+     "address": "0x2386DC45AdDed673317eF068992F19421B481F4c",
+     "label": "InstaTimelock",
+     "type": "timelock",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x0204Cd037B2ec03605CFdFe482D8e257C765fA1B",
+     "label": "Governor",
+     "type": "governor",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": true
+  },
+  "gearbox-dao": {
+   "name": "Gearbox DAO",
+   "source": "https://etherscan.io/address/0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
+   "contracts": [
+    {
+     "address": "0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
+     "label": "ACL",
+     "type": "holder",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch does not yet decode the admin events of Gearbox's ACL; nothing is counted."
+  },
+  "euler-dao": {
+   "name": "Euler DAO",
+   "source": "https://github.com/euler-xyz/euler-interfaces/blob/master/addresses/1/GovernorAddresses.json",
+   "contracts": [
+    {
+     "address": "0xfb034c1C6c7F42171b2d1Cb8486E0f43ED07A968",
+     "label": "eVaultFactory timelock",
+     "type": "timelock",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xcAD001c30E96765aC90307669d578219D4fb1DCe",
+     "label": "DAO multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xb3b84e8320250Afe7a5fb313Ee32B52982b73c53",
+     "label": "Security Council",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "compound-governance": {
+   "name": "Compound governance",
+   "source": "https://docs.compound.xyz/governance/",
+   "contracts": [
+    {
+     "address": "0x6d903f6003cca6255D85CcA4D3B5E5146dC33925",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
+     "label": "Governor",
+     "type": "governor",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
+     "label": "Community multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": true
+  },
+  "uniswap-governance": {
+   "name": "Uniswap governance",
+   "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
+   "contracts": [
+    {
+     "address": "0x1a9C8182C09F50C8318d769245beA52c32BE35BC",
+     "label": "Timelock",
+     "type": "timelock",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0x408ED6354d4973f66138C91495F2f2FCbd8724C3",
+     "label": "Governor Bravo",
+     "type": "governor",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": true
+  },
+  "curve-dao": {
+   "name": "Curve DAO",
+   "source": "https://docs.curve.finance/deployments/dao/",
+   "contracts": [
+    {
+     "address": "0xE478de485ad2fe566d49342Cbd03E49ed7DB3356",
+     "label": "Ownership voting",
+     "type": "aragon-voting",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
+     "label": "Parameter voting",
+     "type": "aragon-voting",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x467947EE34aF926cF1DCac093870f613C96B1E0c",
+     "label": "Emergency DAO",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": true
+  },
+  "balancer-dao": {
+   "name": "Balancer DAO",
+   "source": "https://docs.balancer.fi/concepts/governance/",
+   "contracts": [
+    {
+     "address": "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+     "label": "DAO multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+     "label": "Emergency subDAO",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x0EFcCBb9E2C09Ea29551879bd9Da32362b32fc89",
+     "label": "Treasury",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "cow-dao": {
+   "name": "CoW DAO",
+   "source": "https://docs.cow.fi/cow-protocol/reference/contracts/core",
+   "contracts": [
+    {
+     "address": "0x2c4c28DDBdAc9C5E7055b4C863b72eA0149D8aFE",
+     "label": "GPv2AllowListAuthentication",
+     "type": "holder",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch does not yet decode the solver allow-list events of GPv2AllowListAuthentication; nothing is counted."
+  },
+  "oneinch": {
+   "name": "1inch",
+   "source": "https://etherscan.io/address/0x111111125421cA6dc452d289314280a0f8842A65",
+   "contracts": [
+    {
+     "address": "0x111111125421cA6dc452d289314280a0f8842A65",
+     "label": "Aggregation Router V6",
+     "type": "holder",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "zerox-settler": {
+   "name": "0x Settler",
+   "source": "https://github.com/0xProject/0x-settler",
+   "contracts": [
+    {
+     "address": "0x00000000000004533Fe15556B1E086BB1A72cEae",
+     "label": "Settler deployer",
+     "type": "holder",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch does not yet decode the 0x Settler deployer, where feature ownership moves as NFT transfers; nothing is counted."
+  },
+  "yearn-governance": {
+   "name": "Yearn governance",
+   "source": "https://github.com/yearn/yearn-devdocs/blob/master/src/ethereum/constants.ts",
+   "contracts": [
+    {
+     "address": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+     "label": "yChad multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7",
+     "label": "Brain multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "pendle-governance": {
+   "name": "Pendle governance",
+   "source": "https://github.com/pendle-finance/pendle-core-v2-public/blob/main/deployments/1-core.json",
+   "contracts": [
+    {
+     "address": "0x68d8D192dF476bC01895E16b0ED3945673d777AC",
+     "label": "Timelock controller",
+     "type": "timelock",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x8119EC16F0573B7dAc7C0CB94EB504FB32456ee1",
+     "label": "Governance multisig",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xA28c08f165116587D4F3E708743B4dEe155c5E64",
+     "label": "ProxyAdmin",
+     "type": "holder",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
+  },
+  "lido-dao": {
+   "name": "Lido DAO",
+   "source": "https://docs.lido.fi/deployed-contracts/",
+   "contracts": [
+    {
+     "address": "0xCE0425301C85c5Ea2A0873A2dEe44d78E02D2316",
+     "label": "Emergency Protected Timelock",
+     "type": "timelock",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xC1db28B3301331277e307FDCfF8DE28242A4486E",
+     "label": "Dual Governance",
+     "type": "dual-governance",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x2e59A20f205bB85a89C53f1936454680651E618e",
+     "label": "Aragon voting",
+     "type": "aragon-voting",
+     "since": "2026-10-21"
+    },
+    {
+     "address": "0x8B7854488Fde088d686Ea672B6ba1A5242515f45",
+     "label": "Emergency activation committee",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xC7792b3F2B399bB0EdF53fECDceCeB97FBEB18AF",
+     "label": "Emergency execution committee",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xFFe21561251c49AdccFad065C94Fb4931dF49081",
+     "label": "Reseal committee",
+     "type": "safe",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x3e40D73EB977Dc6a537aF587D48316feE66E9C8c",
+     "label": "Aragon Agent",
+     "type": "agent",
+     "since": "2026-10-21"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch decodes Lido's Aragon votes but not yet Dual Governance or the Emergency Protected Timelock, through which Lido proposals execute; nothing is counted."
+  },
+  "rocket-pool-dao": {
+   "name": "Rocket Pool DAO",
+   "source": "https://docs.rocketpool.net/overview/contracts-integrations",
+   "contracts": [
+    {
+     "address": "0x1d8f8f00cfa6758d7bE78336684788Fb0ee0Fa46",
+     "label": "RocketStorage",
+     "type": "registry",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0x84aE6D61Df5c6ba7196b5C76Bcb112B8a689aD37",
+     "label": "RocketDAOSecurity",
+     "type": "council",
+     "since": "2026-10-28"
+    },
+    {
+     "address": "0xf6ad771dfB1cd10c66F688E251b5E5c21cbfDF81",
+     "label": "RocketDAOProtocolSettingsProposals",
+     "type": "governor",
+     "since": "2026-10-28"
+    }
+   ],
+   "decoded": false,
+   "note": "ownerwatch does not yet decode Rocket Pool's DAO events (RocketStorage and the DAO proposal contracts); nothing is counted."
+  }
+ },
+ "protocols": {
+  "aave-v3": "aave-governance-v3",
+  "aave-v4": "aave-governance-v3",
+  "balancer-v2": "balancer-dao",
+  "balancer-v3": "balancer-dao",
+  "compound-v2": "compound-governance",
+  "compound-v3": "compound-governance",
+  "cowswap": "cow-dao",
+  "curve": "curve-dao",
+  "euler": "euler-dao",
+  "fluid": "fluid-governance",
+  "gearbox": "gearbox-dao",
+  "lido": "lido-dao",
+  "morpho-blue": "morpho-dao",
+  "oneinch": "oneinch",
+  "pendle": "pendle-governance",
+  "rocketpool": "rocket-pool-dao",
+  "spark": "sky-spark",
+  "uniswap-v2": "uniswap-governance",
+  "uniswap-v3": "uniswap-governance",
+  "uniswap-v4": "uniswap-governance",
+  "yearn": "yearn-governance",
+  "zerox": "zerox-settler"
+ }
+}

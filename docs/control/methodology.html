@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin events: methodology</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif;max-width:760px;margin:0 auto;padding:24px 16px}
+h1{font-size:24px;margin:0 0 4px} h2{font-size:18px;margin:28px 0 6px} p.sub{color:var(--muted);margin:0 0 20px}
+a{color:inherit} code{font-size:14px} li{margin:4px 0}
+</style></head><body>
+<h1>Admin events: methodology</h1>
+<p class="sub">How the per-protocol counts at <a href="./">admin-feed/control</a> (<a href="index.json">JSON</a>) are produced. imal1ice · October 2026</p>
+
+<h2>What is counted</h2>
+<p>For each protocol, the governance contracts that decide over it on Ethereum mainnet: timelocks, governors, voting apps, executors and the Safes named in the protocol's own address registry. The list, with each address's source and the day watching started, is <a href="https://github.com/imal1ice/admin-feed/blob/main/control/protocols.json">control/protocols.json</a>. It follows the governance systems mapped in <a href="https://github.com/cp0x-org/defi-dna/tree/main/adapters/metrics/governance">defi-dna's governance metric</a>, and every address was re-read on-chain before it was added.</p>
+<p>The headline reports two counts over the last 90 days, recomputed every hour:</p>
+<ul>
+<li><strong>Control changes</strong>: events that change who controls a contract or how. Ownership transfers, role grants and revocations, proxy upgrades and admin changes, timelock delay changes, governor parameter and timelock changes, Aragon permission and app changes, Safe signer, threshold, module and guard changes, and the admin setters of Aave and Morpho. Each event counts once.</li>
+<li><strong>Governance executions</strong>: a governance decision taking effect. Executed timelock calls, executed proposals, executed Aragon votes and executed Aave payloads. Counted once per transaction, because one proposal usually emits several of these events.</li>
+</ul>
+<p>Not counted: proposals that were created or queued but not executed, cancellations, pauses, and routine Safe transactions.</p>
+
+<h2>Where a protocol shows fewer numbers, or none</h2>
+<ul>
+<li><strong>Governed through Safes.</strong> When a protocol is governed by Safes that act directly, a Safe transaction can be a payment or an admin action, and ownerwatch does not classify it. Those protocols show control changes only.</li>
+<li><strong>Not decoded yet.</strong> On 2026-10-28 every governance contract's logs over the window were compared with ownerwatch's event catalog. Where the contracts that carry out decisions emit events ownerwatch cannot decode yet (Sky's pause and chief, Lido's Dual Governance and Emergency Protected Timelock, Rocket Pool's DAO, CoW's solver allow-list, the 0x Settler deployer, Gearbox's ACL), the protocol gets a note and no number. A zero there would be wrong.</li>
+</ul>
+
+<h2>Dates and sources</h2>
+<p>Events come from <code>eth_getLogs</code> on the listed addresses, filtered to <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>'s event catalog (<code>ownerwatch events</code> prints it). The 90-day history before watching started was filled with <code>ownerwatch backfill</code> over the same addresses. Every date is the block's own timestamp. Every counted event links to its transaction, so any number can be checked on Etherscan.</p>
+
+<h2>How to read it</h2>
+<p>These are counts of things that happened on-chain. They are not a rating, and the feed attaches no reading to them: a high number can mean active, careful governance, and a zero can mean a system that rarely needs changing. The live stream of the same events is the <a href="../">admin-feed</a>.</p>
+<p>Corrections are welcome as <a href="https://github.com/imal1ice/admin-feed/issues">issues</a>.</p>
+</body></html>
