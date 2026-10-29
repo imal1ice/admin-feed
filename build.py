@@ -120,9 +120,19 @@ CONTROL_EVENTS = {
     "ExecutorSet", "GuardianUpdated", "SetOwner", "SetCurator", "SetGuardian", "SetTimelock", "SetIsAllocator",
     "AddedOwner", "RemovedOwner", "ChangedThreshold", "EnabledModule", "DisabledModule", "ChangedGuard",
     "ChangedFallbackHandler",
+    # ownerwatch 0.8.0: Sky, Lido Dual Governance, Rocket Pool, CoW, Gearbox, 0x Settler
+    "LogSetOwner", "LogSetAuthority", "PauseDelaySet", "GovernanceSet", "AdminExecutorSet",
+    "AfterSubmitDelaySet", "AfterScheduleDelaySet", "EmergencyGovernanceSet", "EmergencyActivationCommitteeSet",
+    "EmergencyExecutionCommitteeSet", "EmergencyProtectionEndDateSet", "EmergencyModeDurationSet",
+    "EmergencyModeActivated", "EmergencyModeDeactivated", "ProposerRegistered", "ProposerUnregistered",
+    "ProposerExecutorSet", "ResealCommitteeSet", "ResealManagerSet", "TiebreakerCommitteeSet",
+    "TiebreakerActivationTimeoutSet", "ProposalsCancellerSet", "ConfigProviderSet", "SealableWithdrawalBlockerAdded",
+    "SealableWithdrawalBlockerRemoved", "ContractUpgraded", "ContractAdded", "GuardianChanged", "SolverAdded",
+    "SolverRemoved", "ManagerChanged", "ProxyImplementationUpdated", "PausableAdminAdded", "PausableAdminRemoved",
+    "UnpausableAdminAdded", "UnpausableAdminRemoved", "Deployed", "Removed", "RemovedAll", "Authorized",
 }
 # A governance decision taking effect. Counted once per transaction: one proposal emits several of these.
-EXECUTION_EVENTS = {"CallExecuted", "ExecuteTransaction", "ProposalExecuted", "ExecuteVote", "PayloadExecuted"}
+EXECUTION_EVENTS = {"CallExecuted", "ExecuteTransaction", "ProposalExecuted", "ExecuteVote", "PayloadExecuted", "SpellExecuted"}
 
 
 def block_dates(rows: list[dict]) -> dict[int, str]:
@@ -161,12 +171,14 @@ def control_record(system: dict, rows: list[dict], dates: dict[int, str], cutoff
     """One protocol's entry: control changes and executed governance actions on its governance contracts in
     the last WINDOW_DAYS. Counts of events that happened on-chain, with their dates and transactions; no grade."""
     watched = {c["address"].lower() for c in system["contracts"]}
+    # a system can name the one execution event that means its decision took effect (Lido: the timelock, not the vote)
+    execution_events = set(system.get("execution_events") or EXECUTION_EVENTS)
     mine = [{**r, "date": dates[r["block"]]} for r in rows
             if r.get("chain") == "ethereum" and r.get("contract", "").lower() in watched and r.get("block") in dates
-            and dates[r["block"]] >= cutoff and r.get("event") in CONTROL_EVENTS | EXECUTION_EVENTS]
+            and dates[r["block"]] >= cutoff and r.get("event") in CONTROL_EVENTS | execution_events]
     mine.sort(key=lambda r: r["block"], reverse=True)
     changes = [r for r in mine if r["event"] in CONTROL_EVENTS]
-    executions = {r.get("tx_hash") for r in mine if r["event"] in EXECUTION_EVENTS}
+    executions = {r.get("tx_hash") for r in mine if r["event"] in execution_events}
     if not system.get("executions", True):
         mine = changes
     contracts = []

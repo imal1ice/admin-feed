@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q "ownerwatch>=0.7.4"
+      - run: pip install -q "ownerwatch>=0.8.0"
       - name: Poll once
         run: ownerwatch run --once --config ownerwatch.yaml
       - name: Render site
