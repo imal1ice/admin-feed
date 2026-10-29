@@ -31,6 +31,9 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 <h2>A multisig, but no clock</h2>
 <p>Sixteen more rely on a Safe with no timelock on at least one admin path. The usual shape: the code upgrade waits 24 to 48 hours as advertised, while the same Safe can change roles, mint limits, oracles or pause state instantly. Thresholds as low as 2-of-3 and 2-of-4 guard tens of millions of dollars.</p>
 
+<h2>Supply that did not come through the minter</h2>
+<p>One stablecoin's documentation says every token is minted one for one against deposited collateral through its minting contract. On-chain, most of the supply ever issued was minted directly by the owner, through a timelock, outside that contract. For two of those mints the timelock's delay was 60 seconds. The tokens may well be backed. The point is that the chain does not show it, and the docs describe a mechanism that most of the supply did not use.</p>
+
 <h2>Docs that disagree with the chain</h2>
 <p>At least ten protocols publish documentation that contradicts their own contracts. The patterns:</p>
 <ul>
