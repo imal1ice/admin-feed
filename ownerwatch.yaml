@@ -41,7 +41,14 @@ chains:
         label: "Optimism Foundation Safe"
       - address: "0xcBa28b38103307Ec8dA98377ffF9816C164f9AFa"
         label: "Morpho Owner Safe"
-      # Added 2026-10-28: governance contracts per protocol, see control/protocols.yaml
+      # Added 2026-10-29: Rocket Pool DAO contracts, resolved through RocketStorage
+      - address: "0x2D627A50Dc1C4EDa73E42858E8460b0eCF300b25"
+        label: "Rocket Pool protocol DAO proposals"
+      - address: "0x1e94e6131Ba5B4F193d2A1067517136C52ddF102"
+        label: "Rocket Pool DAO proposals (oDAO, security council)"
+      - address: "0x9290AA076a2F1418a4E414E3D83AE03cA8E1ad10"
+        label: "Rocket Pool contract upgrades"
+      # Added 2026-10-28: governance contracts per protocol, see control/protocols.json
       - address: "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7"
         label: "Aave Governance V3"
       - address: "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30"

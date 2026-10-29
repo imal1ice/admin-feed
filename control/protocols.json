@@ -1,5 +1,5 @@
 {
- "_comment": "Which watched Ethereum contracts belong to which protocol version. Protocol ids are the rows of cp0x-org/defi-dna registry/protocols.json. Governance systems and their contracts follow defi-dna's adapters/metrics/governance (systems.json, mapping.json), whose addresses cite each protocol's own registry (`source`); every address was re-read on-chain (code present, Safe threshold answered) on 2026-10-28. `since` is the day this feed started watching the contract; events before it come from a backfill over the same 90-day window. `decoded: false` marks a system whose governance events ownerwatch cannot decode yet (measured on 2026-10-28: logs over 90 days compared with ownerwatch's event catalog); it gets a note and no value. `executions: false` marks a system governed through Safes, whose transactions are not classified; only control changes are counted.",
+ "_comment": "Which watched Ethereum contracts belong to which protocol version. Protocol ids are the rows of cp0x-org/defi-dna registry/protocols.json. Governance systems and their contracts follow defi-dna's adapters/metrics/governance (systems.json, mapping.json), whose addresses cite each protocol's own registry (`source`); every address was re-read on-chain (code present, Safe threshold answered) on 2026-10-28. `since` is the day this feed started watching the contract; events before it come from a backfill over the same 90-day window. `decoded: false` marks a system whose governance events ownerwatch cannot decode yet (measured against ownerwatch's event catalog over 90 days of logs; all six systems flagged on 2026-10-28 are decoded since ownerwatch 0.8.0); it gets a note and no value. `executions: false` marks a system governed through Safes, whose transactions are not classified; only control changes are counted. `execution_events`, where present, limits which execution events count for that system.",
  "systems": {
   "aave-governance-v3": {
    "name": "Aave Governance V3",
@@ -80,8 +80,8 @@
      "since": "2026-10-28"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch does not yet decode Sky's governance events (DSPause plot/exec notes, DSChief); nothing is counted."
+   "decoded": true,
+   "executions": true
   },
   "morpho-dao": {
    "name": "Morpho DAO",
@@ -135,8 +135,9 @@
      "since": "2026-10-28"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch does not yet decode the admin events of Gearbox's ACL; nothing is counted."
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
   },
   "euler-dao": {
    "name": "Euler DAO",
@@ -275,8 +276,9 @@
      "since": "2026-10-28"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch does not yet decode the solver allow-list events of GPv2AllowListAuthentication; nothing is counted."
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
   },
   "oneinch": {
    "name": "1inch",
@@ -304,8 +306,9 @@
      "since": "2026-10-28"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch does not yet decode the 0x Settler deployer, where feature ownership moves as NFT transfers; nothing is counted."
+   "decoded": true,
+   "executions": false,
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted."
   },
   "yearn-governance": {
    "name": "Yearn governance",
@@ -402,8 +405,12 @@
      "since": "2026-10-21"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch decodes Lido's Aragon votes but not yet Dual Governance or the Emergency Protected Timelock, through which Lido proposals execute; nothing is counted."
+   "decoded": true,
+   "executions": true,
+   "execution_events": [
+    "ProposalExecuted"
+   ],
+   "note": "Executions are counted when Lido's Emergency Protected Timelock executes a proposal; the Aragon vote that submitted it is not counted again."
   },
   "rocket-pool-dao": {
    "name": "Rocket Pool DAO",
@@ -426,10 +433,28 @@
      "label": "RocketDAOProtocolSettingsProposals",
      "type": "governor",
      "since": "2026-10-28"
+    },
+    {
+     "address": "0x2D627A50Dc1C4EDa73E42858E8460b0eCF300b25",
+     "label": "rocketDAOProtocolProposal",
+     "type": "governor",
+     "since": "2026-10-29"
+    },
+    {
+     "address": "0x1e94e6131Ba5B4F193d2A1067517136C52ddF102",
+     "label": "rocketDAOProposal (oDAO and security council)",
+     "type": "governor",
+     "since": "2026-10-29"
+    },
+    {
+     "address": "0x9290AA076a2F1418a4E414E3D83AE03cA8E1ad10",
+     "label": "rocketDAONodeTrustedUpgrade",
+     "type": "registry",
+     "since": "2026-10-29"
     }
    ],
-   "decoded": false,
-   "note": "ownerwatch does not yet decode Rocket Pool's DAO events (RocketStorage and the DAO proposal contracts); nothing is counted."
+   "decoded": true,
+   "executions": true
   }
  },
  "protocols": {

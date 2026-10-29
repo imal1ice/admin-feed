@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29T08:07:37Z",
+ "generated": "2026-10-29T08:20:43Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -670,11 +670,11 @@
   "cowswap": {
    "name": "CoW DAO",
    "source": "https://docs.cow.fi/cow-protocol/reference/contracts/core",
-   "value": null,
-   "note": "ownerwatch does not yet decode the solver allow-list events of GPv2AllowListAuthentication; nothing is counted.",
+   "value": "9 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-10-29",
-   "lastEvent": null,
-   "controlChanges": 0,
+   "lastEvent": "2026-10-19",
+   "controlChanges": 9,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -686,11 +686,84 @@
      "label": "GPv2AllowListAuthentication",
      "type": "holder",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 9,
+     "last": "2026-10-19"
     }
    ],
-   "recent": [],
+   "recent": [
+    {
+     "date": "2026-10-19",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0x49406F6d3690957Ad15461bcd9beFa6ac9A91862",
+     "tx": "https://etherscan.io/tx/0x49df4771e9f716923f3264ab3468fa8b4c78062a0bdb56de5895fc048d102328"
+    },
+    {
+     "date": "2026-10-08",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0x38e59DccE64EA3DDeCE4d98F77e70990fc8f430c",
+     "tx": "https://etherscan.io/tx/0xb7b27b4d7645754678f2b5256bc76a2e550f54c48e861ed1c307216d44de0168"
+    },
+    {
+     "date": "2026-10-07",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0x95480d3f27658E73b2785D30beb0c847D78294c7",
+     "tx": "https://etherscan.io/tx/0x951d894dc6c190ff4b6f4fb7fb46d3247877edef80a82c172a31803c554c3ca2"
+    },
+    {
+     "date": "2026-10-07",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverRemoved",
+     "kind": "control change",
+     "message": "solver removed from the allow-list: 0x95480d3f27658E73b2785D30beb0c847D78294c7",
+     "tx": "https://etherscan.io/tx/0x68f4620051950a73c0882a8053121515f3acccd55c8aceb2e5c0bf42986a1c0f"
+    },
+    {
+     "date": "2026-10-06",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0xDb19da34ADf6E045c975250c1D34f7B79EbaE093",
+     "tx": "https://etherscan.io/tx/0x91e2a23c1484d301ea7d7ac41818c3691699f1b851a1996ebb0ddb10c0c1ef71"
+    },
+    {
+     "date": "2026-09-01",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0xf3A3AB25347de13B6955868a88C4B25DA6007A1f",
+     "tx": "https://etherscan.io/tx/0xa53b18ed5307979dcdfce888f6c00d1e744770c532fcaac0040ccc5a9548fdcb"
+    },
+    {
+     "date": "2026-09-01",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0x80A68197d96f832ec658847510B231BC1f9375F9",
+     "tx": "https://etherscan.io/tx/0xa53b18ed5307979dcdfce888f6c00d1e744770c532fcaac0040ccc5a9548fdcb"
+    },
+    {
+     "date": "2026-08-25",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0xb5E5bA15A5aa58df03d91549496d8CD67A15f858",
+     "tx": "https://etherscan.io/tx/0x58020d73178dd8f7c3a63445095badd519a442e6e9be21f5877892fb6a1b243e"
+    },
+    {
+     "date": "2026-08-25",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverAdded",
+     "kind": "control change",
+     "message": "solver added to the allow-list: 0x12459C3702D9945Cce1bA56E67089F0cD8aC5099",
+     "tx": "https://etherscan.io/tx/0xef74cbcf9fd65f829bfbca9c23d4c488298c5462026ba416e2b91a94da5837a0"
+    }
+   ],
    "system": "cow-dao",
    "url": "https://imal1ice.github.io/admin-feed/control/#cow-dao"
   },
@@ -980,11 +1053,11 @@
   "gearbox": {
    "name": "Gearbox DAO",
    "source": "https://etherscan.io/address/0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
-   "value": null,
-   "note": "ownerwatch does not yet decode the admin events of Gearbox's ACL; nothing is counted.",
+   "value": "2 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-10-29",
-   "lastEvent": null,
-   "controlChanges": 0,
+   "lastEvent": "2026-10-23",
+   "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -996,21 +1069,38 @@
      "label": "ACL",
      "type": "holder",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 2,
+     "last": "2026-10-23"
     }
    ],
-   "recent": [],
+   "recent": [
+    {
+     "date": "2026-10-23",
+     "label": "Gearbox ACL",
+     "event": "UnpausableAdminAdded",
+     "kind": "control change",
+     "message": "unpausable admin added: 0xa133C9A92Fb8dDB962Af1cbae58b2723A0bdf23b",
+     "tx": "https://etherscan.io/tx/0xcc0529b60f68173958ad58f9f70f39f2bd960c8e84c3de872778a0f934a7cdaa"
+    },
+    {
+     "date": "2026-10-23",
+     "label": "Gearbox ACL",
+     "event": "UnpausableAdminRemoved",
+     "kind": "control change",
+     "message": "unpausable admin removed: 0xa133C9A92Fb8dDB962Af1cbae58b2723A0bdf23b",
+     "tx": "https://etherscan.io/tx/0xcc0529b60f68173958ad58f9f70f39f2bd960c8e84c3de872778a0f934a7cdaa"
+    }
+   ],
    "system": "gearbox-dao",
    "url": "https://imal1ice.github.io/admin-feed/control/#gearbox-dao"
   },
   "lido": {
    "name": "Lido DAO",
    "source": "https://docs.lido.fi/deployed-contracts/",
-   "value": null,
-   "note": "ownerwatch decodes Lido's Aragon votes but not yet Dual Governance or the Emergency Protected Timelock, through which Lido proposals execute; nothing is counted.",
+   "value": "0 control changes \u00b7 3 governance executions in 90 days",
+   "note": "Executions are counted when Lido's Emergency Protected Timelock executes a proposal; the Aragon vote that submitted it is not counted again.",
    "updatedAt": "2026-10-29",
-   "lastEvent": "2026-10-19",
+   "lastEvent": "2026-10-23",
    "controlChanges": 0,
    "governanceExecutions": 3,
    "window": {
@@ -1023,8 +1113,8 @@
      "label": "Emergency Protected Timelock",
      "type": "timelock",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 3,
+     "last": "2026-10-23"
     },
     {
      "address": "0xC1db28B3301331277e307FDCfF8DE28242A4486E",
@@ -1039,8 +1129,8 @@
      "label": "Aragon voting",
      "type": "aragon-voting",
      "since": "2026-10-21",
-     "events": 3,
-     "last": "2026-10-19"
+     "events": 0,
+     "last": null
     },
     {
      "address": "0x8B7854488Fde088d686Ea672B6ba1A5242515f45",
@@ -1077,28 +1167,28 @@
    ],
    "recent": [
     {
-     "date": "2026-10-19",
-     "label": "Lido DAO Voting",
-     "event": "ExecuteVote",
+     "date": "2026-10-23",
+     "label": "Lido Emergency Protected Timelock",
+     "event": "ProposalExecuted",
      "kind": "governance execution",
-     "message": "Aragon vote 206 executed",
-     "tx": "https://etherscan.io/tx/0x7a3559517ba94d6697f61d5d91086e16bcc1d7bbdb23bf4934aff6bdf312f381"
+     "message": "timelock proposal 15 executed",
+     "tx": "https://etherscan.io/tx/0x59a768998d7ab2271285a08b4d498813c0de61e69525703e3b50e67d191b3bf8"
     },
     {
-     "date": "2026-09-21",
-     "label": "Lido DAO Voting",
-     "event": "ExecuteVote",
+     "date": "2026-09-25",
+     "label": "Lido Emergency Protected Timelock",
+     "event": "ProposalExecuted",
      "kind": "governance execution",
-     "message": "Aragon vote 205 executed",
-     "tx": "https://etherscan.io/tx/0xcb2cc1805ae5c733f8e2670a8dc57caa8a9a43329bed7e5a8b7d87b10515e76c"
+     "message": "timelock proposal 14 executed",
+     "tx": "https://etherscan.io/tx/0x2aac8dd013e5284a39a08c3ca463862aa22b06b3c1253390a4fc806d0bca6a9e"
     },
     {
-     "date": "2026-08-10",
-     "label": "Lido DAO Voting",
-     "event": "ExecuteVote",
+     "date": "2026-08-14",
+     "label": "Lido Emergency Protected Timelock",
+     "event": "ProposalExecuted",
      "kind": "governance execution",
-     "message": "Aragon vote 204 executed",
-     "tx": "https://etherscan.io/tx/0xd34730fe6f821e3f05eff51f1606276e10eaf40c5854e2d2793a1cd1373d8aee"
+     "message": "timelock proposal 13 executed",
+     "tx": "https://etherscan.io/tx/0x5a7868439de1003dc5f3d7ecf99826410c17883794bcd38ff75dd0e0bcce57c4"
     }
    ],
    "system": "lido-dao",
@@ -1229,12 +1319,12 @@
   "rocketpool": {
    "name": "Rocket Pool DAO",
    "source": "https://docs.rocketpool.net/overview/contracts-integrations",
-   "value": null,
-   "note": "ownerwatch does not yet decode Rocket Pool's DAO events (RocketStorage and the DAO proposal contracts); nothing is counted.",
+   "value": "1 control change \u00b7 4 governance executions in 90 days",
+   "note": null,
    "updatedAt": "2026-10-29",
-   "lastEvent": null,
-   "controlChanges": 0,
-   "governanceExecutions": 0,
+   "lastEvent": "2026-09-11",
+   "controlChanges": 1,
+   "governanceExecutions": 4,
    "window": {
     "days": 90,
     "from": "2026-07-31"
@@ -1263,21 +1353,86 @@
      "since": "2026-10-28",
      "events": 0,
      "last": null
+    },
+    {
+     "address": "0x2D627A50Dc1C4EDa73E42858E8460b0eCF300b25",
+     "label": "rocketDAOProtocolProposal",
+     "type": "governor",
+     "since": "2026-10-29",
+     "events": 1,
+     "last": "2026-09-06"
+    },
+    {
+     "address": "0x1e94e6131Ba5B4F193d2A1067517136C52ddF102",
+     "label": "rocketDAOProposal (oDAO and security council)",
+     "type": "governor",
+     "since": "2026-10-29",
+     "events": 3,
+     "last": "2026-09-11"
+    },
+    {
+     "address": "0x9290AA076a2F1418a4E414E3D83AE03cA8E1ad10",
+     "label": "rocketDAONodeTrustedUpgrade",
+     "type": "registry",
+     "since": "2026-10-29",
+     "events": 1,
+     "last": "2026-09-10"
     }
    ],
-   "recent": [],
+   "recent": [
+    {
+     "date": "2026-09-11",
+     "label": "Rocket Pool DAO proposals (oDAO, security council)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "Rocket Pool DAO proposal 32 executed by 0xAc69b72672aBb00Ab51837F74a4F28B45296b09E",
+     "tx": "https://etherscan.io/tx/0xdc1d6f77d90cd9eb2fc144fc81d72b6a779aca02ad1d0cb77a555c7641c2ee52"
+    },
+    {
+     "date": "2026-09-10",
+     "label": "Rocket Pool contract upgrades",
+     "event": "ContractUpgraded",
+     "kind": "control change",
+     "message": "Rocket Pool contract 0xaba571573f33056605709d51677f0fb220dbca112193d55397fe46d0b060cd87 upgraded 0xd1f7e573cdC64FC0B201ca37aB50bC7Dd880040A -> 0xc4D85aA3e318c38005F6D73cC53E5A2b4223723a",
+     "tx": "https://etherscan.io/tx/0x7eb86d26328f138b6a506e705ebab211bc379a22628965eeb291ff463a882440"
+    },
+    {
+     "date": "2026-09-06",
+     "label": "Rocket Pool protocol DAO proposals",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "Rocket Pool DAO proposal 10 executed by 0x2C5D28538f051686e62da624dDb2811Cc59A4979",
+     "tx": "https://etherscan.io/tx/0xe65051d4004f95ecc91f44877041c602e78e649eb0f85c515ddf5cef611f5653"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "Rocket Pool DAO proposals (oDAO, security council)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "Rocket Pool DAO proposal 31 executed by 0x751683968FD078341C48B90bC657d6bAbc2339F7",
+     "tx": "https://etherscan.io/tx/0x282e07dbefb7fba9646bc54cd3a2c1a9b1bb7dc3b2c545b4dc1ae71952ec049b"
+    },
+    {
+     "date": "2026-08-19",
+     "label": "Rocket Pool DAO proposals (oDAO, security council)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "Rocket Pool DAO proposal 30 executed by 0xFdcC80C42881C045a75651D5D09bc3BB4F86f538",
+     "tx": "https://etherscan.io/tx/0x2d11a436dd0ca5d1a95fdd31a2fd8e288826b92e6abdac1aa515309c2dfebb20"
+    }
+   ],
    "system": "rocket-pool-dao",
    "url": "https://imal1ice.github.io/admin-feed/control/#rocket-pool-dao"
   },
   "spark": {
    "name": "Sky governance (Spark spells)",
    "source": "https://github.com/sparkdotfi/spark-address-registry/blob/master/src/Ethereum.sol",
-   "value": null,
-   "note": "ownerwatch does not yet decode Sky's governance events (DSPause plot/exec notes, DSChief); nothing is counted.",
+   "value": "0 control changes \u00b7 5 governance executions in 90 days",
+   "note": null,
    "updatedAt": "2026-10-29",
-   "lastEvent": null,
+   "lastEvent": "2026-10-12",
    "controlChanges": 0,
-   "governanceExecutions": 0,
+   "governanceExecutions": 5,
    "window": {
     "days": 90,
     "from": "2026-07-31"
@@ -1288,8 +1443,8 @@
      "label": "Sky governance pause (MCD_PAUSE)",
      "type": "timelock",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 5,
+     "last": "2026-10-12"
     },
     {
      "address": "0x929d9A1435662357F54AdcF64DcEE4d6b867a6f9",
@@ -1324,7 +1479,48 @@
      "last": null
     }
    ],
-   "recent": [],
+   "recent": [
+    {
+     "date": "2026-10-12",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0x4877f950F187a62f7D36d290FB5F8E91CceeE965 executed",
+     "tx": "https://etherscan.io/tx/0x93389082b75a9e278b6b2a2d7dde53618c38214b5d71699fd60461dbe1e10275"
+    },
+    {
+     "date": "2026-09-28",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0x87be6557aA45E9c0C6Bc8B536DA6104D5c3d5F60 executed",
+     "tx": "https://etherscan.io/tx/0xbde455c8b5652e914b6713073f8dfbdf3550efd6cfe1f6e33c2ff137b3bb55fe"
+    },
+    {
+     "date": "2026-09-13",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0xe16b16d43334e7d8AbE9D41f255D57518C92a79A executed",
+     "tx": "https://etherscan.io/tx/0xcd57535f7a9e60e61d34b31f793501fa6178b4ae37fe0b2900f76efd54e192c3"
+    },
+    {
+     "date": "2026-08-31",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0xf4631a553D0F444dBD582d0F6D32bDE1C864132c executed",
+     "tx": "https://etherscan.io/tx/0xaf09b160c02ed667e8fa5c061965b253dfb476d0f92df26dbd362a5301203640"
+    },
+    {
+     "date": "2026-08-17",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0x90B9978d9cd6edC6140Cc62EDE86608fae1209A1 executed",
+     "tx": "https://etherscan.io/tx/0x4d4f4d480a53ec6af365068283b90c59cf722aac6654920166c38e4f5c637bf4"
+    }
+   ],
    "system": "sky-spark",
    "url": "https://imal1ice.github.io/admin-feed/control/#sky-spark"
   },
@@ -1683,11 +1879,11 @@
   "zerox": {
    "name": "0x Settler",
    "source": "https://github.com/0xProject/0x-settler",
-   "value": null,
-   "note": "ownerwatch does not yet decode the 0x Settler deployer, where feature ownership moves as NFT transfers; nothing is counted.",
+   "value": "7 control changes in 90 days",
+   "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-10-29",
-   "lastEvent": null,
-   "controlChanges": 0,
+   "lastEvent": "2026-10-09",
+   "controlChanges": 7,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -1699,11 +1895,68 @@
      "label": "Settler deployer",
      "type": "holder",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 7,
+     "last": "2026-10-09"
     }
    ],
-   "recent": [],
+   "recent": [
+    {
+     "date": "2026-10-09",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 4 (nonce 14) at 0xE6E49e792dC5727A1dd3450D9834C7058c6D72ce",
+     "tx": "https://etherscan.io/tx/0x0e420547ed611c963ad1dc16ecd8065d288cb0fdde0c9159bea6c41830f74f11"
+    },
+    {
+     "date": "2026-10-09",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 3 (nonce 19) at 0xEcc95D4bf74782c60009D5f645ADc75828A8F550",
+     "tx": "https://etherscan.io/tx/0xf06ebc37cf4607c9de7264dc57decf7e33b9bf70d746f155be2ba486f50a96b1"
+    },
+    {
+     "date": "2026-10-09",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 2 (nonce 20) at 0x0cEf320d0c5793ade37964E2661a033771e53cd5",
+     "tx": "https://etherscan.io/tx/0x260f0be56842f7c4ffb6f88346aa2516eb97904749e9cea23748717b474c32e9"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 5 (nonce 8) at 0x0038DFB2bBc353Daa6aD22Cb11Ee1D78f41B59cd",
+     "tx": "https://etherscan.io/tx/0x5b32862bdadc05f627a212a99f8607b01a3dec54cc071e6ad7106c1bccd3df37"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 4 (nonce 13) at 0x4563B9378B4eD1f35b3107d1d8e14c25a05898a4",
+     "tx": "https://etherscan.io/tx/0x1f3918fdd1925643dbb2a688ba8c726ac7d5d89a40b190ca3433e503daf1be08"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 3 (nonce 18) at 0x04CCf43bf8dF40659414880603A8D8eF7F465Bea",
+     "tx": "https://etherscan.io/tx/0x76e66711c74914eda32850fbd94076e80d61e7232a005ec6ebf1cfa62250db92"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 2 (nonce 19) at 0x666FEdd4CdD4E890A5aD20E7B60975409435a64A",
+     "tx": "https://etherscan.io/tx/0x2230f4034f42f348fb022d2936ceb9418d74a202289bdc8b051257cc30bd1553"
+    }
+   ],
    "system": "zerox-settler",
    "url": "https://imal1ice.github.io/admin-feed/control/#zerox-settler"
   }
