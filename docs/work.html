@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>imal1ice: admin-surface security</title>
+<meta name="description" content="Open-source tooling and research on who controls EVM protocols: owners, proxy admins, roles, Safes and timelocks.">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--accent:#b00020}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a;--accent:#ff6b6b}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px} p.sub{color:var(--muted);margin:0 0 28px}
+h2{font-size:18px;margin:32px 0 8px}
+ul{padding-left:20px} li{margin:8px 0} a{color:inherit} code{font-size:14px} .muted{color:var(--muted)}
+footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>imal1ice</h1>
+<p class="sub">Open-source tooling and research on who controls EVM protocols: owners, proxy admins, AccessControl roles, Safe signers and timelocks, read from the chain.</p>
+
+<h2>Built</h2>
+<ul>
+<li><a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> (MIT, <code>pip install ownerwatch</code>): alerts when an EVM contract's admin surface changes, and a probe that maps who can upgrade, mint, pause or move funds. Reads the governance of Aave, Compound, Uniswap, Lido, Curve, Balancer, Spark, Euler, Morpho, Fluid, Rocket Pool, CoW and others.</li>
+<li><a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/erc-8241.md">ERC-8241 disclosure checker</a>: drafts a control disclosure for the ERC-8241 draft standard from chain state, and checks a published one record by record at a pinned block, including control the disclosure leaves out. Worked example on Aave V3.</li>
+<li><a href="https://github.com/imal1ice/ownerwatch-action">ownerwatch-action</a>: a GitHub Action that fails CI when the admin surface drifts from a committed baseline, or when an ERC-8241 disclosure no longer matches the chain.</li>
+<li><a href="./">admin-feed</a>: a live, hourly feed of admin changes on major protocols across Ethereum, Arbitrum, Optimism and Base, with <a href="control/">per-protocol counts</a> of control changes and governance executions.</li>
+</ul>
+
+<h2>Research</h2>
+<ul>
+<li><a href="report.html">Who controls mid-size DeFi?</a> The admin setup of 36 protocols, read from the chain. No protocol is named; every team was told privately first.</li>
+</ul>
+
+<h2>Under review</h2>
+<ul>
+<li><a href="https://github.com/cp0x-org/defi-dna/pull/19">cp0x defi-dna #19</a>: the admin-event counts as a feed in an Ethereum Foundation-funded risk aggregator.</li>
+<li><a href="https://github.com/deficollective/defiscan/pull/242">DeFiScan #242</a>: a protocol review in the DeFiScan framework.</li>
+<li><a href="https://github.com/crytic/awesome-ethereum-security/pull/58">awesome-ethereum-security #58</a>: a monitoring section.</li>
+</ul>
+
+<h2>Work with me</h2>
+<p>Admin-surface reviews (every owner, admin, role holder and signer, the control graph, findings with fixes, a ready monitoring config), monitoring setup, and ERC-8241 disclosures drafted from chain state and checked in CI. Write to <a href="mailto:imal1ice@proton.me">imal1ice@proton.me</a>.</p>
+
+<footer>Everything here is public chain data and open-source code. Corrections welcome as <a href="https://github.com/imal1ice/admin-feed/issues">issues</a>.</footer>
+</body></html>
