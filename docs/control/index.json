@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T09:57:34Z",
+ "generated": "2026-10-30T10:53:44Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -1887,11 +1887,11 @@
   "zerox": {
    "name": "0x Settler",
    "source": "https://github.com/0xProject/0x-settler",
-   "value": "7 control changes in 90 days",
+   "value": "10 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-10-30",
-   "lastEvent": "2026-10-09",
-   "controlChanges": 7,
+   "lastEvent": "2026-10-30",
+   "controlChanges": 10,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -1903,11 +1903,35 @@
      "label": "Settler deployer",
      "type": "holder",
      "since": "2026-10-28",
-     "events": 7,
-     "last": "2026-10-09"
+     "events": 10,
+     "last": "2026-10-30"
     }
    ],
    "recent": [
+    {
+     "date": "2026-10-30",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 4 (nonce 15) at 0xBfa23e39EBcB074696414fDd75Ed2C9eFfBde688",
+     "tx": "https://etherscan.io/tx/0x83e39b70ed0628087124844c4f170afedca5c60633f3bdfba3c0490a5a72da93"
+    },
+    {
+     "date": "2026-10-30",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 3 (nonce 20) at 0x9A6350D532ed83a970D452b736bE5847b2856768",
+     "tx": "https://etherscan.io/tx/0x68abacb0bff7571b72c83c180608018f97f7b8979fad86dab193b35be04737f4"
+    },
+    {
+     "date": "2026-10-30",
+     "label": "0x Settler deployer",
+     "event": "Deployed",
+     "kind": "control change",
+     "message": "new code deployed for feature 2 (nonce 21) at 0xaddC26a3854feaBFd20d6BF658254088D83a425A",
+     "tx": "https://etherscan.io/tx/0x6050acc28c4cf57fa5576be05fce3940f16a35b887cacc9c9fffefffa64f17a2"
+    },
     {
      "date": "2026-10-09",
      "label": "0x Settler deployer",
