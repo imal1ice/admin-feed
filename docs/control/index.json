@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T11:49:18Z",
+ "generated": "2026-10-30T13:01:47Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -670,11 +670,11 @@
   "cowswap": {
    "name": "CoW DAO",
    "source": "https://docs.cow.fi/cow-protocol/reference/contracts/core",
-   "value": "9 control changes in 90 days",
+   "value": "12 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-10-30",
-   "lastEvent": "2026-10-19",
-   "controlChanges": 9,
+   "lastEvent": "2026-10-30",
+   "controlChanges": 12,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -686,11 +686,35 @@
      "label": "GPv2AllowListAuthentication",
      "type": "holder",
      "since": "2026-10-28",
-     "events": 9,
-     "last": "2026-10-19"
+     "events": 12,
+     "last": "2026-10-30"
     }
    ],
    "recent": [
+    {
+     "date": "2026-10-30",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverRemoved",
+     "kind": "control change",
+     "message": "solver removed from the allow-list: 0x6bf97aFe2D2C790999cDEd2a8523009eB8a0823f",
+     "tx": "https://etherscan.io/tx/0xb66da743585d82b7f44f6854f0965673bc11d0c0e43768cbe6c157d9809b39f0"
+    },
+    {
+     "date": "2026-10-30",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverRemoved",
+     "kind": "control change",
+     "message": "solver removed from the allow-list: 0xBB765c920f86e2A2654c4B82deB5BC2E092fF93b",
+     "tx": "https://etherscan.io/tx/0xb66da743585d82b7f44f6854f0965673bc11d0c0e43768cbe6c157d9809b39f0"
+    },
+    {
+     "date": "2026-10-30",
+     "label": "CoW GPv2AllowListAuthentication",
+     "event": "SolverRemoved",
+     "kind": "control change",
+     "message": "solver removed from the allow-list: 0x5131590ca2E9D3edC182581352b289dcaE83430c",
+     "tx": "https://etherscan.io/tx/0xb66da743585d82b7f44f6854f0965673bc11d0c0e43768cbe6c157d9809b39f0"
+    },
     {
      "date": "2026-10-19",
      "label": "CoW GPv2AllowListAuthentication",
@@ -746,22 +770,6 @@
      "kind": "control change",
      "message": "solver added to the allow-list: 0x80A68197d96f832ec658847510B231BC1f9375F9",
      "tx": "https://etherscan.io/tx/0xa53b18ed5307979dcdfce888f6c00d1e744770c532fcaac0040ccc5a9548fdcb"
-    },
-    {
-     "date": "2026-08-25",
-     "label": "CoW GPv2AllowListAuthentication",
-     "event": "SolverAdded",
-     "kind": "control change",
-     "message": "solver added to the allow-list: 0xb5E5bA15A5aa58df03d91549496d8CD67A15f858",
-     "tx": "https://etherscan.io/tx/0x58020d73178dd8f7c3a63445095badd519a442e6e9be21f5877892fb6a1b243e"
-    },
-    {
-     "date": "2026-08-25",
-     "label": "CoW GPv2AllowListAuthentication",
-     "event": "SolverAdded",
-     "kind": "control change",
-     "message": "solver added to the allow-list: 0x12459C3702D9945Cce1bA56E67089F0cD8aC5099",
-     "tx": "https://etherscan.io/tx/0xef74cbcf9fd65f829bfbca9c23d4c488298c5462026ba416e2b91a94da5837a0"
     }
    ],
    "system": "cow-dao",
