@@ -1,17 +1,17 @@
 {
- "generated": "2026-10-31T09:47:31Z",
+ "generated": "2026-10-31T10:43:03Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
   "aave-v3": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 19 governance executions in 90 days",
+   "value": "2 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-10-31",
-   "lastEvent": "2026-10-30",
+   "lastEvent": "2026-10-31",
    "controlChanges": 2,
-   "governanceExecutions": 19,
+   "governanceExecutions": 20,
    "window": {
     "days": 90,
     "from": "2026-08-02"
@@ -30,8 +30,8 @@
      "label": "Governance V3",
      "type": "governor",
      "since": "2026-10-28",
-     "events": 1,
-     "last": "2026-10-30"
+     "events": 2,
+     "last": "2026-10-31"
     },
     {
      "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
@@ -67,6 +67,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-10-31",
+     "label": "Aave Governance V3",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "timelock proposal 538 executed",
+     "tx": "https://etherscan.io/tx/0x9c184f3d2cc831fae443b3b58a093e984fa1387b7cff3d04973ef128b6e5befb"
+    },
     {
      "date": "2026-10-30",
      "label": "Aave Governance V3",
@@ -138,14 +146,6 @@
      "kind": "governance execution",
      "message": "Aave payload 472 executed",
      "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
-    },
-    {
-     "date": "2026-09-30",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 471 executed",
-     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
     }
    ],
    "system": "aave-governance-v3",
@@ -154,12 +154,12 @@
   "aave-v4": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 19 governance executions in 90 days",
+   "value": "2 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-10-31",
-   "lastEvent": "2026-10-30",
+   "lastEvent": "2026-10-31",
    "controlChanges": 2,
-   "governanceExecutions": 19,
+   "governanceExecutions": 20,
    "window": {
     "days": 90,
     "from": "2026-08-02"
@@ -178,8 +178,8 @@
      "label": "Governance V3",
      "type": "governor",
      "since": "2026-10-28",
-     "events": 1,
-     "last": "2026-10-30"
+     "events": 2,
+     "last": "2026-10-31"
     },
     {
      "address": "0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30",
@@ -215,6 +215,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-10-31",
+     "label": "Aave Governance V3",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "timelock proposal 538 executed",
+     "tx": "https://etherscan.io/tx/0x9c184f3d2cc831fae443b3b58a093e984fa1387b7cff3d04973ef128b6e5befb"
+    },
     {
      "date": "2026-10-30",
      "label": "Aave Governance V3",
@@ -286,14 +294,6 @@
      "kind": "governance execution",
      "message": "Aave payload 472 executed",
      "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
-    },
-    {
-     "date": "2026-09-30",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 471 executed",
-     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
     }
    ],
    "system": "aave-governance-v3",
