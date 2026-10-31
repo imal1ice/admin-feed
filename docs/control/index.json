@@ -1,20 +1,20 @@
 {
- "generated": "2026-10-30T23:43:01Z",
+ "generated": "2026-10-31T01:03:36Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
   "aave-v3": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 20 governance executions in 90 days",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-30",
    "controlChanges": 2,
-   "governanceExecutions": 20,
+   "governanceExecutions": 19,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -22,7 +22,7 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 19,
+     "events": 18,
      "last": "2026-10-28"
     },
     {
@@ -154,15 +154,15 @@
   "aave-v4": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 20 governance executions in 90 days",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-30",
    "controlChanges": 2,
-   "governanceExecutions": 20,
+   "governanceExecutions": 19,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -170,7 +170,7 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 19,
+     "events": 18,
      "last": "2026-10-28"
     },
     {
@@ -304,13 +304,13 @@
    "source": "https://docs.balancer.fi/concepts/governance/",
    "value": "2 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-09-10",
    "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -364,13 +364,13 @@
    "source": "https://docs.balancer.fi/concepts/governance/",
    "value": "2 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-09-10",
    "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -424,13 +424,13 @@
    "source": "https://docs.compound.xyz/governance/",
    "value": "0 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-26",
    "controlChanges": 0,
    "governanceExecutions": 20,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -548,13 +548,13 @@
    "source": "https://docs.compound.xyz/governance/",
    "value": "0 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-26",
    "controlChanges": 0,
    "governanceExecutions": 20,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -672,13 +672,13 @@
    "source": "https://docs.cow.fi/cow-protocol/reference/contracts/core",
    "value": "12 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-30",
    "controlChanges": 12,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -778,15 +778,15 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/deployments/dao/",
-   "value": "4 control changes \u00b7 41 governance executions in 90 days",
+   "value": "4 control changes \u00b7 40 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-29",
    "controlChanges": 4,
-   "governanceExecutions": 41,
+   "governanceExecutions": 40,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -794,7 +794,7 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 41,
+     "events": 40,
      "last": "2026-10-29"
     },
     {
@@ -904,13 +904,13 @@
    "source": "https://github.com/euler-xyz/euler-interfaces/blob/master/addresses/1/GovernorAddresses.json",
    "value": "0 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": null,
    "controlChanges": 0,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -947,13 +947,13 @@
    "source": "https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md",
    "value": "0 control changes \u00b7 5 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-27",
    "controlChanges": 0,
    "governanceExecutions": 5,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1063,13 +1063,13 @@
    "source": "https://etherscan.io/address/0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3",
    "value": "2 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-23",
    "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1107,13 +1107,13 @@
    "source": "https://docs.lido.fi/deployed-contracts/",
    "value": "0 control changes \u00b7 3 governance executions in 90 days",
    "note": "Executions are counted when Lido's Emergency Protected Timelock executes a proposal; the Aragon vote that submitted it is not counted again.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-23",
    "controlChanges": 0,
    "governanceExecutions": 3,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1207,13 +1207,13 @@
    "source": "https://docs.morpho.org/developers/contracts/addresses/",
    "value": "2 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-09-22",
    "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1259,13 +1259,13 @@
    "source": "https://etherscan.io/address/0x111111125421cA6dc452d289314280a0f8842A65",
    "value": "0 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": null,
    "controlChanges": 0,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1286,13 +1286,13 @@
    "source": "https://github.com/pendle-finance/pendle-core-v2-public/blob/main/deployments/1-core.json",
    "value": "0 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": null,
    "controlChanges": 0,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1329,13 +1329,13 @@
    "source": "https://docs.rocketpool.net/overview/contracts-integrations",
    "value": "1 control change \u00b7 4 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-09-11",
    "controlChanges": 1,
    "governanceExecutions": 4,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1437,13 +1437,13 @@
    "source": "https://github.com/sparkdotfi/spark-address-registry/blob/master/src/Ethereum.sol",
    "value": "0 control changes \u00b7 6 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-29",
    "controlChanges": 0,
    "governanceExecutions": 6,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1545,13 +1545,13 @@
    "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
    "value": "0 control changes \u00b7 2 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-05",
    "controlChanges": 0,
    "governanceExecutions": 2,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1645,13 +1645,13 @@
    "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
    "value": "0 control changes \u00b7 2 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-05",
    "controlChanges": 0,
    "governanceExecutions": 2,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1745,13 +1745,13 @@
    "source": "https://developers.uniswap.org/docs/ecosystem/governance/technical-reference",
    "value": "0 control changes \u00b7 2 governance executions in 90 days",
    "note": null,
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-05",
    "controlChanges": 0,
    "governanceExecutions": 2,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1845,13 +1845,13 @@
    "source": "https://github.com/yearn/yearn-devdocs/blob/master/src/ethereum/constants.ts",
    "value": "2 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-15",
    "controlChanges": 2,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
@@ -1897,13 +1897,13 @@
    "source": "https://github.com/0xProject/0x-settler",
    "value": "10 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
-   "updatedAt": "2026-10-30",
+   "updatedAt": "2026-10-31",
    "lastEvent": "2026-10-30",
    "controlChanges": 10,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
-    "from": "2026-08-01"
+    "from": "2026-08-02"
    },
    "contracts": [
     {
