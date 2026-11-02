@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T10:13:45Z",
+ "generated": "2026-11-02T11:08:50Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -777,7 +777,7 @@
   },
   "curve": {
    "name": "Curve DAO",
-   "source": "https://docs.curve.finance/deployments/dao/",
+   "source": "https://docs.curve.finance/user/deployments",
    "value": "4 control changes \u00b7 38 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-02",
