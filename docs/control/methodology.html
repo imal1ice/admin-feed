@@ -28,7 +28,7 @@ a{color:inherit} code{font-size:14px} li{margin:4px 0}
 </ul>
 
 <h2>Dates and sources</h2>
-<p>Events come from <code>eth_getLogs</code> on the listed addresses, filtered to <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>'s event catalog (<code>ownerwatch events</code> prints it). The 90-day history before watching started was filled with <code>ownerwatch backfill</code> over the same addresses. Every date is the block's own timestamp. Every counted event links to its transaction, so any number can be checked on Etherscan.</p>
+<p>Events come from <code>eth_getLogs</code> on the listed addresses, filtered to <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>'s event catalog (<code>ownerwatch events</code> prints it). The 90-day history before watching started was filled with <code>ownerwatch backfill</code> over the same addresses. Every date is the block's own timestamp. The ten most recent counted events of each system link to their transactions on the <a href="./">main page</a>, and every event behind every count is in <a href="https://github.com/imal1ice/admin-feed/blob/main/alerts.jsonl">alerts.jsonl</a> with its transaction hash, so any number can be checked on Etherscan.</p>
 
 <h2>How to read it</h2>
 <p>These are counts of things that happened on-chain. They are not a rating, and the feed attaches no reading to them: a high number can mean active, careful governance, and a zero can mean a system that rarely needs changing. The live stream of the same events is the <a href="../">admin-feed</a>.</p>

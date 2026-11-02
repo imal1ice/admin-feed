@@ -214,7 +214,7 @@
   },
   "curve-dao": {
    "name": "Curve DAO",
-   "source": "https://docs.curve.finance/deployments/dao/",
+   "source": "https://docs.curve.finance/user/deployments",
    "contracts": [
     {
      "address": "0xE478de485ad2fe566d49342Cbd03E49ed7DB3356",

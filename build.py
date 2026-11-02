@@ -1,10 +1,13 @@
 """Render docs/index.html and docs/feed.xml from alerts.jsonl. Standard library only."""
 from __future__ import annotations
 
+import collections
 import datetime as dt
 import html
+import http.client
 import json
 import pathlib
+import re
 from xml.sax.saxutils import escape
 
 ROOT = pathlib.Path(__file__).parent
@@ -13,16 +16,35 @@ DOCS = ROOT / "docs"
 SITE = "https://imal1ice.github.io/admin-feed/"
 EXPLORERS = {"ethereum": "https://etherscan.io", "base": "https://basescan.org",
              "arbitrum": "https://arbiscan.io", "optimism": "https://optimistic.etherscan.io"}
+SAFE_PREFIXES = {"ethereum": "eth", "base": "base", "arbitrum": "arb1", "optimism": "oeth"}
 MAX_PAGE = 500
 MAX_RSS = 100
+# On-chain text (proposal descriptions, vote metadata) can hold characters XML 1.0 forbids; one of them breaks the whole feed.
+XML_ILLEGAL = re.compile("[^\\t\\n\\r\\x20-\\ud7ff\\ue000-\\ufffd\\U00010000-\\U0010ffff]")
 
 
 def load() -> list[dict]:
     if not ALERTS.exists():
         return []
     rows = [json.loads(l) for l in ALERTS.read_text(encoding="utf-8").splitlines() if l.strip()]
+    assign_guids(rows)
     rows.sort(key=lambda r: (r.get("ts", ""), r.get("block", 0)), reverse=True)
     return rows
+
+
+def assign_guids(rows: list[dict]) -> None:
+    """Give each alert a stable RSS guid. Alerts carry no log index and one transaction can emit the same event
+    on the same contract many times, so repeats get a counter. rows must be in file order: alerts.jsonl only
+    grows, so a counter never changes once assigned."""
+    seen: collections.Counter = collections.Counter()
+    for r in rows:
+        base = f"{r.get('chain')}:{(r.get('tx_hash') or '').rsplit('/', 1)[-1]}:{r.get('contract')}:{r.get('event')}:{r.get('block')}"
+        seen[base] += 1
+        r["guid"] = base if seen[base] == 1 else f"{base}:{seen[base]}"
+
+
+def xml_text(value: object) -> str:
+    return escape(XML_ILLEGAL.sub("", str(value)))
 
 
 def tx_url(row: dict) -> str:
@@ -30,13 +52,17 @@ def tx_url(row: dict) -> str:
     tx = row.get("tx_hash") or ""
     if tx.startswith("http"):
         return tx
+    if row.get("source") == "Safe" and not row.get("block"):
+        # A queued Safe transaction carries a safeTxHash at block 0: it has no on-chain transaction yet.
+        prefix = SAFE_PREFIXES.get(row.get("chain", ""))
+        return f"https://app.safe.global/transactions/queue?safe={prefix}:{row.get('contract')}" if prefix else ""
     base = EXPLORERS.get(row.get("chain", ""), "")
     return f"{base}/tx/{tx}" if base and tx.startswith("0x") else ""
 
 
 def tx_link(row: dict) -> str:
     url = tx_url(row)
-    h = url.rsplit("/", 1)[-1] if url else (row.get("tx_hash") or "-")
+    h = (row.get("tx_hash") or "-").rsplit("/", 1)[-1]
     if url:
         return f'<a href="{html.escape(url)}">{html.escape(h[:10])}…</a>'
     return html.escape(h or "-")
@@ -97,9 +123,8 @@ def render_rss(rows: list[dict]) -> str:
             pub = ""
         title = f"[{r.get('severity', 'info').upper()}] {r.get('label', '')}: {r.get('event', '')}"
         link = tx_url(r) or SITE
-        guid = f"{r.get('chain')}:{(r.get('tx_hash') or '').rsplit('/', 1)[-1]}:{r.get('contract')}:{r.get('event')}:{r.get('block')}"
-        items.append(f"<item><title>{escape(title)}</title><link>{escape(link)}</link><guid isPermaLink=\"false\">{escape(guid)}</guid>"
-                     f"<pubDate>{pub}</pubDate><description>{escape(str(r.get('message', '')))} (block {r.get('block')}, {escape(str(r.get('chain')))})</description></item>")
+        items.append(f"<item><title>{xml_text(title)}</title><link>{xml_text(link)}</link><guid isPermaLink=\"false\">{xml_text(r.get('guid', ''))}</guid>"
+                     f"<pubDate>{pub}</pubDate><description>{xml_text(r.get('message', ''))} (block {r.get('block')}, {xml_text(r.get('chain'))})</description></item>")
     return ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Admin surface changes</title>'
             f'<link>{SITE}</link><description>Timelock queues, upgrades, role grants and Safe changes on major protocols on Ethereum, Arbitrum, Optimism and Base, via ownerwatch.</description>'
             + "".join(items) + "</channel></rss>")
@@ -140,10 +165,9 @@ def block_dates(rows: list[dict]) -> dict[int, str]:
     which can trail the block by up to an hour; dates here are the block's own. A block the RPC will not
     answer this run falls back to the alert's date and is retried on the next build."""
     import time
-    import urllib.error
     import urllib.request
     cache = {int(k): v for k, v in json.loads(BLOCKTIMES.read_text()).items()} if BLOCKTIMES.exists() else {}
-    missing = sorted({r["block"] for r in rows} - cache.keys())
+    missing = sorted({r["block"] for r in rows if r["block"]} - cache.keys())
     fetched = 0
     for i in range(0, len(missing), 10):
         body = [{"jsonrpc": "2.0", "id": b, "method": "eth_getBlockByNumber", "params": [hex(b), False]} for b in missing[i:i + 10]]
@@ -152,13 +176,15 @@ def block_dates(rows: list[dict]) -> dict[int, str]:
             try:
                 with urllib.request.urlopen(req, timeout=60) as resp:
                     answers = json.loads(resp.read())
-                break
-            except (urllib.error.URLError, TimeoutError):
-                time.sleep(2 ** attempt * 2)
+                if isinstance(answers, list):   # a rate limit or error answers with a single object
+                    break
+            except (OSError, ValueError, http.client.HTTPException):
+                pass
+            time.sleep(2 ** attempt * 2)
         else:
             break
         for ans in answers:
-            if ans.get("result"):
+            if isinstance(ans, dict) and ans.get("result"):
                 cache[ans["id"]] = dt.datetime.fromtimestamp(int(ans["result"]["timestamp"], 16), dt.timezone.utc).strftime("%Y-%m-%d")
                 fetched += 1
         time.sleep(0.5)

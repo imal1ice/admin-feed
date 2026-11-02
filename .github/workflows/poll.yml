@@ -20,13 +20,21 @@ jobs:
       - run: pip install -q "ownerwatch>=0.8.0"
       - name: Poll once
         run: ownerwatch run --once --config ownerwatch.yaml
+      # A chain whose RPC is down fails the job, but what the other chains found still gets published.
       - name: Render site
+        if: ${{ !cancelled() }}
         run: python build.py
       - name: Commit state and site
+        if: ${{ !cancelled() }}
         run: |
           git config user.name imal1ice
           git config user.email imal1ice@proton.me
           git add -A state alerts.jsonl docs control/blocktimes.json
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -q -m "poll $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull -q --rebase && git push -q
+          for i in 1 2 3 4; do
+            if git pull -q --rebase -X theirs && git push -q; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 15))
+          done
+          exit 1
