@@ -16,7 +16,7 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 <h1>Who controls mid-size DeFi? 36 protocols, read from the chain</h1>
 <p class="sub">imal1ice · October 2026 · <a href="./">admin-feed</a></p>
 
-<p>Between 14 and 26 October 2026 I read the admin setup of 36 DeFi protocols on Ethereum, Arbitrum, Base and Optimism, mostly in the $10M to $400M TVL range. For each one I asked who can upgrade the contracts, mint the token, pause, move collateral or change the oracle, and whether anything slows them down. Everything came from public chain state and verified source code, read with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>. No protocol is named here: several findings are not fixed yet, and every team was told privately first.</p>
+<p>Between 14 and 26 October 2026 I read the admin setup of 36 DeFi protocols on Ethereum, Arbitrum, Base and Optimism, mostly in the $10M to $400M TVL range. For each one I asked who can upgrade the contracts, mint the token, pause, move collateral or change the oracle, and whether anything slows them down. Everything came from public chain state and verified source code, read with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>. No protocol is named here, because several findings are not fixed yet. Twenty teams received their findings by private email first. Eleven publish no email, so they have not seen theirs; eight of those got a public request for a private contact, with no details. The other five had nothing to report.</p>
 
 <div class="stats">
 <div class="stat"><b>10</b><span>put a privileged role on a single key</span></div>
@@ -24,6 +24,8 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 <div class="stat"><b>8</b><span>are genuinely well run</span></div>
 <div class="stat"><b>10+</b><span>publish docs that contradict their contracts</span></div>
 </div>
+
+<p>The other two could not be verified from public information: unverified or diamond-style contracts with no docs.</p>
 
 <h2>One key, one transaction</h2>
 <p>Ten of the 36 put at least one privileged role on a single externally owned address. Depending on the protocol, that key can upgrade the contracts, appoint a minter, blacklist holders, approve redemptions or move collateral, in one transaction, with no second signature and no delay. Several of these keys are active hot wallets with hundreds or thousands of transactions. Some teams say the key sits behind MPC or a custody provider. That may be true, but nothing on-chain shows it, and holders cannot check it.</p>
@@ -46,7 +48,7 @@ footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid va
 </ul>
 
 <h2>Nowhere to send a security note</h2>
-<p>Thirteen offered no working private channel. Eleven publish no email at all: Discord, X or Telegram only, often behind phone verification. Two publish a security address that cannot receive mail: one domain has no mail server, and the other address does not exist.</p>
+<p>Thirteen offered no working private channel. Eleven publish no email at all: Discord, X or Telegram only, often behind phone verification. Two publish a security address that cannot receive mail: one domain has no mail server, and the other address does not exist. I reached those two through a general address.</p>
 
 <h2>What this means</h2>
 <p><b>For users:</b> "audited" and "multisig" on a landing page say little about who can change the protocol tomorrow. The questions that matter can be answered from the chain in minutes: who holds each admin role, how many signatures it takes, and whether anything delays them.</p>
