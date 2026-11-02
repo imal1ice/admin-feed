@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T16:07:07Z",
+ "generated": "2026-11-02T17:09:46Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -778,12 +778,12 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/user/deployments",
-   "value": "4 control changes \u00b7 38 governance executions in 90 days",
+   "value": "4 control changes \u00b7 39 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-02",
    "lastEvent": "2026-11-02",
    "controlChanges": 4,
-   "governanceExecutions": 38,
+   "governanceExecutions": 39,
    "window": {
     "days": 90,
     "from": "2026-08-04"
@@ -794,7 +794,7 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 38,
+     "events": 39,
      "last": "2026-11-02"
     },
     {
@@ -815,6 +815,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-02",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1513 executed",
+     "tx": "https://etherscan.io/tx/0x2f6b2b135254c815ef52ea05d6c609ff33d4c4574f47317be02527c932eb2714"
+    },
     {
      "date": "2026-11-02",
      "label": "Curve Ownership voting",
@@ -886,14 +894,6 @@
      "kind": "governance execution",
      "message": "Aragon vote 1505 executed",
      "tx": "https://etherscan.io/tx/0x243d49d61886e263a78bf4b22a8272d7bccaac25088b2725678f09382e343277"
-    },
-    {
-     "date": "2026-10-21",
-     "label": "Curve Ownership voting",
-     "event": "ExecuteVote",
-     "kind": "governance execution",
-     "message": "Aragon vote 1503 executed",
-     "tx": "https://etherscan.io/tx/0x0e330fe0220bf93981eae68255ce3196734c1036e689335d8a8c7f61fcc637c1"
     }
    ],
    "system": "curve-dao",
