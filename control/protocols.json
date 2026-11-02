@@ -43,7 +43,10 @@
     }
    ],
    "decoded": true,
-   "executions": true
+   "executions": true,
+   "execution_events": [
+    "PayloadExecuted"
+   ]
   },
   "sky-spark": {
    "name": "Sky governance (Spark spells)",
