@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T05:00:00Z",
+ "generated": "2026-11-03T05:59:35Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -1343,12 +1343,12 @@
   "rocketpool": {
    "name": "Rocket Pool DAO",
    "source": "https://docs.rocketpool.net/overview/contracts-integrations",
-   "value": "1 control change \u00b7 4 governance executions in 90 days",
+   "value": "1 control change \u00b7 5 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-03",
-   "lastEvent": "2026-09-11",
+   "lastEvent": "2026-11-03",
    "controlChanges": 1,
-   "governanceExecutions": 4,
+   "governanceExecutions": 5,
    "window": {
     "days": 90,
     "from": "2026-08-05"
@@ -1391,8 +1391,8 @@
      "label": "rocketDAOProposal (oDAO and security council)",
      "type": "governor",
      "since": "2026-10-29",
-     "events": 3,
-     "last": "2026-09-11"
+     "events": 4,
+     "last": "2026-11-03"
     },
     {
      "address": "0x9290AA076a2F1418a4E414E3D83AE03cA8E1ad10",
@@ -1404,6 +1404,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-03",
+     "label": "Rocket Pool DAO proposals (oDAO, security council)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "Rocket Pool DAO proposal 33 executed by 0x8d074ad69b55dD57dA2708306f1c200ae1803359",
+     "tx": "https://etherscan.io/tx/0x5db2a9b4574586577c79e6bdac34bb9cce7fbcb75ba18479ffadc805636ab229"
+    },
     {
      "date": "2026-09-11",
      "label": "Rocket Pool DAO proposals (oDAO, security council)",
