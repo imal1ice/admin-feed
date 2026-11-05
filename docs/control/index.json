@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T21:54:07Z",
+ "generated": "2026-11-05T22:55:07Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -422,12 +422,12 @@
   "compound-v2": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 20 governance executions in 90 days",
+   "value": "0 control changes \u00b7 21 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-05",
-   "lastEvent": "2026-10-26",
+   "lastEvent": "2026-11-05",
    "controlChanges": 0,
-   "governanceExecutions": 20,
+   "governanceExecutions": 21,
    "window": {
     "days": 90,
     "from": "2026-08-07"
@@ -438,16 +438,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 61,
-     "last": "2026-10-26"
+     "events": 62,
+     "last": "2026-11-05"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 20,
-     "last": "2026-10-26"
+     "events": 21,
+     "last": "2026-11-05"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -459,6 +459,22 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-05",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x9A3D64E386C18Cb1d6d5179a9596A4B5736e98A6 value 0 sig '' = sendMessage(address,bytes,uint32) [0x3dbb202b]",
+     "tx": "https://etherscan.io/tx/0x0c3a2644e0febccc2cfddb142aa3da6275a59218502cd13b7011806a471173a7"
+    },
+    {
+     "date": "2026-11-05",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 621 executed",
+     "tx": "https://etherscan.io/tx/0x0c3a2644e0febccc2cfddb142aa3da6275a59218502cd13b7011806a471173a7"
+    },
     {
      "date": "2026-10-26",
      "label": "Compound Timelock",
@@ -522,22 +538,6 @@
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1 value 0 sig ''",
      "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
-    },
-    {
-     "date": "2026-10-10",
-     "label": "Compound Governor Bravo (proxy)",
-     "event": "ProposalExecuted",
-     "kind": "governance execution",
-     "message": "proposal 614 executed",
-     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
-    },
-    {
-     "date": "2026-10-06",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig ''",
-     "tx": "https://etherscan.io/tx/0xafaa5bf6b68ebab27d8cc4212730b77a3371396712bd296da7ce0a63ba083476"
     }
    ],
    "system": "compound-governance",
@@ -546,12 +546,12 @@
   "compound-v3": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 20 governance executions in 90 days",
+   "value": "0 control changes \u00b7 21 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-05",
-   "lastEvent": "2026-10-26",
+   "lastEvent": "2026-11-05",
    "controlChanges": 0,
-   "governanceExecutions": 20,
+   "governanceExecutions": 21,
    "window": {
     "days": 90,
     "from": "2026-08-07"
@@ -562,16 +562,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 61,
-     "last": "2026-10-26"
+     "events": 62,
+     "last": "2026-11-05"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 20,
-     "last": "2026-10-26"
+     "events": 21,
+     "last": "2026-11-05"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -583,6 +583,22 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-05",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x9A3D64E386C18Cb1d6d5179a9596A4B5736e98A6 value 0 sig '' = sendMessage(address,bytes,uint32) [0x3dbb202b]",
+     "tx": "https://etherscan.io/tx/0x0c3a2644e0febccc2cfddb142aa3da6275a59218502cd13b7011806a471173a7"
+    },
+    {
+     "date": "2026-11-05",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 621 executed",
+     "tx": "https://etherscan.io/tx/0x0c3a2644e0febccc2cfddb142aa3da6275a59218502cd13b7011806a471173a7"
+    },
     {
      "date": "2026-10-26",
      "label": "Compound Timelock",
@@ -646,22 +662,6 @@
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1 value 0 sig ''",
      "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
-    },
-    {
-     "date": "2026-10-10",
-     "label": "Compound Governor Bravo (proxy)",
-     "event": "ProposalExecuted",
-     "kind": "governance execution",
-     "message": "proposal 614 executed",
-     "tx": "https://etherscan.io/tx/0x353283032be7c4c88d66d43bcc0547753ff10c7802bd4efc4fe57260f709a678"
-    },
-    {
-     "date": "2026-10-06",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig ''",
-     "tx": "https://etherscan.io/tx/0xafaa5bf6b68ebab27d8cc4212730b77a3371396712bd296da7ce0a63ba083476"
     }
    ],
    "system": "compound-governance",
