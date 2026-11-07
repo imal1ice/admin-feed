@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07T09:53:27Z",
+ "generated": "2026-11-07T10:49:31Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -778,12 +778,12 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/user/deployments",
-   "value": "4 control changes \u00b7 35 governance executions in 90 days",
+   "value": "4 control changes \u00b7 36 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-07",
-   "lastEvent": "2026-11-03",
+   "lastEvent": "2026-11-07",
    "controlChanges": 4,
-   "governanceExecutions": 35,
+   "governanceExecutions": 36,
    "window": {
     "days": 90,
     "from": "2026-08-09"
@@ -794,8 +794,8 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 35,
-     "last": "2026-11-03"
+     "events": 36,
+     "last": "2026-11-07"
     },
     {
      "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
@@ -815,6 +815,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-07",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1515 executed",
+     "tx": "https://etherscan.io/tx/0xa71b20cf8c21ca88398aba3ae8f8b2c86491dee0c969f755739233efb31c0d6c"
+    },
     {
      "date": "2026-11-03",
      "label": "Curve Ownership voting",
@@ -886,14 +894,6 @@
      "kind": "control change",
      "message": "Safe owner added 0x4046B37Ffc36B0C723d7Fc64e0C763B698D81934",
      "tx": "https://etherscan.io/tx/0x3083723f8647cf70b47dc18880ec2980bfb6bae0211f3ffc27f7bd7f44ef199f"
-    },
-    {
-     "date": "2026-10-29",
-     "label": "Curve Ownership voting",
-     "event": "ExecuteVote",
-     "kind": "governance execution",
-     "message": "Aragon vote 1509 executed",
-     "tx": "https://etherscan.io/tx/0x567e9b7264c0a6f8397648482778dd7dce742aecd96745da576f799871abca53"
     }
    ],
    "system": "curve-dao",
