@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08T15:43:57Z",
+ "generated": "2026-11-08T16:46:15Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -945,12 +945,12 @@
   "fluid": {
    "name": "Fluid governance",
    "source": "https://github.com/Instadapp/fluid-contracts-public/blob/main/deployments/deployments.md",
-   "value": "0 control changes \u00b7 4 governance executions in 90 days",
+   "value": "0 control changes \u00b7 5 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-08",
-   "lastEvent": "2026-10-27",
+   "lastEvent": "2026-11-08",
    "controlChanges": 0,
-   "governanceExecutions": 4,
+   "governanceExecutions": 5,
    "window": {
     "days": 90,
     "from": "2026-08-10"
@@ -961,19 +961,35 @@
      "label": "InstaTimelock",
      "type": "timelock",
      "since": "2026-10-28",
-     "events": 4,
-     "last": "2026-10-27"
+     "events": 5,
+     "last": "2026-11-08"
     },
     {
      "address": "0x0204Cd037B2ec03605CFdFe482D8e257C765fA1B",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-28",
-     "events": 4,
-     "last": "2026-10-27"
+     "events": 5,
+     "last": "2026-11-08"
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-08",
+     "label": "Fluid InstaTimelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0x2386DC45AdDed673317eF068992F19421B481F4c value 0 sig 'executePayload(address,string,bytes)' = executePayload(0x23427ef17f1bf975fced43cc802c1a23cd7f4e48, execute(), 0x)",
+     "tx": "https://etherscan.io/tx/0x8781f0b162546a3969957b5d7dda84a4f0e0f405615e3ce5742321a864a2fa26"
+    },
+    {
+     "date": "2026-11-08",
+     "label": "Fluid Governor",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 142 executed",
+     "tx": "https://etherscan.io/tx/0x8781f0b162546a3969957b5d7dda84a4f0e0f405615e3ce5742321a864a2fa26"
+    },
     {
      "date": "2026-10-27",
      "label": "Fluid InstaTimelock",
