@@ -8,6 +8,7 @@ import http.client
 import json
 import pathlib
 import re
+import shutil
 from xml.sax.saxutils import escape
 
 ROOT = pathlib.Path(__file__).parent
@@ -18,6 +19,27 @@ EXPLORERS = {"ethereum": "https://etherscan.io", "base": "https://basescan.org",
              "arbitrum": "https://arbiscan.io", "optimism": "https://optimistic.etherscan.io"}
 SAFE_PREFIXES = {"ethereum": "eth", "base": "base", "arbitrum": "arb1", "optimism": "oeth"}
 MAX_PAGE = 500
+
+ICON_TAGS = (
+    f'<link rel="icon" type="image/png" sizes="180x180" href="{SITE}favicon.png">'
+    f'<link rel="apple-touch-icon" href="{SITE}favicon.png">'
+    '<meta name="theme-color" content="#121D30">'
+)
+
+
+def head_extra(og_title: str, og_desc: str, og_url: str) -> str:
+    """Favicon + Open Graph / Twitter card tags shared by every page."""
+    t = html.escape(og_title, quote=True)
+    d = html.escape(og_desc, quote=True)
+    return (
+        ICON_TAGS +
+        '<meta property="og:type" content="website">'
+        f'<meta property="og:title" content="{t}">'
+        f'<meta property="og:description" content="{d}">'
+        f'<meta property="og:url" content="{og_url}">'
+        f'<meta property="og:image" content="{SITE}og-image.png">'
+        '<meta name="twitter:card" content="summary_large_image">'
+    )
 MAX_RSS = 100
 # On-chain text (proposal descriptions, vote metadata) can hold characters XML 1.0 forbids; one of them breaks the whole feed.
 XML_ILLEGAL = re.compile("[^\\t\\n\\r\\x20-\\ud7ff\\ue000-\\ufffd\\U00010000-\\U0010ffff]")
@@ -83,6 +105,7 @@ def render_html(rows: list[dict]) -> str:
     parts = [f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Admin surface changes</title>
 <link rel="alternate" type="application/rss+xml" title="admin-feed" href="feed.xml">
+{head_extra("admin-feed — DeFi admin surface changes", "Timelock queues, upgrades, role grants and Safe changes on major protocols on Ethereum, Arbitrum, Optimism and Base, via ownerwatch.", SITE)}
 <style>
 :root{{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--crit:#b00020;--high:#c2410c;--med:#a16207;--info:#2563eb}}
 @media(prefers-color-scheme:dark){{:root{{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a;--crit:#ff6b6b;--high:#fb923c;--med:#facc15;--info:#60a5fa}}}}
@@ -246,6 +269,7 @@ def render_control(rows: list[dict]) -> tuple[dict, str]:
             "protocols": protocols}
     parts = [f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Admin events by protocol</title>
+{head_extra("Admin events by protocol — admin-feed", "Per-protocol timelock, upgrade, role and Safe changes on major DeFi protocols, via ownerwatch.", SITE + "control/")}
 <style>
 :root{{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}}
 @media(prefers-color-scheme:dark){{:root{{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}}}
@@ -278,6 +302,10 @@ table{{border-collapse:collapse;width:100%;font-size:14px}} td,th{{text-align:le
 def main() -> None:
     rows = load()
     DOCS.mkdir(exist_ok=True)
+    for asset in ("favicon.png", "og-image.png"):
+        src = ROOT / "assets" / asset
+        if src.exists():
+            shutil.copyfile(src, DOCS / asset)
     (DOCS / "index.html").write_text(render_html(rows), encoding="utf-8")
     (DOCS / "feed.xml").write_text(render_rss(rows), encoding="utf-8")
     if CONTROL.exists():
