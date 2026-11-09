@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three months of DeFi admin activity</title>
+<meta name="description" content="What the admin-feed recorded: 664 control-surface events across major DeFi protocols on Ethereum and three L2s, 30 July to 2 November 2026, including 14 changes to who holds a multisig's keys.">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--accent:#b00020}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a;--accent:#ff6b6b}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px} p.sub{color:var(--muted);margin:0 0 28px}
+h2{font-size:18px;margin:32px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.stat{border:1px solid var(--line);border-radius:8px;padding:12px}
+.stat b{display:block;font-size:28px;line-height:1.1;color:var(--accent)} .stat span{font-size:14px;color:var(--muted)}
+ul{padding-left:20px} li{margin:6px 0} a{color:inherit} code{font-size:14px}
+footer{color:var(--muted);font-size:14px;margin-top:40px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>Three months of DeFi admin activity, read from the chain</h1>
+<p class="sub">imal1ice · November 2026 · <a href="./">admin-feed</a></p>
+
+<p>The <a href="./">admin-feed</a> watches the control contracts of major DeFi protocols — their timelocks, governors, treasuries and owner multisigs — and records every admin-surface event the block it happens. Between 2026-07-30 and 2026-11-02 it logged <b>664</b> such events across Ethereum, Arbitrum, Optimism and Base. This is what moved. Every figure here is a count of on-chain events, each linked to its transaction in the feed; it is a transparency view, not a judgement.</p>
+
+<div class="stats">
+<div class="stat"><b>664</b><span>admin-surface events recorded</span></div>
+<div class="stat"><b>14</b><span>changes to a multisig's signers or threshold</span></div>
+<div class="stat"><b>309</b><span>privileged actions executed</span></div>
+<div class="stat"><b>157</b><span>queued or proposed, visible before they ran</span></div>
+</div>
+
+<h2>Who changed their keys</h2>
+<p>The sharpest control event is a change to who holds a multisig's keys. In this window 14 of them were recorded, across 6 protocols whose Safes guard real money:</p>
+<ul>
+<li>the Balancer treasury Safe swapped a signer (10 Sep);</li>
+<li>the Morpho owner Safe added a signer and raised its threshold to 6 (22 Sep);</li>
+<li>the Yearn “Brain” multisig removed two signers (15 Oct);</li>
+<li>the Aave Risk Council Safe swapped a signer (22 Oct);</li>
+<li>the Curve Emergency DAO Safe reshuffled two seats in one day (29 Oct);</li>
+<li>the Lido Reseal committee swapped a signer (30 Oct);</li>
+</ul>
+<p>None of these is hidden — they are ordinary Safe <code>AddedOwner</code>, <code>RemovedOwner</code> and <code>ChangedThreshold</code> events, public the moment they land. The point of the feed is that someone is reading them.</p>
+
+<h2>The timelock is only as good as its readers</h2>
+<p>Most of the activity — 309 executed actions and 157 queued or proposed — ran through timelocks and governors: Compound's timelock, Aave's Payloads Controller, the ENS and Arbitrum DAO timelocks, Curve's ownership voting. A timelock exists so that a privileged call can be seen before it executes. That delay only protects anyone if the queue is actually watched; a queued call that no one reads is a delay in name only.</p>
+
+<h2>Where the activity was</h2>
+<p>The most active control contracts in the window:</p>
+<ul>
+<li><b>Compound Timelock</b> — 136 events;</li>
+<li><b>Balancer Treasury (Safe)</b> — 89 events;</li>
+<li><b>Compound Governor Bravo (proxy)</b> — 79 events;</li>
+<li><b>Aave Payloads Controller (proxy)</b> — 72 events;</li>
+<li><b>Curve Ownership voting</b> — 43 events;</li>
+<li><b>ENS DAO Timelock</b> — 41 events;</li>
+<li><b>Arbitrum DAO L1 Timelock (proxy)</b> — 32 events;</li>
+<li><b>Aave Governance V3</b> — 30 events;</li>
+</ul>
+
+<h2>How this was read</h2>
+<p>Every event is decoded from public chain state with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> and recorded by the <a href="./">admin-feed</a>, which runs hourly and publishes an <a href="./feed.xml">RSS feed</a>. The catalog of what it watches, and how each event is decoded, is in the <a href="./control/methodology.html">methodology</a>. Nothing here is private: every number is a public on-chain event you can open in a block explorer from the feed.</p>
+
+<footer>Read from the chain with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>. The feed and its methodology are public. imal1ice, November 2026.</footer>
+</body></html>
