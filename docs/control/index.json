@@ -1,17 +1,17 @@
 {
- "generated": "2026-11-09T19:00:34Z",
+ "generated": "2026-11-09T20:00:19Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
   "aave-v3": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 16 governance executions in 90 days",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-09",
-   "lastEvent": "2026-10-28",
+   "lastEvent": "2026-11-09",
    "controlChanges": 2,
-   "governanceExecutions": 16,
+   "governanceExecutions": 19,
    "window": {
     "days": 90,
     "from": "2026-08-11"
@@ -22,8 +22,8 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 16,
-     "last": "2026-10-28"
+     "events": 19,
+     "last": "2026-11-09"
     },
     {
      "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
@@ -67,6 +67,30 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 479 executed",
+     "tx": "https://etherscan.io/tx/0x22de5c4a2e030a959c0e2657dcd6c6b813aae6b863c05c471b4a50051d29998b"
+    },
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 478 executed",
+     "tx": "https://etherscan.io/tx/0xdf88ec1b6666b76652b8ca610345e8731e1e60f9fdd315b3ddc9832d08a3bf2a"
+    },
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 480 executed",
+     "tx": "https://etherscan.io/tx/0x66992e9b4e0fe1f979fff147e386d159fbac905603d5618f07be477435727dc8"
+    },
     {
      "date": "2026-10-28",
      "label": "Aave Payloads Controller (proxy)",
@@ -122,30 +146,6 @@
      "kind": "governance execution",
      "message": "Aave payload 473 executed",
      "tx": "https://etherscan.io/tx/0x750886b77571dc6dd0a2e74e657963e83c8bd025d3d3f9aaf13dc5b4ec3a9fbe"
-    },
-    {
-     "date": "2026-10-12",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 472 executed",
-     "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
-    },
-    {
-     "date": "2026-09-30",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 471 executed",
-     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
-    },
-    {
-     "date": "2026-09-25",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 470 executed",
-     "tx": "https://etherscan.io/tx/0x60256f180c019dd7bd101bbe680461df28f1a59ef811025b8b49e94730351adc"
     }
    ],
    "system": "aave-governance-v3",
@@ -154,12 +154,12 @@
   "aave-v4": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 16 governance executions in 90 days",
+   "value": "2 control changes \u00b7 19 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-09",
-   "lastEvent": "2026-10-28",
+   "lastEvent": "2026-11-09",
    "controlChanges": 2,
-   "governanceExecutions": 16,
+   "governanceExecutions": 19,
    "window": {
     "days": 90,
     "from": "2026-08-11"
@@ -170,8 +170,8 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 16,
-     "last": "2026-10-28"
+     "events": 19,
+     "last": "2026-11-09"
     },
     {
      "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
@@ -215,6 +215,30 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 479 executed",
+     "tx": "https://etherscan.io/tx/0x22de5c4a2e030a959c0e2657dcd6c6b813aae6b863c05c471b4a50051d29998b"
+    },
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 478 executed",
+     "tx": "https://etherscan.io/tx/0xdf88ec1b6666b76652b8ca610345e8731e1e60f9fdd315b3ddc9832d08a3bf2a"
+    },
+    {
+     "date": "2026-11-09",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 480 executed",
+     "tx": "https://etherscan.io/tx/0x66992e9b4e0fe1f979fff147e386d159fbac905603d5618f07be477435727dc8"
+    },
     {
      "date": "2026-10-28",
      "label": "Aave Payloads Controller (proxy)",
@@ -270,30 +294,6 @@
      "kind": "governance execution",
      "message": "Aave payload 473 executed",
      "tx": "https://etherscan.io/tx/0x750886b77571dc6dd0a2e74e657963e83c8bd025d3d3f9aaf13dc5b4ec3a9fbe"
-    },
-    {
-     "date": "2026-10-12",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 472 executed",
-     "tx": "https://etherscan.io/tx/0x124cf7682634d501e609d69fc432cb639caadfc498efddebcb7d4b99bc68de25"
-    },
-    {
-     "date": "2026-09-30",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 471 executed",
-     "tx": "https://etherscan.io/tx/0x78a34f81997b8c61a4d3bd468da78b9c6555e03b2b9ad6d878d35a8439c91505"
-    },
-    {
-     "date": "2026-09-25",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 470 executed",
-     "tx": "https://etherscan.io/tx/0x60256f180c019dd7bd101bbe680461df28f1a59ef811025b8b49e94730351adc"
     }
    ],
    "system": "aave-governance-v3",
