@@ -396,6 +396,15 @@ def render_transparency(rows: list[dict]) -> str:
             .replace("%%ASOF%%", TRANS_ASOF).replace("%%GEN%%", gen))
 
 
+SITEMAP_PAGES = ["", "transparency.html", "report.html", "control/", "activity.html", "work.html"]
+
+
+def render_sitemap() -> str:
+    today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    urls = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{today}</lastmod></url>" for p in SITEMAP_PAGES)
+    return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + "</urlset>\n"
+
+
 def main() -> None:
     rows = load()
     DOCS.mkdir(exist_ok=True)
@@ -411,6 +420,8 @@ def main() -> None:
         (DOCS / "control" / "index.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
         (DOCS / "control" / "index.html").write_text(page, encoding="utf-8")
     (DOCS / "transparency.html").write_text(render_transparency(rows), encoding="utf-8")
+    (DOCS / "sitemap.xml").write_text(render_sitemap(), encoding="utf-8")
+    (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("")
     print(f"rendered {len(rows)} alerts")
 

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imal1ice.github.io/admin-feed/sitemap.xml
