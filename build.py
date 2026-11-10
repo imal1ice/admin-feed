@@ -119,7 +119,7 @@ h2{{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-
 footer{{color:var(--muted);font-size:13px;margin-top:32px}}
 </style></head><body>
 <h1>Admin surface changes</h1>
-<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
+<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="disclosures.html">Control disclosures</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
     if not rows:
         parts.append("<p>No changes recorded yet. The feed started on " + gen + ".</p>")
     for day, items in by_day.items():
@@ -396,13 +396,70 @@ def render_transparency(rows: list[dict]) -> str:
             .replace("%%ASOF%%", TRANS_ASOF).replace("%%GEN%%", gen))
 
 
-SITEMAP_PAGES = ["", "transparency.html", "report.html", "control/", "activity.html", "work.html"]
+SITEMAP_PAGES = ["", "transparency.html", "disclosures.html", "report.html", "control/", "activity.html", "work.html"]
 
 
 def render_sitemap() -> str:
     today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     urls = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{today}</lastmod></url>" for p in SITEMAP_PAGES)
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + "</urlset>\n"
+
+
+OW_BLOB = "https://github.com/imal1ice/ownerwatch/blob/main/examples/erc-8241/"
+DISCLOSURES = [  # (protocol, what it shows, records verified clean, example file)
+    ("Aave V3 (Ethereum core)", "Pool, addresses provider and ACLManager — 24 role holders and two timelocks, replayed from the logs.", "89", "aave-v3-drafted.json"),
+    ("Compound III (USDC)", "Comet and Configurator, upgradeable only through a proxy admin owned by the 48-hour Compound Timelock.", "12", "compound-iii-usdc.json"),
+    ("Uniswap V3 Factory", "a pure ownership chain resolving to the Uniswap Timelock (48h) — no roles, no proxy.", "8", "uniswap-v3.json"),
+    ("Morpho Blue", "an immutable singleton owned by a multisig — no upgrade path at all.", "6", "morpho-blue.json"),
+]
+
+DISCLOSURES_TEMPLATE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chain-verified control disclosures (ERC-8241)</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Machine-checkable ERC-8241 control disclosures for major DeFi protocols, each verified clean against on-chain state with ownerwatch.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chain-verified control disclosures (ERC-8241)">
+<meta property="og:description" content="Machine-checkable ERC-8241 control disclosures for major DeFi protocols, each verified clean against the chain with ownerwatch.">
+<meta property="og:url" content="https://imal1ice.github.io/admin-feed/disclosures.html">
+<meta property="og:image" content="https://imal1ice.github.io/admin-feed/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px} p.sub{color:var(--muted);margin:0 0 20px}
+h2{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:28px 0 8px}
+a{color:inherit} code{font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0} td,th{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);vertical-align:top} th{color:var(--muted);font-weight:600}
+footer{color:var(--muted);font-size:13px;margin-top:32px}
+</style></head><body>
+<h1>Chain-verified control disclosures</h1>
+<p class="sub"><a href="./">admin-feed</a> · ERC-8241 control disclosures by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
+
+<p>A control disclosure states, in a machine-checkable file, exactly <strong>who can change a protocol's contracts</strong> — every owner, proxy admin, role holder, Safe signer and timelock. <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> drafts it from the chain and <code>disclosure check</code> verifies every claim against on-chain state, so a reader never has to trust the prose. Here are four, for public protocols, each checking clean at a pinned block.</p>
+
+<table>
+<tr><th>Protocol</th><th>What the disclosure shows</th><th>Records verified</th><th>Disclosure</th></tr>
+%%ROWS%%
+</table>
+<p class="sub">“Records verified” is how many claims the checker settled against the chain with zero mismatches and zero undisclosed powers. Each example is pinned to a block; re-draft at the current block to re-verify.</p>
+
+<h2>How it works</h2>
+<p>Three commands: <code>disclosure draft</code> writes the file from the chain, <code>disclosure check</code> verifies it (and fails CI on any drift), and the ownerwatch GitHub Action emits a live status badge that goes red the moment on-chain control drifts from the disclosure. The 10-minute walk-through is the <a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/disclosure-quickstart.md">control-disclosure quickstart</a>.</p>
+
+<h2>Want yours?</h2>
+<p>If you publish a governance or security page, a machine-checkable disclosure turns “trust our docs” into “check the chain.” I draft it, chain-verify every claim, and wire the CI check and the live badge into your repo. Write to <a href="mailto:imal1ice@proton.me">imal1ice@proton.me</a>. Before anything is paid I share the terms, including where I am based, so you can decide whether you are able to work with me.</p>
+
+<footer><a href="./">← admin-feed</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></footer>
+</body></html>"""
+
+
+def render_disclosures() -> str:
+    rows = "\n".join(
+        f'<tr><td>{html.escape(name)}</td><td>{html.escape(what)}</td><td>{html.escape(n)} records ok</td>'
+        f'<td><a href="{OW_BLOB}{html.escape(f)}">JSON</a></td></tr>'
+        for name, what, n, f in DISCLOSURES)
+    return DISCLOSURES_TEMPLATE.replace("%%ROWS%%", rows)
 
 
 def main() -> None:
@@ -420,6 +477,7 @@ def main() -> None:
         (DOCS / "control" / "index.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
         (DOCS / "control" / "index.html").write_text(page, encoding="utf-8")
     (DOCS / "transparency.html").write_text(render_transparency(rows), encoding="utf-8")
+    (DOCS / "disclosures.html").write_text(render_disclosures(), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(render_sitemap(), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("")
