@@ -21,7 +21,7 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 <h1>Chain-verified control disclosures</h1>
 <p class="sub"><a href="./">admin-feed</a> · ERC-8241 control disclosures by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
 
-<p>A control disclosure states, in a machine-checkable file, exactly <strong>who can change a protocol's contracts</strong> — every owner, proxy admin, role holder, Safe signer and timelock. <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> drafts it from the chain and <code>disclosure check</code> verifies every claim against on-chain state, so a reader never has to trust the prose. Here are four, for public protocols, each checking clean at a pinned block.</p>
+<p>A control disclosure states, in a machine-checkable file, exactly <strong>who can change a protocol's contracts</strong> — every owner, proxy admin, role holder, Safe signer and timelock. <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> drafts it from the chain and <code>disclosure check</code> verifies every claim against on-chain state, so a reader never has to trust the prose. Here are five, for public protocols, each checking clean at a pinned block.</p>
 
 <table>
 <tr><th>Protocol</th><th>What the disclosure shows</th><th>Records verified</th><th>Disclosure</th></tr>
@@ -29,6 +29,7 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 <tr><td>Compound III (USDC)</td><td>Comet and Configurator, upgradeable only through a proxy admin owned by the 48-hour Compound Timelock.</td><td>12 records ok</td><td><a href="https://github.com/imal1ice/ownerwatch/blob/main/examples/erc-8241/compound-iii-usdc.json">JSON</a></td></tr>
 <tr><td>Uniswap V3 Factory</td><td>a pure ownership chain resolving to the Uniswap Timelock (48h) — no roles, no proxy.</td><td>8 records ok</td><td><a href="https://github.com/imal1ice/ownerwatch/blob/main/examples/erc-8241/uniswap-v3.json">JSON</a></td></tr>
 <tr><td>Morpho Blue</td><td>an immutable singleton owned by a multisig — no upgrade path at all.</td><td>6 records ok</td><td><a href="https://github.com/imal1ice/ownerwatch/blob/main/examples/erc-8241/morpho-blue.json">JSON</a></td></tr>
+<tr><td>Beanstalk</td><td>an EIP-2535 Diamond whose facets are replaceable via diamondCut — an upgrade path no proxy slot reveals — gated by its owner, a 5-of-9 multisig, with no timelock.</td><td>8 records ok</td><td><a href="https://github.com/imal1ice/ownerwatch/blob/main/examples/erc-8241/beanstalk.json">JSON</a></td></tr>
 </table>
 <p class="sub">“Records verified” is how many claims the checker settled against the chain with zero mismatches and zero undisclosed powers. Each example is pinned to a block; re-draft at the current block to re-verify.</p>
 

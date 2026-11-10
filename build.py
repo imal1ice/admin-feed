@@ -411,6 +411,7 @@ DISCLOSURES = [  # (protocol, what it shows, records verified clean, example fil
     ("Compound III (USDC)", "Comet and Configurator, upgradeable only through a proxy admin owned by the 48-hour Compound Timelock.", "12", "compound-iii-usdc.json"),
     ("Uniswap V3 Factory", "a pure ownership chain resolving to the Uniswap Timelock (48h) — no roles, no proxy.", "8", "uniswap-v3.json"),
     ("Morpho Blue", "an immutable singleton owned by a multisig — no upgrade path at all.", "6", "morpho-blue.json"),
+    ("Beanstalk", "an EIP-2535 Diamond whose facets are replaceable via diamondCut — an upgrade path no proxy slot reveals — gated by its owner, a 5-of-9 multisig, with no timelock.", "8", "beanstalk.json"),
 ]
 
 DISCLOSURES_TEMPLATE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -436,7 +437,7 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 <h1>Chain-verified control disclosures</h1>
 <p class="sub"><a href="./">admin-feed</a> · ERC-8241 control disclosures by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
 
-<p>A control disclosure states, in a machine-checkable file, exactly <strong>who can change a protocol's contracts</strong> — every owner, proxy admin, role holder, Safe signer and timelock. <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> drafts it from the chain and <code>disclosure check</code> verifies every claim against on-chain state, so a reader never has to trust the prose. Here are four, for public protocols, each checking clean at a pinned block.</p>
+<p>A control disclosure states, in a machine-checkable file, exactly <strong>who can change a protocol's contracts</strong> — every owner, proxy admin, role holder, Safe signer and timelock. <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> drafts it from the chain and <code>disclosure check</code> verifies every claim against on-chain state, so a reader never has to trust the prose. Here are five, for public protocols, each checking clean at a pinned block.</p>
 
 <table>
 <tr><th>Protocol</th><th>What the disclosure shows</th><th>Records verified</th><th>Disclosure</th></tr>
