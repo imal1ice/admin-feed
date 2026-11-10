@@ -68,3 +68,35 @@ def facts(name, addr):
 for name,addr in SEED:
     f=facts(name,addr)
     print(json.dumps(f))
+
+# --- Governance change delay (second table) ---
+# Entry points: the documented governance contracts from admin-feed/control/protocols.json (each with a public source).
+# Only protocols whose governance routes changes through a timelock with a clean on-chain delay are listed; voting-based
+# DAOs (Curve, Balancer, Lido dual-governance, Sky) are omitted rather than reduced to one number.
+GOV_SEED=[
+    ("Aave V3","0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A"),   # Governance V3 Executor Lvl 1
+    ("Compound","0x6d903f6003cca6255D85CcA4D3B5E5146dC33925"),  # Timelock
+    ("Euler","0xfb034c1C6c7F42171b2d1Cb8486E0f43ED07A968"),      # eVaultFactory timelock
+    ("Fluid","0x2386DC45AdDed673317eF068992F19421B481F4c"),      # InstaTimelock
+    ("Gearbox","0x523dA3a8961E4dD4f6206DBf7E6c749f51796bb3"),    # ACL (routes through a timelock)
+    ("Pendle","0x68d8D192dF476bC01895E16b0ED3945673d777AC"),     # Timelock controller
+    ("Uniswap","0x1a9C8182C09F50C8318d769245beA52c32BE35BC"),    # Timelock
+]
+
+def gov_delay(name, addr):
+    try:
+        out=subprocess.run([OW,"probe",addr,"--rpc",RPC,"--json"],capture_output=True,text=True,timeout=150)
+        d=json.loads(out.stdout)
+    except Exception as e:
+        return {"name":name,"err":str(e)[:60]}
+    nodes=d.get("nodes",[])
+    root=next((n for n in nodes if n["address"].lower()==addr.lower()),None)
+    delay=(root or {}).get("delay")
+    if delay is None:
+        tl=[n for n in nodes if n.get("kind") in ("timelock","legacy-timelock") and n.get("delay") is not None]
+        delay=tl[0]["delay"] if tl else None
+    return {"name":name,"gov_delay":(dur(delay) if delay is not None else "no single timelock delay read")}
+
+if __name__ == "__main__" and "--gov" in sys.argv:
+    for name,addr in GOV_SEED:
+        print(json.dumps(gov_delay(name,addr)))

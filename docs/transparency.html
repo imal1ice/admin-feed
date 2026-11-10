@@ -26,6 +26,7 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 
 <blockquote><strong>Chain view, not a verdict.</strong> This shows what contract state says, not whether a setup is safe or risky. An address is not how its key is held (an externally-owned account may be a hardware or MPC wallet; a multisig's signers may be one organisation). A blank cell means <em>this read did not resolve that fact from this entry point</em> — never that the fact is absent. This is a neutral public-good reference, not a ranking or a judgment of any team.</blockquote>
 
+<h2>Core contracts</h2>
 <table>
 <tr><th>Protocol</th><th>Chain</th><th>Controller</th><th>Changes behind a timelock</th><th>Upgradeable (ERC-1967)</th></tr>
 <tr><td>Uniswap V3 Factory</td><td>ethereum</td><td>timelock-gated governance</td><td>48h</td><td>not read as upgradeable</td></tr>
@@ -37,6 +38,21 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 </table>
 
 <p class="sub">Read at the chain head on 2026-11-10. More protocols are added only when the probe resolves their full control path from a curated governance entry point (not a token address), so no row implies an absence the read did not actually establish.</p>
+
+
+<h2>Governance change delay</h2>
+<p>A second lens, for comparison: where a protocol's on-chain governance routes changes through a timelock, the delay read at that timelock. The entry points are the documented governance contracts in <a href="https://github.com/imal1ice/admin-feed/blob/main/control/protocols.json">admin-feed's control registry</a> (each carries a public source link); the delay is read from the chain. Listed alphabetically — this is a reference, not a ranking.</p>
+<table>
+<tr><th>Protocol</th><th>Governance timelock delay</th></tr>
+<tr><td>Aave V3</td><td>24h</td></tr>
+<tr><td>Compound</td><td>48h</td></tr>
+<tr><td>Euler</td><td>96h</td></tr>
+<tr><td>Fluid</td><td>24h</td></tr>
+<tr><td>Gearbox</td><td>36h</td></tr>
+<tr><td>Pendle</td><td>48h</td></tr>
+<tr><td>Uniswap</td><td>48h</td></tr>
+</table>
+<p class="sub">Protocols whose changes pass through on-chain voting rather than a single fixed timelock (e.g. Curve, Balancer, Lido's dual governance, Sky) are not one number, so they are omitted here rather than reduced to one. Read on 2026-11-10.</p>
 
 <h2>Method</h2>
 <p>Each row is <code>ownerwatch probe &lt;governance-entry&gt; --rpc &lt;rpc&gt; --json</code>, walking owners, proxy admins and roles to the controller that can change the contract, and reading any timelock delay on the way. The generator is <a href="https://github.com/imal1ice/admin-feed/blob/main/transparency_gen.py">transparency_gen.py</a>. Nothing is sent on-chain.</p>
