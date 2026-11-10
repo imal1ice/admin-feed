@@ -1,10 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DeFi control surface, at a glance</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="A neutral, chain-read reference: for each protocol, what on-chain state says about how its contracts can be changed — timelock, upgradeability, controller kind. By ownerwatch.">
+<meta name="description" content="A neutral, chain-read reference: for each protocol, what on-chain state says about how its contracts can be changed — timelock, upgradeability, controller, and the last admin change observed live. By ownerwatch.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DeFi control surface, at a glance">
-<meta property="og:description" content="A neutral, chain-read reference to how DeFi protocols' contracts can be changed: timelock, upgradeability, controller. By ownerwatch.">
+<meta property="og:description" content="A neutral, chain-read reference to how DeFi protocols' contracts can be changed: timelock, upgradeability, controller, last change observed. By ownerwatch.">
 <meta property="og:url" content="https://imal1ice.github.io/admin-feed/transparency.html">
 <meta property="og:image" content="https://imal1ice.github.io/admin-feed/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 <h1>DeFi control surface, at a glance</h1>
 <p class="sub"><a href="./">admin-feed</a> · a neutral chain-read reference by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
 
-<p>A neutral, chain-read reference: for each protocol, what on-chain state says about <strong>how its contracts can be changed</strong> — whether changes pass through a timelock, whether the contract is upgradeable, and what kind of address controls it. Generated with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>; every value is read from the chain at a pinned block.</p>
+<p>A neutral, chain-read reference: for each protocol, what on-chain state says about <strong>how its contracts can be changed</strong> — whether changes pass through a timelock, whether the contract is upgradeable, what kind of address controls it, and when its admin surface last changed. Generated with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>.</p>
 
 <blockquote><strong>Chain view, not a verdict.</strong> This shows what contract state says, not whether a setup is safe or risky. An address is not how its key is held (an externally-owned account may be a hardware or MPC wallet; a multisig's signers may be one organisation). A blank cell means <em>this read did not resolve that fact from this entry point</em> — never that the fact is absent. This is a neutral public-good reference, not a ranking or a judgment of any team.</blockquote>
 
@@ -36,29 +36,27 @@ footer{color:var(--muted);font-size:13px;margin-top:32px}
 <tr><td>Ethena (USDe)</td><td>ethereum</td><td>timelock-gated governance</td><td>24h</td><td>not read as upgradeable</td></tr>
 <tr><td>Morpho Blue</td><td>ethereum</td><td>a 6-of-10 Safe</td><td>— (immutable core, no upgrades)</td><td>no</td></tr>
 </table>
+<p class="sub">Core-contract facts read at the chain head on 2026-11-10. More protocols are added only when the probe resolves their full control path from a curated governance entry point (not a token address), so no row implies an absence the read did not actually establish.</p>
 
-<p class="sub">Read at the chain head on 2026-11-10. More protocols are added only when the probe resolves their full control path from a curated governance entry point (not a token address), so no row implies an absence the read did not actually establish.</p>
-
-
-<h2>Governance change delay</h2>
-<p>A second lens, for comparison: where a protocol's on-chain governance routes changes through a timelock, the delay read at that timelock. The entry points are the documented governance contracts in <a href="https://github.com/imal1ice/admin-feed/blob/main/control/protocols.json">admin-feed's control registry</a> (each carries a public source link); the delay is read from the chain. Listed alphabetically — this is a reference, not a ranking.</p>
+<h2>Governance change delay &amp; last change observed</h2>
+<p>A second lens: where a protocol's on-chain governance routes changes through a timelock, the delay read at that timelock, and the last admin change <strong>observed live</strong> on its governance contracts by the <a href="./">admin-feed</a>. Entry points are the documented governance contracts in <a href="https://github.com/imal1ice/admin-feed/blob/main/control/protocols.json">admin-feed's control registry</a> (each with a public source). Listed alphabetically — a reference, not a ranking.</p>
 <table>
-<tr><th>Protocol</th><th>Governance timelock delay</th></tr>
-<tr><td>Aave V3</td><td>24h</td></tr>
-<tr><td>Compound</td><td>48h</td></tr>
-<tr><td>Euler</td><td>96h</td></tr>
-<tr><td>Fluid</td><td>24h</td></tr>
-<tr><td>Gearbox</td><td>36h</td></tr>
-<tr><td>Pendle</td><td>48h</td></tr>
-<tr><td>Uniswap</td><td>48h</td></tr>
+<tr><th>Protocol</th><th>Governance timelock delay</th><th>Last admin change observed</th></tr>
+<tr><td>Aave V3</td><td>24h</td><td>2026-11-09</td></tr>
+<tr><td>Compound</td><td>48h</td><td>2026-11-09</td></tr>
+<tr><td>Euler</td><td>96h</td><td>—</td></tr>
+<tr><td>Fluid</td><td>24h</td><td>2026-11-08</td></tr>
+<tr><td>Gearbox</td><td>36h</td><td>2026-10-23</td></tr>
+<tr><td>Pendle</td><td>48h</td><td>—</td></tr>
+<tr><td>Uniswap</td><td>48h</td><td>2026-10-05</td></tr>
 </table>
-<p class="sub">Protocols whose changes pass through on-chain voting rather than a single fixed timelock (e.g. Curve, Balancer, Lido's dual governance, Sky) are not one number, so they are omitted here rather than reduced to one. Read on 2026-11-10.</p>
+<p class="sub">The last column updates hourly from the live feed; a dash means no admin event on these contracts since the feed began (30 Jul 2026) — a long quiet period is itself information. Protocols whose changes pass through on-chain voting rather than a single fixed timelock (e.g. Curve, Balancer, Lido's dual governance, Sky) are not one number, so they are omitted here rather than reduced to one.</p>
 
 <h2>Method</h2>
-<p>Each row is <code>ownerwatch probe &lt;governance-entry&gt; --rpc &lt;rpc&gt; --json</code>, walking owners, proxy admins and roles to the controller that can change the contract, and reading any timelock delay on the way. The generator is <a href="https://github.com/imal1ice/admin-feed/blob/main/transparency_gen.py">transparency_gen.py</a>. Nothing is sent on-chain.</p>
+<p>Each core-contract row is <code>ownerwatch probe &lt;governance-entry&gt; --rpc &lt;rpc&gt; --json</code>, walking owners, proxy admins and roles to the controller that can change the contract, and reading any timelock delay on the way. The governance delays are read the same way from the registry's timelock contracts; the last-change column is the latest event on those contracts in the live feed. The generator is <a href="https://github.com/imal1ice/admin-feed/blob/main/transparency_gen.py">transparency_gen.py</a>. Nothing is sent on-chain.</p>
 
 <h2>About</h2>
 <p>ownerwatch is free and MIT-licensed; it monitors and audits exactly these control surfaces. If you want your own deployment mapped — every owner, proxy admin, role holder and Safe signer, with a written report and a monitoring config — or a chain-verified <a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/disclosure-quickstart.md">ERC-8241 control disclosure</a> wired into your CI, write to <a href="mailto:imal1ice@proton.me">imal1ice@proton.me</a>. Before anything is paid I share the terms, including where I am based, so you can decide whether you are able to work with me.</p>
 
-<footer><a href="./">← admin-feed</a> · <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="https://github.com/imal1ice/admin-feed">source</a></footer>
+<footer><a href="./">← admin-feed</a> · <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="https://github.com/imal1ice/admin-feed">source</a> · updated 2026-11-10 08:02 UTC</footer>
 </body></html>

@@ -299,6 +299,103 @@ table{{border-collapse:collapse;width:100%;font-size:14px}} td,th{{text-align:le
     return data, "\n".join(parts)
 
 
+TRANS_CORE = [
+    ("Uniswap V3 Factory", "ethereum", "timelock-gated governance", "48h", "not read as upgradeable"),
+    ("Compound III (USDC Comet)", "ethereum", "timelock-gated governance", "48h", "yes"),
+    ("Compound V2 Comptroller", "ethereum", "timelock-gated governance", "48h", "yes"),
+    ("Aave V3 Pool", "ethereum", "timelock-gated governance", "24h", "yes"),
+    ("Ethena (USDe)", "ethereum", "timelock-gated governance", "24h", "not read as upgradeable"),
+    ("Morpho Blue", "ethereum", "a 6-of-10 Safe", "— (immutable core, no upgrades)", "no"),
+]
+TRANS_GOV = [  # (protocol, governance timelock delay read on-chain, system id in control/protocols.json)
+    ("Aave V3", "24h", "aave-governance-v3"),
+    ("Compound", "48h", "compound-governance"),
+    ("Euler", "96h", "euler-dao"),
+    ("Fluid", "24h", "fluid-governance"),
+    ("Gearbox", "36h", "gearbox-dao"),
+    ("Pendle", "48h", "pendle-governance"),
+    ("Uniswap", "48h", "uniswap-governance"),
+]
+TRANS_ASOF = "2026-11-10"  # date the on-chain facts (delays, upgradeability) were read
+
+TRANS_TEMPLATE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeFi control surface, at a glance</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="A neutral, chain-read reference: for each protocol, what on-chain state says about how its contracts can be changed — timelock, upgradeability, controller, and the last admin change observed live. By ownerwatch.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DeFi control surface, at a glance">
+<meta property="og:description" content="A neutral, chain-read reference to how DeFi protocols' contracts can be changed: timelock, upgradeability, controller, last change observed. By ownerwatch.">
+<meta property="og:url" content="https://imal1ice.github.io/admin-feed/transparency.html">
+<meta property="og:image" content="https://imal1ice.github.io/admin-feed/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px} p.sub{color:var(--muted);margin:0 0 20px}
+h2{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:28px 0 8px}
+a{color:inherit} code{font-size:13px}
+blockquote{border-left:3px solid var(--line);margin:16px 0;padding:4px 0 4px 14px;color:var(--muted);font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0} td,th{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);vertical-align:top} th{color:var(--muted);font-weight:600}
+footer{color:var(--muted);font-size:13px;margin-top:32px}
+</style></head><body>
+<h1>DeFi control surface, at a glance</h1>
+<p class="sub"><a href="./">admin-feed</a> · a neutral chain-read reference by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
+
+<p>A neutral, chain-read reference: for each protocol, what on-chain state says about <strong>how its contracts can be changed</strong> — whether changes pass through a timelock, whether the contract is upgradeable, what kind of address controls it, and when its admin surface last changed. Generated with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>.</p>
+
+<blockquote><strong>Chain view, not a verdict.</strong> This shows what contract state says, not whether a setup is safe or risky. An address is not how its key is held (an externally-owned account may be a hardware or MPC wallet; a multisig's signers may be one organisation). A blank cell means <em>this read did not resolve that fact from this entry point</em> — never that the fact is absent. This is a neutral public-good reference, not a ranking or a judgment of any team.</blockquote>
+
+<h2>Core contracts</h2>
+<table>
+<tr><th>Protocol</th><th>Chain</th><th>Controller</th><th>Changes behind a timelock</th><th>Upgradeable (ERC-1967)</th></tr>
+%%CORE%%
+</table>
+<p class="sub">Core-contract facts read at the chain head on %%ASOF%%. More protocols are added only when the probe resolves their full control path from a curated governance entry point (not a token address), so no row implies an absence the read did not actually establish.</p>
+
+<h2>Governance change delay &amp; last change observed</h2>
+<p>A second lens: where a protocol's on-chain governance routes changes through a timelock, the delay read at that timelock, and the last admin change <strong>observed live</strong> on its governance contracts by the <a href="./">admin-feed</a>. Entry points are the documented governance contracts in <a href="https://github.com/imal1ice/admin-feed/blob/main/control/protocols.json">admin-feed's control registry</a> (each with a public source). Listed alphabetically — a reference, not a ranking.</p>
+<table>
+<tr><th>Protocol</th><th>Governance timelock delay</th><th>Last admin change observed</th></tr>
+%%GOV%%
+</table>
+<p class="sub">The last column updates hourly from the live feed; a dash means no admin event on these contracts since the feed began (30 Jul 2026) — a long quiet period is itself information. Protocols whose changes pass through on-chain voting rather than a single fixed timelock (e.g. Curve, Balancer, Lido's dual governance, Sky) are not one number, so they are omitted here rather than reduced to one.</p>
+
+<h2>Method</h2>
+<p>Each core-contract row is <code>ownerwatch probe &lt;governance-entry&gt; --rpc &lt;rpc&gt; --json</code>, walking owners, proxy admins and roles to the controller that can change the contract, and reading any timelock delay on the way. The governance delays are read the same way from the registry's timelock contracts; the last-change column is the latest event on those contracts in the live feed. The generator is <a href="https://github.com/imal1ice/admin-feed/blob/main/transparency_gen.py">transparency_gen.py</a>. Nothing is sent on-chain.</p>
+
+<h2>About</h2>
+<p>ownerwatch is free and MIT-licensed; it monitors and audits exactly these control surfaces. If you want your own deployment mapped — every owner, proxy admin, role holder and Safe signer, with a written report and a monitoring config — or a chain-verified <a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/disclosure-quickstart.md">ERC-8241 control disclosure</a> wired into your CI, write to <a href="mailto:imal1ice@proton.me">imal1ice@proton.me</a>. Before anything is paid I share the terms, including where I am based, so you can decide whether you are able to work with me.</p>
+
+<footer><a href="./">← admin-feed</a> · <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="https://github.com/imal1ice/admin-feed">source</a> · updated %%GEN%%</footer>
+</body></html>"""
+
+
+def render_transparency(rows: list[dict]) -> str:
+    """Neutral control-surface reference: static chain-read facts + a LIVE 'last admin change observed'
+    column computed from the feed's alerts (matched by the registry's sourced contract addresses)."""
+    sysmap: dict[str, set] = {}
+    if CONTROL.exists():
+        systems = json.loads(CONTROL.read_text(encoding="utf-8")).get("systems", {})
+        for sid, s in systems.items():
+            sysmap[sid] = {(c.get("address") or "").lower() for c in s.get("contracts", [])}
+
+    def last_change(sid: str):
+        addrs = sysmap.get(sid, set())
+        ts = [r.get("ts") for r in rows if (r.get("contract") or "").lower() in addrs and r.get("ts")]
+        return max(ts)[:10] if ts else None
+
+    core = "\n".join(
+        f"<tr><td>{html.escape(p)}</td><td>{html.escape(ch)}</td><td>{html.escape(ct)}</td><td>{html.escape(tl)}</td><td>{html.escape(up)}</td></tr>"
+        for p, ch, ct, tl, up in TRANS_CORE)
+    gov = "\n".join(
+        f"<tr><td>{html.escape(name)}</td><td>{html.escape(delay)}</td><td>{last_change(sid) or '—'}</td></tr>"
+        for name, delay, sid in TRANS_GOV)
+    gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    return (TRANS_TEMPLATE.replace("%%CORE%%", core).replace("%%GOV%%", gov)
+            .replace("%%ASOF%%", TRANS_ASOF).replace("%%GEN%%", gen))
+
+
 def main() -> None:
     rows = load()
     DOCS.mkdir(exist_ok=True)
@@ -313,6 +410,7 @@ def main() -> None:
         data, page = render_control(rows)
         (DOCS / "control" / "index.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
         (DOCS / "control" / "index.html").write_text(page, encoding="utf-8")
+    (DOCS / "transparency.html").write_text(render_transparency(rows), encoding="utf-8")
     (DOCS / ".nojekyll").write_text("")
     print(f"rendered {len(rows)} alerts")
 
