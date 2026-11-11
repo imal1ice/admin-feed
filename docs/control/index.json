@@ -1,16 +1,16 @@
 {
- "generated": "2026-11-11T17:59:52Z",
+ "generated": "2026-11-11T19:04:10Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
   "aave-v3": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 20 governance executions in 90 days",
+   "value": "12 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-11",
    "lastEvent": "2026-11-11",
-   "controlChanges": 2,
+   "controlChanges": 12,
    "governanceExecutions": 20,
    "window": {
     "days": 90,
@@ -46,8 +46,8 @@
      "label": "Governance Guardian",
      "type": "safe",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 10,
+     "last": "2026-11-11"
     },
     {
      "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
@@ -69,83 +69,83 @@
    "recent": [
     {
      "date": "2026-11-11",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 481 executed",
-     "tx": "https://etherscan.io/tx/0x92d593767fddcb90f69d9c816dbeca54046ff2afe66e5fdb348da43f52560ffe"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 479 executed",
-     "tx": "https://etherscan.io/tx/0x22de5c4a2e030a959c0e2657dcd6c6b813aae6b863c05c471b4a50051d29998b"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 478 executed",
-     "tx": "https://etherscan.io/tx/0xdf88ec1b6666b76652b8ca610345e8731e1e60f9fdd315b3ddc9832d08a3bf2a"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 480 executed",
-     "tx": "https://etherscan.io/tx/0x66992e9b4e0fe1f979fff147e386d159fbac905603d5618f07be477435727dc8"
-    },
-    {
-     "date": "2026-10-28",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 477 executed",
-     "tx": "https://etherscan.io/tx/0x226c48626ec314b194dfa080e992dcabfa1526f813835f81914e1885d5af1275"
-    },
-    {
-     "date": "2026-10-24",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 476 executed",
-     "tx": "https://etherscan.io/tx/0x56ce4896169a408576c05744dfa561949eff9ef8fe2f101bde48eacc5e3e17c0"
-    },
-    {
-     "date": "2026-10-22",
-     "label": "Aave Risk Council (Safe)",
+     "label": "Aave Governance Guardian (Safe)",
      "event": "RemovedOwner",
      "kind": "control change",
-     "message": "Safe owner removed 0x606dC57cd166643760E049609bfd1D8a698D3bAc",
-     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+     "message": "Safe owner removed 0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-22",
-     "label": "Aave Risk Council (Safe)",
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
      "event": "AddedOwner",
      "kind": "control change",
-     "message": "Safe owner added 0x2B99790c35a401be873FA7Eb514D9220736BB1cA",
-     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+     "message": "Safe owner added 0x61C2dAE896f93e5f0f10425914CE7868eE8A0e44",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-17",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 475 executed",
-     "tx": "https://etherscan.io/tx/0x22563675a30209a70881d047e4d93dd8025dfe8ef8657f4ad45fd0f0d4c3c3ff"
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-16",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 474 executed",
-     "tx": "https://etherscan.io/tx/0x45daddf38952f0e83976a1b2975104003ff65208b50fe16d7a4dbad652204224"
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x2694B8A8490f10f98Da6F83d18267Eae9412CbF1",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0xb291232F480F41c75802C4a60F1D2AC03404Afef",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x0D2394C027602Dc4c3832Ffd849b5df45DBac0E9",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x985F3290d7971a840152E46d00b5ceb60A56f235",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x4C30E33758216aD0d676419c21CB8D014C68099f",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x9EF7c9A17c5881d54A4694785637acD93E790403",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     }
    ],
    "system": "aave-governance-v3",
@@ -154,11 +154,11 @@
   "aave-v4": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "2 control changes \u00b7 20 governance executions in 90 days",
+   "value": "12 control changes \u00b7 20 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-11",
    "lastEvent": "2026-11-11",
-   "controlChanges": 2,
+   "controlChanges": 12,
    "governanceExecutions": 20,
    "window": {
     "days": 90,
@@ -194,8 +194,8 @@
      "label": "Governance Guardian",
      "type": "safe",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 10,
+     "last": "2026-11-11"
     },
     {
      "address": "0x47c71dFEB55Ebaa431Ae3fbF99Ea50e0D3d30fA8",
@@ -217,83 +217,83 @@
    "recent": [
     {
      "date": "2026-11-11",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 481 executed",
-     "tx": "https://etherscan.io/tx/0x92d593767fddcb90f69d9c816dbeca54046ff2afe66e5fdb348da43f52560ffe"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 479 executed",
-     "tx": "https://etherscan.io/tx/0x22de5c4a2e030a959c0e2657dcd6c6b813aae6b863c05c471b4a50051d29998b"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 478 executed",
-     "tx": "https://etherscan.io/tx/0xdf88ec1b6666b76652b8ca610345e8731e1e60f9fdd315b3ddc9832d08a3bf2a"
-    },
-    {
-     "date": "2026-11-09",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 480 executed",
-     "tx": "https://etherscan.io/tx/0x66992e9b4e0fe1f979fff147e386d159fbac905603d5618f07be477435727dc8"
-    },
-    {
-     "date": "2026-10-28",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 477 executed",
-     "tx": "https://etherscan.io/tx/0x226c48626ec314b194dfa080e992dcabfa1526f813835f81914e1885d5af1275"
-    },
-    {
-     "date": "2026-10-24",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 476 executed",
-     "tx": "https://etherscan.io/tx/0x56ce4896169a408576c05744dfa561949eff9ef8fe2f101bde48eacc5e3e17c0"
-    },
-    {
-     "date": "2026-10-22",
-     "label": "Aave Risk Council (Safe)",
+     "label": "Aave Governance Guardian (Safe)",
      "event": "RemovedOwner",
      "kind": "control change",
-     "message": "Safe owner removed 0x606dC57cd166643760E049609bfd1D8a698D3bAc",
-     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+     "message": "Safe owner removed 0xebED04E9137AfeBFF6a1B97aC0adf61a544eFE29",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-22",
-     "label": "Aave Risk Council (Safe)",
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
      "event": "AddedOwner",
      "kind": "control change",
-     "message": "Safe owner added 0x2B99790c35a401be873FA7Eb514D9220736BB1cA",
-     "tx": "https://etherscan.io/tx/0x859204c2d79cce7548d73aebfd00e1c818a9f454f73eb354f44c5f98d70d3779"
+     "message": "Safe owner added 0x61C2dAE896f93e5f0f10425914CE7868eE8A0e44",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-17",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 475 executed",
-     "tx": "https://etherscan.io/tx/0x22563675a30209a70881d047e4d93dd8025dfe8ef8657f4ad45fd0f0d4c3c3ff"
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0xbd4DCfA978c6D0d342cE36809AfFFa49d4B7f1F7",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     },
     {
-     "date": "2026-10-16",
-     "label": "Aave Payloads Controller (proxy)",
-     "event": "PayloadExecuted",
-     "kind": "governance execution",
-     "message": "Aave payload 474 executed",
-     "tx": "https://etherscan.io/tx/0x45daddf38952f0e83976a1b2975104003ff65208b50fe16d7a4dbad652204224"
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x2694B8A8490f10f98Da6F83d18267Eae9412CbF1",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x936CD9654271083cCF93A975919Da0aB3Bc99EF3",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0xb291232F480F41c75802C4a60F1D2AC03404Afef",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x0D2394C027602Dc4c3832Ffd849b5df45DBac0E9",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x985F3290d7971a840152E46d00b5ceb60A56f235",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x4C30E33758216aD0d676419c21CB8D014C68099f",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
+    },
+    {
+     "date": "2026-11-11",
+     "label": "Aave Governance Guardian (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x9EF7c9A17c5881d54A4694785637acD93E790403",
+     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     }
    ],
    "system": "aave-governance-v3",
