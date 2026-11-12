@@ -119,7 +119,7 @@ h2{{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-
 footer{{color:var(--muted);font-size:13px;margin-top:32px}}
 </style></head><body>
 <h1>Admin surface changes</h1>
-<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="disclosures.html">Control disclosures</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
+<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="disclosures.html">Control disclosures</a> · <a href="diamonds.html">Who can upgrade your diamond?</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
     if not rows:
         parts.append("<p>No changes recorded yet. The feed started on " + gen + ".</p>")
     for day, items in by_day.items():
@@ -396,7 +396,7 @@ def render_transparency(rows: list[dict]) -> str:
             .replace("%%ASOF%%", TRANS_ASOF).replace("%%GEN%%", gen))
 
 
-SITEMAP_PAGES = ["", "transparency.html", "disclosures.html", "report.html", "control/", "activity.html", "work.html"]
+SITEMAP_PAGES = ["", "transparency.html", "disclosures.html", "diamonds.html", "report.html", "control/", "activity.html", "work.html"]
 
 
 def render_sitemap() -> str:
@@ -463,6 +463,62 @@ def render_disclosures() -> str:
     return DISCLOSURES_TEMPLATE.replace("%%ROWS%%", rows)
 
 
+DIAMONDS_TEMPLATE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who can upgrade your EIP-2535 diamond?</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="A diamond has no ERC-1967 implementation slot, so most monitors miss diamondCut. Check who can replace your facets in one command, proven by simulation, with ownerwatch.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Who can upgrade your EIP-2535 diamond?">
+<meta property="og:description" content="Most admin monitors read a diamond as immutable and never watch diamondCut. Find out who can swap your facets in one command.">
+<meta property="og:url" content="https://imal1ice.github.io/admin-feed/diamonds.html">
+<meta property="og:image" content="https://imal1ice.github.io/admin-feed/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px} p.sub{color:var(--muted);margin:0 0 20px}
+h2{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:28px 0 8px}
+a{color:inherit} code{font-size:13px}
+pre{background:var(--line);padding:12px;border-radius:6px;overflow-x:auto;font-size:13px}
+ul{padding-left:20px} li{margin:6px 0}
+footer{color:var(--muted);font-size:13px;margin-top:32px}
+</style></head><body>
+<h1>Who can upgrade your EIP-2535 diamond?</h1>
+<p class="sub"><a href="./">admin-feed</a> &middot; a control-surface note by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></p>
+
+<p>A <strong>diamond</strong> (EIP-2535) splits a contract into <em>facets</em> whose code is replaced through <code>diamondCut</code>. That is its strength &mdash; and its blind spot. A diamond has <strong>no ERC-1967 implementation slot</strong>, so most admin-monitoring tools read it as a fixed, non-upgradeable contract and never watch <code>diamondCut</code> at all. The path that can replace any facet&rsquo;s code is, by default, <strong>unseen</strong> by the monitors a protocol&rsquo;s users rely on.</p>
+<p>So the first question &mdash; for your own diamond, or one you depend on &mdash; is simply: <strong>who can call <code>diamondCut</code>, and with what delay?</strong></p>
+
+<h2>Check it in one command</h2>
+<pre>pip install ownerwatch
+ownerwatch probe --prove --markdown --rpc https://ethereum-rpc.publicnode.com &lt;yourDiamond&gt;</pre>
+<p><a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> resolves a diamond&rsquo;s <code>diamondCut</code> gate and <strong>proves it by simulation</strong> &mdash; an empty <code>diamondCut</code> that <em>succeeds from the gate and reverts from a stranger</em> shows who really holds the upgrade power. It reports the full facet set and walks the control graph above the gate (owner &rarr; Safe &rarr; timelock &rarr; signers), the same for a diamond as for any proxy. Read-only; nothing is sent on-chain.</p>
+
+<h2>How to read the result</h2>
+<ul>
+<li><strong>A single EOA on the gate</strong> &mdash; one key can replace any facet&rsquo;s code (and often pause or change roles) immediately, with no delay. The chain shows an address, not how the key is held; an MPC or hardware setup looks the same, so confirm custody.</li>
+<li><strong>A Safe with no timelock</strong> &mdash; a multisig can swap facets in one transaction, no on-chain delay to watch.</li>
+<li><strong>A timelock in front</strong> &mdash; facet changes are queued and visible for the delay before they execute. The strongest shape.</li>
+<li><strong>No <code>diamondCut</code> exposed</strong> &mdash; the diamond may be effectively immutable, or use a non-standard gate; read the facets to be sure.</li>
+</ul>
+<p>This is a <strong>chain view, not a verdict</strong>: it shows who <em>can</em> upgrade, not whether the team is trustworthy. The absence of a finding is not proof of safety &mdash; only that this read did not surface one.</p>
+
+<h2>Watch it after the check</h2>
+<p>A one-off check is a snapshot. To hear about a facet swap, a Safe signer change or a new role grant the moment it happens, ownerwatch emits a ready-to-run monitoring config for the diamond and the gate above it &mdash; it watches <code>DiamondCut</code>, Safe signer and threshold changes, and every queued timelock call. Free and self-hosted, as a CLI, a <a href="https://github.com/imal1ice/ownerwatch-action">GitHub Action</a>, or an MCP server.</p>
+
+<h2>Want it done for you</h2>
+<p>ownerwatch is free and MIT-licensed; the self-check above is yours to run. If you&rsquo;d rather have the full picture written up &mdash; every privileged power on your diamond proven from chain state at a pinned block, the gaps between your docs and the chain, and a ready monitoring config &mdash; or have the monitor run for you, write to <a href="mailto:imal1ice@proton.me">imal1ice@proton.me</a>. Before anything is paid I share the terms, including where I am based, so you can decide whether you are able to work with me.</p>
+
+<footer><a href="./">&larr; admin-feed</a> &middot; <a href="transparency.html">Control surface at a glance</a> &middot; <a href="disclosures.html">Control disclosures</a> &middot; <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> &middot; updated %%GEN%%</footer>
+</body></html>"""
+
+
+def render_diamonds() -> str:
+    gen = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    return DIAMONDS_TEMPLATE.replace("%%GEN%%", gen)
+
+
 def main() -> None:
     rows = load()
     DOCS.mkdir(exist_ok=True)
@@ -479,6 +535,7 @@ def main() -> None:
         (DOCS / "control" / "index.html").write_text(page, encoding="utf-8")
     (DOCS / "transparency.html").write_text(render_transparency(rows), encoding="utf-8")
     (DOCS / "disclosures.html").write_text(render_disclosures(), encoding="utf-8")
+    (DOCS / "diamonds.html").write_text(render_diamonds(), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(render_sitemap(), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("")
