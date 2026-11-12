@@ -1,17 +1,17 @@
 {
- "generated": "2026-11-12T17:10:35Z",
+ "generated": "2026-11-12T22:44:16Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
   "aave-v3": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "12 control changes \u00b7 20 governance executions in 90 days",
+   "value": "12 control changes \u00b7 21 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-12",
-   "lastEvent": "2026-11-11",
+   "lastEvent": "2026-11-12",
    "controlChanges": 12,
-   "governanceExecutions": 20,
+   "governanceExecutions": 21,
    "window": {
     "days": 90,
     "from": "2026-08-14"
@@ -22,8 +22,8 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 20,
-     "last": "2026-11-11"
+     "events": 21,
+     "last": "2026-11-12"
     },
     {
      "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
@@ -67,6 +67,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-12",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 482 executed",
+     "tx": "https://etherscan.io/tx/0x03e5ed15d08e47e2dcae63c99ef8221c9ab6caa80f06d266803b8303082ef551"
+    },
     {
      "date": "2026-11-11",
      "label": "Aave Governance Guardian (Safe)",
@@ -137,14 +145,6 @@
      "event": "RemovedOwner",
      "kind": "control change",
      "message": "Safe owner removed 0x4C30E33758216aD0d676419c21CB8D014C68099f",
-     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
-    },
-    {
-     "date": "2026-11-11",
-     "label": "Aave Governance Guardian (Safe)",
-     "event": "AddedOwner",
-     "kind": "control change",
-     "message": "Safe owner added 0x9EF7c9A17c5881d54A4694785637acD93E790403",
      "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     }
    ],
@@ -154,12 +154,12 @@
   "aave-v4": {
    "name": "Aave Governance V3",
    "source": "https://github.com/bgd-labs/aave-address-book/blob/main/src/GovernanceV3Ethereum.sol",
-   "value": "12 control changes \u00b7 20 governance executions in 90 days",
+   "value": "12 control changes \u00b7 21 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-12",
-   "lastEvent": "2026-11-11",
+   "lastEvent": "2026-11-12",
    "controlChanges": 12,
-   "governanceExecutions": 20,
+   "governanceExecutions": 21,
    "window": {
     "days": 90,
     "from": "2026-08-14"
@@ -170,8 +170,8 @@
      "label": "Payloads Controller",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 20,
-     "last": "2026-11-11"
+     "events": 21,
+     "last": "2026-11-12"
     },
     {
      "address": "0x9AEE0B04504CeF83A65AC3f0e838D0593BCb2BC7",
@@ -215,6 +215,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-12",
+     "label": "Aave Payloads Controller (proxy)",
+     "event": "PayloadExecuted",
+     "kind": "governance execution",
+     "message": "Aave payload 482 executed",
+     "tx": "https://etherscan.io/tx/0x03e5ed15d08e47e2dcae63c99ef8221c9ab6caa80f06d266803b8303082ef551"
+    },
     {
      "date": "2026-11-11",
      "label": "Aave Governance Guardian (Safe)",
@@ -285,14 +293,6 @@
      "event": "RemovedOwner",
      "kind": "control change",
      "message": "Safe owner removed 0x4C30E33758216aD0d676419c21CB8D014C68099f",
-     "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
-    },
-    {
-     "date": "2026-11-11",
-     "label": "Aave Governance Guardian (Safe)",
-     "event": "AddedOwner",
-     "kind": "control change",
-     "message": "Safe owner added 0x9EF7c9A17c5881d54A4694785637acD93E790403",
      "tx": "https://etherscan.io/tx/0x388febf169649d55ae77665754ee44226d5f201ea03d1655602201bb090231a6"
     }
    ],
