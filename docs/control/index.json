@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T15:02:57Z",
+ "generated": "2026-11-14T19:56:07Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -778,12 +778,12 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/user/deployments",
-   "value": "4 control changes \u00b7 32 governance executions in 90 days",
+   "value": "4 control changes \u00b7 33 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-14",
-   "lastEvent": "2026-11-12",
+   "lastEvent": "2026-11-14",
    "controlChanges": 4,
-   "governanceExecutions": 32,
+   "governanceExecutions": 33,
    "window": {
     "days": 90,
     "from": "2026-08-16"
@@ -794,8 +794,8 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 32,
-     "last": "2026-11-12"
+     "events": 33,
+     "last": "2026-11-14"
     },
     {
      "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
@@ -815,6 +815,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-14",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1518 executed",
+     "tx": "https://etherscan.io/tx/0xeaa891459eb79febf9302881ab001974850267aff09db18e900ff554d4b10d90"
+    },
     {
      "date": "2026-11-12",
      "label": "Curve Ownership voting",
@@ -885,14 +893,6 @@
      "event": "AddedOwner",
      "kind": "control change",
      "message": "Safe owner added 0xBd0a74e51729a4D0B92742e67183C4cBc97bCA92",
-     "tx": "https://etherscan.io/tx/0x3083723f8647cf70b47dc18880ec2980bfb6bae0211f3ffc27f7bd7f44ef199f"
-    },
-    {
-     "date": "2026-10-29",
-     "label": "Curve Emergency DAO (Safe)",
-     "event": "RemovedOwner",
-     "kind": "control change",
-     "message": "Safe owner removed 0xe9A65fe8190fA5A4b5E277b84f0aAce686FDc174",
      "tx": "https://etherscan.io/tx/0x3083723f8647cf70b47dc18880ec2980bfb6bae0211f3ffc27f7bd7f44ef199f"
     }
    ],
