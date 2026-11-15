@@ -522,6 +522,34 @@ def render_diamonds() -> str:
 # ---- blog (reputation funnel; posts are hand-authored HTML bodies) ----
 BLOG_POSTS = [
     {
+        "slug": "who-controls-36-defi",
+        "title": "I read who controls 36 DeFi protocols. Here's the scoreboard.",
+        "date": "2026-11-15",
+        "desc": "Between 14 and 26 October I read the admin setup of 36 mid-size DeFi protocols from the chain. Ten put a privileged role on a single key; sixteen run a Safe with no timelock; eight were genuinely well run. The numbers, and what they mean.",
+        "body": """
+<p>In my <a href="control-plane.html">last note</a> I argued that the control plane &mdash; who can upgrade, mint, pause or move funds &mdash; is the attack surface almost nobody maps. Here's the evidence.</p>
+<p>Between 14 and 26 October 2026 I read the admin setup of <strong>36 mid-size DeFi protocols</strong> (roughly $10M&ndash;$400M TVL) on Ethereum, Arbitrum, Base and Optimism. For each I asked the same question: who can upgrade the contracts, mint the token, pause, move collateral or change the oracle &mdash; and does anything slow them down? Everything came from public chain state and verified source, read with <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>. <strong>No protocol is named</strong> &mdash; several findings aren't fixed yet, and twenty teams got theirs privately first. This is the aggregate scoreboard.</p>
+
+<h2>The scoreboard</h2>
+<ul>
+<li><strong>10 of 36</strong> put at least one privileged role on a <strong>single externally-owned key</strong> &mdash; one transaction, no second signature, no delay.</li>
+<li><strong>16 of 36</strong> rely on a <strong>Safe with no timelock</strong> on at least one admin path.</li>
+<li><strong>8 of 36</strong> were <strong>genuinely well run</strong> &mdash; every dangerous power behind a multisig and a real delay.</li>
+<li><strong>10+ of 36</strong> publish <strong>documentation that contradicts their own contracts</strong>.</li>
+<li><strong>2</strong> couldn't be verified from public information at all.</li>
+</ul>
+
+<h2>Three things that stood out</h2>
+<p><strong>One key, one transaction.</strong> For those ten protocols, a single hot wallet &mdash; some with thousands of transactions on it &mdash; can upgrade the code, appoint a minter, blacklist holders or move collateral, alone and instantly. Some teams say the key sits behind MPC or a custodian. Maybe so &mdash; but nothing on-chain shows it, and a holder can't check it.</p>
+<p><strong>A multisig, but no clock.</strong> The most common shape wasn't a single key; it was a Safe whose <em>code upgrade</em> waits the advertised 24&ndash;48 hours, while the <em>same Safe</em> can change roles, mint limits, oracles or pause state <em>instantly</em>. Thresholds as low as 2-of-3 guarded tens of millions. The delay you were promised often guards only the one door nobody uses.</p>
+<p><strong>Supply that didn't come through the minter.</strong> One stablecoin's docs say every token is minted one-for-one against collateral through its minting contract. On-chain, most of the supply ever issued was minted <em>directly by the owner</em>, outside that contract &mdash; twice through a timelock whose delay was <strong>60 seconds</strong>. The tokens may well be backed. The point is the chain doesn't show it, and the docs describe a mechanism most of the supply never used.</p>
+
+<h2>What to take from it</h2>
+<p>None of this is a hack, and none of it is an accusation &mdash; most are disclosed design choices. But two thirds of a representative slice of mid-size DeFi have at least one privileged path that is faster, or more concentrated, than their own documentation implies. &ldquo;Trust the multisig&rdquo; is carrying a lot of weight it often hasn't earned.</p>
+<p>The anonymized write-up, with the full method, is here: <a href="../report.html">Who controls mid-size DeFi? 36 protocols, read from the chain</a>. You can read any contract's control plane yourself in one command (<a href="control-plane.html">how</a>), and if you want a full, simulation-proven map of your own deployment, <a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/one-time-review.md">that's what I do</a>. The chain is the source of truth; the docs are just a claim.</p>
+"""
+    },
+    {
         "slug": "control-plane",
         "title": "The control plane is the attack surface nobody maps",
         "date": "2026-11-15",
@@ -592,7 +620,7 @@ POST_TEMPLATE = _BLOG_HEAD + """<p class="sub"><a href="./">imal1ice &mdash; not
 BLOG_INDEX_TEMPLATE = _BLOG_HEAD + """<h1>imal1ice</h1>
 <p class="sub">Notes on who really controls your protocol &mdash; the owners, admins, Safe signers, timelocks and upgrade gates above the code. By the author of <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>.</p>
 %%LIST%%
-<footer><a href="./../">admin-feed</a> &middot; <a href="../diamonds.html">Who can upgrade your diamond?</a> &middot; <a href="../transparency.html">Control surface at a glance</a> &middot; <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></footer>
+<footer><a href="./../">admin-feed</a> &middot; <a href="../diamonds.html">Who can upgrade your diamond?</a> &middot; <a href="../transparency.html">Control surface at a glance</a> &middot; <a href="rss.xml">RSS</a> &middot; <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></footer>
 </body></html>"""
 
 
@@ -618,6 +646,22 @@ def render_blog() -> dict:
                      base, "website", icon="../favicon.png")
     idx = idx.replace("%%LIST%%", "\n".join(items))
     out["blog/index.html"] = idx
+    # blog RSS (subscribe without any social account)
+    rss_items = []
+    for post in BLOG_POSTS:
+        url = base + post["slug"] + ".html"
+        try:
+            pub = dt.datetime.strptime(post["date"], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+        except Exception:
+            pub = ""
+        rss_items.append(f"<item><title>{html.escape(post['title'])}</title><link>{url}</link>"
+                         f"<guid>{url}</guid><pubDate>{pub}</pubDate>"
+                         f"<description>{html.escape(post['desc'])}</description></item>")
+    out["blog/rss.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
+        '<title>imal1ice \u2014 who controls your protocol</title>'
+        f'<link>{base}</link>'
+        '<description>Notes on who really controls DeFi protocols: owners, admins, Safe signers, timelocks and upgrade gates.</description>'
+        + "".join(rss_items) + '</channel></rss>')
     return out
 
 
