@@ -119,7 +119,7 @@ h2{{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-
 footer{{color:var(--muted);font-size:13px;margin-top:32px}}
 </style></head><body>
 <h1>Admin surface changes</h1>
-<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="disclosures.html">Control disclosures</a> · <a href="diamonds.html">Who can upgrade your diamond?</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
+<p class="sub">Timelock queues, upgrades, role grants, Safe signer changes and queued Safe transactions on major protocols across Ethereum, Arbitrum, Optimism and Base, as they happen. Polled hourly by <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> on a free GitHub Actions runner. <a href="report.html">Report: who controls 36 DeFi protocols</a> · <a href="activity.html">Three months of admin activity</a> · <a href="transparency.html">Control surface at a glance</a> · <a href="disclosures.html">Control disclosures</a> · <a href="diamonds.html">Who can upgrade your diamond?</a> · <a href="blog/">Blog</a> · <a href="feed.xml">RSS</a> · <a href="https://github.com/imal1ice/admin-feed">source and config</a> · <a href="work.html">About and contact</a></p>"""]
     if not rows:
         parts.append("<p>No changes recorded yet. The feed started on " + gen + ".</p>")
     for day, items in by_day.items():
@@ -396,7 +396,7 @@ def render_transparency(rows: list[dict]) -> str:
             .replace("%%ASOF%%", TRANS_ASOF).replace("%%GEN%%", gen))
 
 
-SITEMAP_PAGES = ["", "transparency.html", "disclosures.html", "diamonds.html", "report.html", "control/", "activity.html", "work.html"]
+SITEMAP_PAGES = ["", "transparency.html", "disclosures.html", "diamonds.html", "blog/", "report.html", "control/", "activity.html", "work.html"]
 
 
 def render_sitemap() -> str:
@@ -519,6 +519,108 @@ def render_diamonds() -> str:
     return DIAMONDS_TEMPLATE.replace("%%GEN%%", gen)
 
 
+# ---- blog (reputation funnel; posts are hand-authored HTML bodies) ----
+BLOG_POSTS = [
+    {
+        "slug": "control-plane",
+        "title": "The control plane is the attack surface nobody maps",
+        "date": "2026-11-15",
+        "desc": "Code gets audited; the owners, proxy admins, Safe signers, timelocks and upgrade gates above it almost never do — and that's the part that can replace the audited code in one transaction. How to read who really controls a protocol.",
+        "body": """
+<p>Every audit report ends with the same ritual sentence: <em>&ldquo;these findings assume the privileged roles are controlled by a trusted multisig.&rdquo;</em> Then everyone moves on. But that sentence is doing enormous work &mdash; it quietly waves away the single question that decides whether your funds are safe: <strong>who actually holds the keys, and what can they do without asking anyone?</strong></p>
+<p>Code gets audited. The <em>control plane</em> &mdash; the owners, proxy upgrade admins, role holders, Safe signers, timelocks and upgrade gates that sit above the code &mdash; almost never does. And it's the part that can replace the audited code with one transaction.</p>
+<p>I spend my time mapping that layer on live protocols. Here's what it actually looks like, and how to read it on anything you depend on.</p>
+
+<h2>Four shapes, from &ldquo;sleep soundly&rdquo; to &ldquo;one bad night&rdquo;</h2>
+<p>Strip away the branding and almost every protocol's control plane is one of a few shapes:</p>
+<p><strong>1. A timelock in front of a multisig.</strong> An upgrade or parameter change is queued on-chain, visible to everyone for a fixed delay (24&ndash;48h is common), then executed by a multisig. This is the good shape: you can <em>see</em> a dangerous change coming and exit before it lands. When people say &ldquo;governed by a multisig,&rdquo; this is what they should mean &mdash; but often don't.</p>
+<p><strong>2. A multisig with no timelock.</strong> The same multisig, minus the delay. The threshold still means several keys must agree &mdash; but a change is <em>immediate</em>. No warning, no window. For a protocol holding real money, the missing timelock is the difference between &ldquo;we can respond&rdquo; and &ldquo;we read about it afterward.&rdquo;</p>
+<p><strong>3. A single key.</strong> One externally-owned account can upgrade the code, change the roles, or pause the system &mdash; instantly, alone. The chain can't tell you whether that key is one laptop or a serious MPC setup; it only shows you that <em>nothing on-chain stops its holder.</em> You'd be surprised how many live systems resolve, in two hops, to exactly this.</p>
+<p><strong>4. The invisible kind &mdash; diamonds, modules, guards.</strong> Some upgrade paths don't show up where tools look. An <a href="../diamonds.html">EIP-2535 diamond</a> has no standard implementation slot, so most monitors read it as <em>immutable</em> even though its code is swappable through <code>diamondCut</code>. A Gnosis Safe <strong>module</strong> can move funds with <em>no owner signature at all</em>, bypassing the threshold you were counting on. A Safe <strong>guard</strong> runs on every transaction and can silently brick the lot. None of these appear in &ldquo;owner&rdquo; or &ldquo;threshold&rdquo; &mdash; you have to know to look.</p>
+<p>The uncomfortable part: shapes 2&ndash;4 are common, and they're usually not bugs. They're <em>disclosed design choices</em> buried in a governance doc nobody reads &mdash; or not disclosed at all, just sitting there on-chain.</p>
+
+<h2>How to read it yourself, in one command</h2>
+<p>You don't have to take anyone's word for it. The control plane is public state. Point a read-only tool at any contract and resolve the chain of who-controls-whom, proven by simulation rather than by prose:</p>
+<pre>pip install ownerwatch
+ownerwatch probe --prove --rpc https://ethereum-rpc.publicnode.com &lt;contract&gt;</pre>
+<p>It walks owner &rarr; admin &rarr; Safe &rarr; timelock &rarr; signers, reads the diamond facets, the Safe's modules and guard, and every role, and <em>proves</em> a privileged power by simulating it (the call succeeds from the holder, reverts from a stranger). It's free and MIT-licensed. The output is a map of exactly who can do what to the contract you're trusting &mdash; and, just as important, what the read <strong>could not</strong> establish, because an honest map says where it's blind.</p>
+
+<h2>What I keep finding</h2>
+<ul>
+<li>&ldquo;Governed by a multisig&rdquo; frequently means <em>a multisig with no timelock</em> &mdash; the protection people assume is there, isn't.</li>
+<li>The scariest-looking powers are usually the <em>disclosed</em> ones; the genuinely dangerous ones are the <strong>undisclosed</strong> paths &mdash; a module, a diamond facet, a role-admin loop &mdash; that the team itself may have lost track of.</li>
+<li>Immutability is oversold. A contract with no proxy can still route its real power through an owner that <em>is</em> upgradeable.</li>
+</ul>
+<p>None of this is an accusation. It's a reading. A control-plane map isn't a verdict that a team is careless &mdash; it's the thing that lets you decide, with evidence instead of vibes, whether &ldquo;trust the multisig&rdquo; is a sentence you're comfortable resting your money on.</p>
+
+<h2>If you want the full map</h2>
+<p>I do this for a living: a written control-surface review of a deployment &mdash; every owner, admin, role holder and Safe signer, each privileged power proven by simulation at a pinned block, the gaps between the docs and the chain, and a ready monitoring config so you hear about a change the moment it happens. The tool is free; <a href="https://github.com/imal1ice/ownerwatch/blob/main/docs/one-time-review.md">the review</a> is for when you want the whole picture, done properly, by someone who looks at this all day.</p>
+<p>Either way: next time you read &ldquo;assuming the privileged roles are controlled by a trusted multisig,&rdquo; go check. The chain will tell you the truth the audit skipped.</p>
+""",
+    },
+]
+
+_BLOG_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%%TITLE%%</title>
+<link rel="icon" type="image/png" href="%%ICON%%">
+<meta name="description" content="%%DESC%%">
+<meta property="og:type" content="%%OGTYPE%%">
+<meta property="og:title" content="%%TITLE%%">
+<meta property="og:description" content="%%DESC%%">
+<meta property="og:url" content="%%URL%%">
+<meta property="og:image" content="https://imal1ice.github.io/admin-feed/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--muted:#999;--line:#2a2a2a}}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:25px;line-height:1.25;margin:0 0 6px} p.sub{color:var(--muted);margin:0 0 24px;font-size:14px}
+h2{font-size:18px;margin:30px 0 8px}
+a{color:inherit} code{font-size:14px}
+pre{background:var(--line);padding:12px;border-radius:6px;overflow-x:auto;font-size:13px;line-height:1.5}
+ul{padding-left:20px} li{margin:8px 0}
+footer{color:var(--muted);font-size:13px;margin-top:36px;border-top:1px solid var(--line);padding-top:16px}
+</style></head><body>
+"""
+
+POST_TEMPLATE = _BLOG_HEAD + """<p class="sub"><a href="./">imal1ice &mdash; notes on who controls your protocol</a> &middot; %%DATE%%</p>
+<h1>%%TITLE%%</h1>
+%%BODY%%
+<footer>Free, MIT-licensed tooling: <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a> &middot; <a href="../diamonds.html">Who can upgrade your diamond?</a> &middot; <a href="../transparency.html">Control surface at a glance</a> &middot; <a href="./">more notes</a><br>&mdash; imal1ice</footer>
+</body></html>"""
+
+BLOG_INDEX_TEMPLATE = _BLOG_HEAD + """<h1>imal1ice</h1>
+<p class="sub">Notes on who really controls your protocol &mdash; the owners, admins, Safe signers, timelocks and upgrade gates above the code. By the author of <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a>.</p>
+%%LIST%%
+<footer><a href="./../">admin-feed</a> &middot; <a href="../diamonds.html">Who can upgrade your diamond?</a> &middot; <a href="../transparency.html">Control surface at a glance</a> &middot; <a href="https://github.com/imal1ice/ownerwatch">ownerwatch</a></footer>
+</body></html>"""
+
+
+def _blog_fill(tpl, title, desc, url, ogtype, icon="../favicon.png"):
+    return (tpl.replace("%%TITLE%%", title).replace("%%DESC%%", desc)
+            .replace("%%URL%%", url).replace("%%OGTYPE%%", ogtype).replace("%%ICON%%", icon))
+
+
+def render_blog() -> dict:
+    """Returns {path: html} for the blog index + each post."""
+    out = {}
+    base = "https://imal1ice.github.io/admin-feed/blog/"
+    items = []
+    for post in BLOG_POSTS:
+        url = base + post["slug"] + ".html"
+        page = _blog_fill(POST_TEMPLATE, post["title"], post["desc"], url, "article", icon="../favicon.png")
+        page = page.replace("%%DATE%%", post["date"]).replace("%%BODY%%", post["body"])
+        out["blog/" + post["slug"] + ".html"] = page
+        items.append(f'<h2 style="margin-bottom:2px"><a href="{post["slug"]}.html">{html.escape(post["title"])}</a></h2>'
+                     f'<p class="sub">{post["date"]} &middot; {html.escape(post["desc"])}</p>')
+    idx = _blog_fill(BLOG_INDEX_TEMPLATE, "imal1ice — who controls your protocol",
+                     "Notes on who really controls DeFi protocols: owners, proxy admins, Safe signers, timelocks and upgrade gates. By the author of ownerwatch.",
+                     base, "website", icon="../favicon.png")
+    idx = idx.replace("%%LIST%%", "\n".join(items))
+    out["blog/index.html"] = idx
+    return out
+
+
 def main() -> None:
     rows = load()
     DOCS.mkdir(exist_ok=True)
@@ -536,6 +638,9 @@ def main() -> None:
     (DOCS / "transparency.html").write_text(render_transparency(rows), encoding="utf-8")
     (DOCS / "disclosures.html").write_text(render_disclosures(), encoding="utf-8")
     (DOCS / "diamonds.html").write_text(render_diamonds(), encoding="utf-8")
+    (DOCS / "blog").mkdir(exist_ok=True)
+    for _bpath, _bhtml in render_blog().items():
+        (DOCS / _bpath).write_text(_bhtml, encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(render_sitemap(), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("")
