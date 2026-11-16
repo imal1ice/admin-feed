@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T07:58:30Z",
+ "generated": "2026-11-16T18:31:29Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -422,12 +422,12 @@
   "compound-v2": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 22 governance executions in 90 days",
+   "value": "0 control changes \u00b7 23 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-16",
-   "lastEvent": "2026-11-07",
+   "lastEvent": "2026-11-16",
    "controlChanges": 0,
-   "governanceExecutions": 22,
+   "governanceExecutions": 23,
    "window": {
     "days": 90,
     "from": "2026-08-18"
@@ -438,16 +438,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 70,
-     "last": "2026-11-07"
+     "events": 72,
+     "last": "2026-11-16"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 22,
-     "last": "2026-11-07"
+     "events": 23,
+     "last": "2026-11-16"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -459,6 +459,30 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-16",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xD28d21422f5fA74E3d4414626c774bDA274b7Ca9 value 0 sig '' = execTransaction(to=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, value=0, data=0x095ea7b30000000000000000000000006472d31e775b6a736fb3fb00208b470c5db14fcf00000\u2026, operation=0, safeTxGas=0, baseGas=0, gasPrice=0, gasToken=0x0000000000000000000000000000000000000000, refundReceiver=0x0000000000000000000000000000000000000000, signatures=0x0000000000000000000000006d903f6003cca6255d85cca4d3b5e5146dc339250000000000000\u2026) [0x6a761202, verified via implementation]",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
+    {
+     "date": "2026-11-16",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xfe5e5D361b2ad62c541bAb87C45a0B9B018389a2 value 0 sig '' = sendMessageToChild(_receiver=0x18281dfC4d00905DA1aaA6731414EABa843c468A, _data=0x00000000000000000000000000000000000000000000000000000000000000800000000000000\u2026) [0xb4720477, verified]",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
+    {
+     "date": "2026-11-16",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 624 executed",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
     {
      "date": "2026-11-07",
      "label": "Compound Timelock",
@@ -513,30 +537,6 @@
      "event": "ExecuteTransaction",
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetSupplyCap(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newSupplyCap=0) [0xa2ced7fd, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x1EC63B5883C3481134FD50D5DAebc83Ecd2E8779 value 0 sig '' = deployAndUpgradeTo(configuratorProxy=0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3, cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3) [0x9627816f, verified]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xA17581A9E3356d9A858b789D68B4d866e593aE94, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
      "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
     }
    ],
@@ -546,12 +546,12 @@
   "compound-v3": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 22 governance executions in 90 days",
+   "value": "0 control changes \u00b7 23 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-16",
-   "lastEvent": "2026-11-07",
+   "lastEvent": "2026-11-16",
    "controlChanges": 0,
-   "governanceExecutions": 22,
+   "governanceExecutions": 23,
    "window": {
     "days": 90,
     "from": "2026-08-18"
@@ -562,16 +562,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 70,
-     "last": "2026-11-07"
+     "events": 72,
+     "last": "2026-11-16"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 22,
-     "last": "2026-11-07"
+     "events": 23,
+     "last": "2026-11-16"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -583,6 +583,30 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-16",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xD28d21422f5fA74E3d4414626c774bDA274b7Ca9 value 0 sig '' = execTransaction(to=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, value=0, data=0x095ea7b30000000000000000000000006472d31e775b6a736fb3fb00208b470c5db14fcf00000\u2026, operation=0, safeTxGas=0, baseGas=0, gasPrice=0, gasToken=0x0000000000000000000000000000000000000000, refundReceiver=0x0000000000000000000000000000000000000000, signatures=0x0000000000000000000000006d903f6003cca6255d85cca4d3b5e5146dc339250000000000000\u2026) [0x6a761202, verified via implementation]",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
+    {
+     "date": "2026-11-16",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xfe5e5D361b2ad62c541bAb87C45a0B9B018389a2 value 0 sig '' = sendMessageToChild(_receiver=0x18281dfC4d00905DA1aaA6731414EABa843c468A, _data=0x00000000000000000000000000000000000000000000000000000000000000800000000000000\u2026) [0xb4720477, verified]",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
+    {
+     "date": "2026-11-16",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 624 executed",
+     "tx": "https://etherscan.io/tx/0xac117907d2b000d199d15f3486a05631b5766e865cc8dad31767d1446f98f1dd"
+    },
     {
      "date": "2026-11-07",
      "label": "Compound Timelock",
@@ -637,30 +661,6 @@
      "event": "ExecuteTransaction",
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetSupplyCap(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newSupplyCap=0) [0xa2ced7fd, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x1EC63B5883C3481134FD50D5DAebc83Ecd2E8779 value 0 sig '' = deployAndUpgradeTo(configuratorProxy=0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3, cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3) [0x9627816f, verified]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xA17581A9E3356d9A858b789D68B4d866e593aE94, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
      "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
     }
    ],
@@ -778,12 +778,12 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/user/deployments",
-   "value": "4 control changes \u00b7 31 governance executions in 90 days",
+   "value": "4 control changes \u00b7 32 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-16",
-   "lastEvent": "2026-11-14",
+   "lastEvent": "2026-11-16",
    "controlChanges": 4,
-   "governanceExecutions": 31,
+   "governanceExecutions": 32,
    "window": {
     "days": 90,
     "from": "2026-08-18"
@@ -794,8 +794,8 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 31,
-     "last": "2026-11-14"
+     "events": 32,
+     "last": "2026-11-16"
     },
     {
      "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
@@ -815,6 +815,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-16",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1520 executed",
+     "tx": "https://etherscan.io/tx/0xc3a2bf413611cc33c85d676acee71f564eaeaa6c894082bc12df05443d8557f3"
+    },
     {
      "date": "2026-11-14",
      "label": "Curve Ownership voting",
@@ -885,14 +893,6 @@
      "event": "RemovedOwner",
      "kind": "control change",
      "message": "Safe owner removed 0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3",
-     "tx": "https://etherscan.io/tx/0x3083723f8647cf70b47dc18880ec2980bfb6bae0211f3ffc27f7bd7f44ef199f"
-    },
-    {
-     "date": "2026-10-29",
-     "label": "Curve Emergency DAO (Safe)",
-     "event": "AddedOwner",
-     "kind": "control change",
-     "message": "Safe owner added 0xBd0a74e51729a4D0B92742e67183C4cBc97bCA92",
      "tx": "https://etherscan.io/tx/0x3083723f8647cf70b47dc18880ec2980bfb6bae0211f3ffc27f7bd7f44ef199f"
     }
    ],
@@ -1939,11 +1939,11 @@
   "yearn": {
    "name": "Yearn governance",
    "source": "https://github.com/yearn/yearn-devdocs/blob/master/src/ethereum/constants.ts",
-   "value": "2 control changes in 90 days",
+   "value": "4 control changes in 90 days",
    "note": "Governed through Safes or acting contracts directly: a Safe transaction is not classified, so only control changes are counted.",
    "updatedAt": "2026-11-16",
-   "lastEvent": "2026-10-15",
-   "controlChanges": 2,
+   "lastEvent": "2026-11-16",
+   "controlChanges": 4,
    "governanceExecutions": 0,
    "window": {
     "days": 90,
@@ -1955,8 +1955,8 @@
      "label": "yChad multisig",
      "type": "safe",
      "since": "2026-10-28",
-     "events": 0,
-     "last": null
+     "events": 2,
+     "last": "2026-11-16"
     },
     {
      "address": "0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7",
@@ -1968,6 +1968,22 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-16",
+     "label": "Yearn yChad multisig (Safe)",
+     "event": "RemovedOwner",
+     "kind": "control change",
+     "message": "Safe owner removed 0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6",
+     "tx": "https://etherscan.io/tx/0xf2ac69b26faa0ebcffcf6bdc8ea20263ca70331dc28336121a053b0d180b63ac"
+    },
+    {
+     "date": "2026-11-16",
+     "label": "Yearn yChad multisig (Safe)",
+     "event": "AddedOwner",
+     "kind": "control change",
+     "message": "Safe owner added 0x383965940c950008a4B67BfaA477Fdf6AC91a7F7",
+     "tx": "https://etherscan.io/tx/0xf2ac69b26faa0ebcffcf6bdc8ea20263ca70331dc28336121a053b0d180b63ac"
+    },
     {
      "date": "2026-10-15",
      "label": "Yearn Brain multisig (Safe)",
