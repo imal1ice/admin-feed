@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T11:34:53Z",
+ "generated": "2026-11-20T20:13:31Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -422,12 +422,12 @@
   "compound-v2": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 21 governance executions in 90 days",
+   "value": "0 control changes \u00b7 22 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-20",
-   "lastEvent": "2026-11-16",
+   "lastEvent": "2026-11-20",
    "controlChanges": 0,
-   "governanceExecutions": 21,
+   "governanceExecutions": 22,
    "window": {
     "days": 90,
     "from": "2026-08-22"
@@ -438,16 +438,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 59,
-     "last": "2026-11-16"
+     "events": 60,
+     "last": "2026-11-20"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 21,
-     "last": "2026-11-16"
+     "events": 22,
+     "last": "2026-11-20"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -459,6 +459,22 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-20",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig '' = sendMessage(_to=0x1F71901daf98d70B4BAF40DE080321e5C2676856, _fee=0, _calldata=0x00000000000000000000000000000000000000000000000000000000000000800000000000000\u2026) [0x9f3ce55a, verified via implementation]",
+     "tx": "https://etherscan.io/tx/0x99c451eaebcb59f27de2a5047adf2aefc2978b0b043c34240de2c716b48161f6"
+    },
+    {
+     "date": "2026-11-20",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 625 executed",
+     "tx": "https://etherscan.io/tx/0x99c451eaebcb59f27de2a5047adf2aefc2978b0b043c34240de2c716b48161f6"
+    },
     {
      "date": "2026-11-16",
      "label": "Compound Timelock",
@@ -521,22 +537,6 @@
      "event": "ExecuteTransaction",
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetSupplyCap(cometProxy=0x3Afdc9BCA9213A35503b077a6072F3D0d5AB0840, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newSupplyCap=0) [0xa2ced7fd, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x1EC63B5883C3481134FD50D5DAebc83Ecd2E8779 value 0 sig '' = deployAndUpgradeTo(configuratorProxy=0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3, cometProxy=0x3Afdc9BCA9213A35503b077a6072F3D0d5AB0840) [0x9627816f, verified]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
      "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
     }
    ],
@@ -546,12 +546,12 @@
   "compound-v3": {
    "name": "Compound governance",
    "source": "https://docs.compound.xyz/governance/",
-   "value": "0 control changes \u00b7 21 governance executions in 90 days",
+   "value": "0 control changes \u00b7 22 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-20",
-   "lastEvent": "2026-11-16",
+   "lastEvent": "2026-11-20",
    "controlChanges": 0,
-   "governanceExecutions": 21,
+   "governanceExecutions": 22,
    "window": {
     "days": 90,
     "from": "2026-08-22"
@@ -562,16 +562,16 @@
      "label": "Timelock",
      "type": "timelock",
      "since": "2026-10-21",
-     "events": 59,
-     "last": "2026-11-16"
+     "events": 60,
+     "last": "2026-11-20"
     },
     {
      "address": "0x309a862bbC1A00e45506cB8A802D1ff10004c8C0",
      "label": "Governor",
      "type": "governor",
      "since": "2026-10-21",
-     "events": 21,
-     "last": "2026-11-16"
+     "events": 22,
+     "last": "2026-11-20"
     },
     {
      "address": "0xbbf3f1421D886E9b2c5D716B5192aC998af2012c",
@@ -583,6 +583,22 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-20",
+     "label": "Compound Timelock",
+     "event": "ExecuteTransaction",
+     "kind": "governance execution",
+     "message": "timelock tx executed: target 0xd19d4B5d358258f05D7B411E21A1460D11B0876F value 0 sig '' = sendMessage(_to=0x1F71901daf98d70B4BAF40DE080321e5C2676856, _fee=0, _calldata=0x00000000000000000000000000000000000000000000000000000000000000800000000000000\u2026) [0x9f3ce55a, verified via implementation]",
+     "tx": "https://etherscan.io/tx/0x99c451eaebcb59f27de2a5047adf2aefc2978b0b043c34240de2c716b48161f6"
+    },
+    {
+     "date": "2026-11-20",
+     "label": "Compound Governor Bravo (proxy)",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "proposal 625 executed",
+     "tx": "https://etherscan.io/tx/0x99c451eaebcb59f27de2a5047adf2aefc2978b0b043c34240de2c716b48161f6"
+    },
     {
      "date": "2026-11-16",
      "label": "Compound Timelock",
@@ -645,22 +661,6 @@
      "event": "ExecuteTransaction",
      "kind": "governance execution",
      "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetSupplyCap(cometProxy=0x3Afdc9BCA9213A35503b077a6072F3D0d5AB0840, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newSupplyCap=0) [0xa2ced7fd, verified via implementation]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x1EC63B5883C3481134FD50D5DAebc83Ecd2E8779 value 0 sig '' = deployAndUpgradeTo(configuratorProxy=0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3, cometProxy=0x3Afdc9BCA9213A35503b077a6072F3D0d5AB0840) [0x9627816f, verified]",
-     "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Compound Timelock",
-     "event": "ExecuteTransaction",
-     "kind": "governance execution",
-     "message": "timelock tx executed: target 0x316f9708bB98af7dA9c68C1C3b5e79039cD336E3 value 0 sig '' = updateAssetBorrowCollateralFactor(cometProxy=0xc3d688B66703497DAA19211EEdff47f25384cdc3, asset=0x18084fbA666a33d37592fA2633fD49a74DD93a88, newBorrowCF=0) [0xb73585f1, verified via implementation]",
      "tx": "https://etherscan.io/tx/0xaaaf346a5a06619834d66cfee9fdaabc82686dba6a758e9a336ff99742499219"
     }
    ],
