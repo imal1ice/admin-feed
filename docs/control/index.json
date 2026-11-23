@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T09:00:21Z",
+ "generated": "2026-11-23T21:19:39Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -1483,12 +1483,12 @@
   "spark": {
    "name": "Sky governance (Spark spells)",
    "source": "https://github.com/sparkdotfi/spark-address-registry/blob/master/src/Ethereum.sol",
-   "value": "0 control changes \u00b7 6 governance executions in 90 days",
+   "value": "0 control changes \u00b7 7 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-23",
-   "lastEvent": "2026-11-09",
+   "lastEvent": "2026-11-23",
    "controlChanges": 0,
-   "governanceExecutions": 6,
+   "governanceExecutions": 7,
    "window": {
     "days": 90,
     "from": "2026-08-25"
@@ -1499,8 +1499,8 @@
      "label": "Sky governance pause (MCD_PAUSE)",
      "type": "timelock",
      "since": "2026-10-28",
-     "events": 6,
-     "last": "2026-11-09"
+     "events": 7,
+     "last": "2026-11-23"
     },
     {
      "address": "0x929d9A1435662357F54AdcF64DcEE4d6b867a6f9",
@@ -1536,6 +1536,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-23",
+     "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
+     "event": "SpellExecuted",
+     "kind": "governance execution",
+     "message": "spell 0xE02D6BA76fcFa69BEC6D54cAfFae623A5Cbbda8D executed",
+     "tx": "https://etherscan.io/tx/0x4babaf4be2f91bdcf19e8c7213144ed0481d05ac468bb27aae24de272a644e29"
+    },
     {
      "date": "2026-11-09",
      "label": "Sky/Spark Sky governance pause (MCD_PAUSE)",
