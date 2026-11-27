@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T08:26:08Z",
+ "generated": "2026-11-27T18:57:22Z",
  "chain": "ethereum",
  "methodology": "https://imal1ice.github.io/admin-feed/control/methodology.html",
  "protocols": {
@@ -778,12 +778,12 @@
   "curve": {
    "name": "Curve DAO",
    "source": "https://docs.curve.finance/user/deployments",
-   "value": "4 control changes \u00b7 33 governance executions in 90 days",
+   "value": "4 control changes \u00b7 34 governance executions in 90 days",
    "note": null,
    "updatedAt": "2026-11-27",
-   "lastEvent": "2026-11-26",
+   "lastEvent": "2026-11-27",
    "controlChanges": 4,
-   "governanceExecutions": 33,
+   "governanceExecutions": 34,
    "window": {
     "days": 90,
     "from": "2026-08-29"
@@ -794,8 +794,8 @@
      "label": "Ownership voting",
      "type": "aragon-voting",
      "since": "2026-10-28",
-     "events": 33,
-     "last": "2026-11-26"
+     "events": 34,
+     "last": "2026-11-27"
     },
     {
      "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
@@ -815,6 +815,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-27",
+     "label": "Curve Ownership voting",
+     "event": "ExecuteVote",
+     "kind": "governance execution",
+     "message": "Aragon vote 1529 executed",
+     "tx": "https://etherscan.io/tx/0x54f8f1a1a6200e512223a492f29defab4f82eb2d0c0d1ae81d355ec6678d667b"
+    },
     {
      "date": "2026-11-26",
      "label": "Curve Ownership voting",
@@ -886,14 +894,6 @@
      "kind": "governance execution",
      "message": "Aragon vote 1517 executed",
      "tx": "https://etherscan.io/tx/0xef3e33d51ba3910abd73ddec167a770cf776bd576916921bb49d6ae14725d15c"
-    },
-    {
-     "date": "2026-11-07",
-     "label": "Curve Ownership voting",
-     "event": "ExecuteVote",
-     "kind": "governance execution",
-     "message": "Aragon vote 1515 executed",
-     "tx": "https://etherscan.io/tx/0xa71b20cf8c21ca88398aba3ae8f8b2c86491dee0c969f755739233efb31c0d6c"
     }
    ],
    "system": "curve-dao",
@@ -1089,12 +1089,12 @@
   "lido": {
    "name": "Lido DAO",
    "source": "https://docs.lido.fi/deployed-contracts/",
-   "value": "6 control changes \u00b7 2 governance executions in 90 days",
+   "value": "6 control changes \u00b7 3 governance executions in 90 days",
    "note": "Executions are counted when Lido's Emergency Protected Timelock executes a proposal; the Aragon vote that submitted it is not counted again.",
    "updatedAt": "2026-11-27",
-   "lastEvent": "2026-11-13",
+   "lastEvent": "2026-11-27",
    "controlChanges": 6,
-   "governanceExecutions": 2,
+   "governanceExecutions": 3,
    "window": {
     "days": 90,
     "from": "2026-08-29"
@@ -1105,8 +1105,8 @@
      "label": "Emergency Protected Timelock",
      "type": "timelock",
      "since": "2026-10-28",
-     "events": 2,
-     "last": "2026-10-23"
+     "events": 3,
+     "last": "2026-11-27"
     },
     {
      "address": "0xC1db28B3301331277e307FDCfF8DE28242A4486E",
@@ -1158,6 +1158,14 @@
     }
    ],
    "recent": [
+    {
+     "date": "2026-11-27",
+     "label": "Lido Emergency Protected Timelock",
+     "event": "ProposalExecuted",
+     "kind": "governance execution",
+     "message": "timelock proposal 16 executed",
+     "tx": "https://etherscan.io/tx/0x7dc0be52b99a08b164af88e01dba740f79114ee29fc6c04ea5f03a11b17ff261"
+    },
     {
      "date": "2026-11-13",
      "label": "Lido Emergency execution committee (Safe)",
